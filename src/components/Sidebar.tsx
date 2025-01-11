@@ -183,8 +183,174 @@
 //   );
 // }
 
+//////////////////////////////////////////////////
+
+// import React, { useState } from 'react';
+// import { FaUser, FaShoppingCart, FaClipboardList, FaUsers, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt } from 'react-icons/fa';
+// import { MdKeyboardArrowDown } from 'react-icons/md';
+
+// export function Sidebar() {
+//   const [isPatientOpen, setIsPatientOpen] = useState(false);
+//   const [isResponsibleOpen, setIsResponsibleOpen] = useState(false);
+
+//   return (
+//     <div className="flex h-screen bg-gray-100">
+//       {/* Sidebar */}
+//       <div className="w-64 bg-white shadow-md">
+//         <div className="p-4 flex items-center space-x-2 border-b">
+//           <FaFileMedicalAlt size={24} className="text-blue-600" />
+//           <h1 className="text-lg font-semibold">Patient Management</h1>
+//         </div>
+
+//         {/* Patient Profile Section */}
+//         <div className="p-4 border-b">
+//           <div className="flex items-center space-x-4">
+//             {/* Patient Image Circle */}
+//             <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+//               <img
+//                 src="https://via.placeholder.com/150" // Replace with actual patient image URL
+//                 alt="Patient"
+//                 className="w-full h-full object-cover rounded-full"
+//               />
+//             </div>
+
+//             {/* Patient Info */}
+//             <div>
+//               <div className="font-semibold text-gray-800">John Doe</div>
+//               <div className="text-sm text-gray-500">DOB: 01/01/1980</div>
+//               <div className="text-sm text-gray-500">Phone: (123) 456-7890</div>
+//               <div className="text-sm text-gray-500">Insurance: HealthCare Co.</div>
+//               <div className="text-sm text-gray-500">Plan: Premium Plan</div>
+//               <div className="text-sm text-gray-500">
+//                 <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
+//               </div>
+//               <div className="text-sm text-gray-500">Last Visit: 12/15/2024</div>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Sidebar menu */}
+//         <div className="p-4">
+//           {/* Patient dropdown */}
+//           <div>
+//             <button
+//               className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 py-2"
+//               onClick={() => setIsPatientOpen(!isPatientOpen)}
+//             >
+//               <div className="flex items-center space-x-2">
+//                 <FaUser size={20} className="text-purple-500 hover:text-indigo-500 transition duration-300" />
+//                 <span>Notes</span>
+//               </div>
+//               <MdKeyboardArrowDown size={20} className={`${isPatientOpen ? 'transform rotate-180' : ''}`} />
+//             </button>
+//             {isPatientOpen && (
+//               <div className="ml-6 mt-2 space-y-2">
+//                 <button className="flex items-center text-gray-600 hover:text-blue-600">
+//                   <FaClipboardList size={18} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
+//                   Orders
+//                 </button>
+//                 <button className="flex items-center text-gray-600 hover:text-blue-600">
+//                   <FaShoppingCart size={18} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
+//                   Products
+//                 </button>
+//               </div>
+//             )}
+//           </div>
+
+//           {/* Responsible Party dropdown */}
+//           <div className="mt-4">
+//             <button
+//               className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 py-2"
+//               onClick={() => setIsResponsibleOpen(!isResponsibleOpen)}
+//             >
+//               <div className="flex items-center space-x-2">
+//                 <FaUsers size={20} className="text-blue-500 hover:text-blue-700 transition duration-300" />
+//                 <span>Plan summary</span>
+//               </div>
+//               <MdKeyboardArrowDown size={20} className={`${isResponsibleOpen ? 'transform rotate-180' : ''}`} />
+//             </button>
+//             {isResponsibleOpen && (
+//               <div className="ml-6 mt-2 ">
+//                 <button className="flex items-center text-gray-600 hover:text-blue-600">
+//                   <FaClipboardList size={18} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
+//                   Orders
+//                 </button>
+//                 <button className="flex items-center text-gray-600 hover:text-blue-600">
+//                   <FaShoppingCart size={18} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
+//                   Products
+//                 </button>
+//               </div>
+//             )}
+//           </div>
+
+//           {/* Other Menu Items */}
+//           <div className="mt-4 space-y-2">
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaUser size={20} className="mr-2 text-purple-500 hover:text-indigo-500 transition duration-300" />
+//               Allergies
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaDollarSign size={20} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
+//               Advanced directives
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaBell size={20} className="mr-2 text-orange-500 hover:text-orange-700 transition duration-300" />
+//               Vitals
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaCalendarAlt size={20} className="mr-2 text-red-500 hover:text-red-700 transition duration-300" />
+//               Health watcher
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaTasks size={20} className="mr-2 text-purple-500 hover:text-purple-700 transition duration-300" />
+//               Medication
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaTasks size={20} className="mr-2 text-purple-500 hover:text-purple-700 transition duration-300" />
+//               Messages
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaHistory size={20} className="mr-2 text-brown-500 hover:text-brown-700 transition duration-300" />
+//               Orders
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaStickyNote size={20} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
+//               Results
+//             </button>
+//             <button className="flex items-center text-gray-700 hover:text-blue-600">
+//               <FaStickyNote size={20} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
+//               Documents
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Main content area */}
+//       <div className="flex-1 p-6">
+//         <div className="text-center bg-gray-200 p-6 rounded-md shadow-sm">
+//           <h2 className="text-xl font-semibold mb-2">Welcome!</h2>
+//           <p>Please select an option from the sidebar.</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////
+
 import React, { useState } from 'react';
-import { FaUser, FaShoppingCart, FaClipboardList, FaUsers, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaBook } from 'react-icons/fa';
+import { FaUser, FaShoppingCart, FaClipboardList, FaUsers, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt } from 'react-icons/fa';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
 export function Sidebar() {
@@ -196,8 +362,35 @@ export function Sidebar() {
       {/* Sidebar */}
       <div className="w-64 bg-white shadow-md">
         <div className="p-4 flex items-center space-x-2 border-b">
-          <FaBook size={24} className="text-blue-600" />
+          <FaFileMedicalAlt size={24} className="text-blue-600" />
           <h1 className="text-lg font-semibold">Patient Management</h1>
+        </div>
+
+        {/* Patient Profile Section */}
+        <div className="p-4 border-b">
+          <div className="flex items-center space-x-4">
+            {/* Patient Image Circle */}
+            <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
+              <img
+                src="https://via.placeholder.com/150" // Replace with actual patient image URL
+                alt="Patient"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+
+            {/* Patient Info */}
+            <div>
+              <div className="font-semibold text-gray-800">John Doe</div>
+              <div className="text-sm text-gray-500">DOB: 01/01/1980</div>
+              <div className="text-sm text-gray-500">Phone: (123) 456-7890</div>
+              <div className="text-sm text-gray-500">Insurance: HealthCare Co.</div>
+              <div className="text-sm text-gray-500">Plan: Premium Plan</div>
+              <div className="text-sm text-gray-500">
+                <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
+              </div>
+              <div className="text-sm text-gray-500">Last Visit: 12/15/2024</div>
+            </div>
+          </div>
         </div>
 
         {/* Sidebar menu */}
@@ -257,7 +450,7 @@ export function Sidebar() {
           {/* Other Menu Items */}
           <div className="mt-4 space-y-2">
             <button className="flex items-center text-gray-700 hover:text-blue-600">
-              <FaUsers size={20} className="mr-2 text-blue-500 hover:text-blue-700 transition duration-300" />
+              <FaUser size={20} className="mr-2 text-purple-500 hover:text-indigo-500 transition duration-300" />
               Allergies
             </button>
             <button className="flex items-center text-gray-700 hover:text-blue-600">
@@ -278,15 +471,19 @@ export function Sidebar() {
             </button>
             <button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaTasks size={20} className="mr-2 text-purple-500 hover:text-purple-700 transition duration-300" />
-              Tasks
+              Messages
             </button>
             <button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaHistory size={20} className="mr-2 text-brown-500 hover:text-brown-700 transition duration-300" />
-              History
+              Orders
             </button>
             <button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaStickyNote size={20} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
-              Memos
+              Results
+            </button>
+            <button className="flex items-center text-gray-700 hover:text-blue-600">
+              <FaStickyNote size={20} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
+              Documents
             </button>
           </div>
         </div>
@@ -302,3 +499,6 @@ export function Sidebar() {
     </div>
   );
 }
+
+
+
