@@ -1,10 +1,12 @@
 import React from 'react'
 import { Sidebar } from './components/Sidebar'
+import AppointmentForm from './components/AppoinmentPage'
 
 const App = () => {
   return (
     <div>
-      <Sidebar/>
+      {/* <Sidebar/> */}
+      <AppointmentForm/>
     </div>
   )
 }
