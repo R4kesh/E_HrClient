@@ -187,6 +187,8 @@ function Form() {
 
   // Handle file upload change
   const handleImageChange = (e) => {
+    console.log('e.',e.target.files[0])
+    setFile(e.target.files[0])
     setFormData({ ...formData, file: e.target.files[0] });
   };
 
@@ -229,7 +231,7 @@ function Form() {
     formDataToSend.append('phoneNumber', formData.phoneNumber);
     formDataToSend.append('notificationMethod', formData.notificationMethod);
     formDataToSend.append('visitType', formData.visitType);
-    formDataToSend.append("files", file);
+    if (file) formDataToSend.append("files", file);
     formDataToSend.append('insuranceCarrier', formData.insuranceCarrier);
     formDataToSend.append('insurancePlanName', formData.insurancePlanName);
     formDataToSend.append('pharmacyDetails', formData.pharmacyDetails);
@@ -283,8 +285,14 @@ function Form() {
               <label className="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center">
                 <input
                   type="file"
+                  id="file"
+                  multiple
+                  name="file"
+      onChange={handleImageChange} 
                 //   name="patientImage"
-                  onChange={handleImageChange}
+                accept=".pdf,.jpg,.jpeg,.png"
+                // onChange={handleImageChange}
+                
                   className="hidden"
                 />
                 {formData.file ? (
