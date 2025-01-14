@@ -346,45 +346,50 @@
 
 
 
-
-///////////////////////////////////////////////////////
-
-import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { FaUser, FaShoppingCart, FaClipboardList, FaUsers, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt } from 'react-icons/fa';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
+import { useTabs } from '../Context/TabProvider';
 
 export function Sidebar() {
+  const { id } = useParams(); // Get patient ID from the route
+  const { addTab } = useTabs();
+
   const [isPatientOpen, setIsPatientOpen] = useState(false);
   const [isResponsibleOpen, setIsResponsibleOpen] = useState(false);
   const [patientDetails, setPatientDetails] = useState(null);
-  const { id } = useParams(); // Get patient ID from the URL
+
+
+
+  const [patient, setPatient] = useState(null); // State to store patient details
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
-    // Fetch patient details from an API using the patient ID
-    const fetchPatientDetails = async () => {
-      try {
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/patient/getDetails/${id}`);
-        console.log('response',response.data)
-        setPatientDetails(response.data);
-      } catch (error) {
-        console.error("Error fetching patient details", error);
-      }
-    };
-
     if (id) {
       fetchPatientDetails();
     }
   }, [id]);
 
-  if (!patientDetails) {
-    return (
-      <div className="flex justify-center items-center p-6">
-        <p>Loading patient details...</p>
-      </div>
-    );
-  }
+  const fetchPatientDetails = async () => {
+    try {
+      setLoading(true); // Set loading to true
+      const response = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/api/patient/${id}`
+      );
+      setPatient(response.data);
+    } catch (error) {
+      console.error("Error fetching patient details:", error);
+    } finally {
+      setLoading(false); // Set loading to false after API call
+    }
+  };
+console.log('patient',patient);
+
+  useEffect(() => {
+    addTab({ id: "/", name: "Home", path: `/${id}` });
+  }, [addTab]);
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -396,34 +401,53 @@ export function Sidebar() {
         </div>
 
         {/* Patient Profile Section */}
-        <div className="p-4 border-b">
-          <div className="flex items-center space-x-4">
-            {/* Patient Image Circle */}
-            <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
-              <img
-                src={patientDetails.image || "https://via.placeholder.com/150"} // Use actual image URL from API
-                alt="Patient"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
+        <div className="p-4 border-b flex flex-col space-y-4">
+  {loading ? (
+    <div>Loading...</div>
+  ) : patient ? (
+    <>
+      {/* Profile Image */}
+      {console.log("Image URL:", `${import.meta.env.VITE_BASE_URL}${patient.patientImage}`)} {/* Add console.log here */}
+      <div className="w-full h-32 bg-gray-300 rounded-lg overflow-hidden">
+        <img
+          src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
+          alt="Patient"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-            {/* Patient Info */}
-            <div>
-              <div className="font-semibold text-gray-800">{patientDetails.firstName || "John Doe"}</div>
-              <div className="text-sm text-gray-500">DOB: {patientDetails.dateOfBirth || "01/01/1980"}</div>
-              <div className="text-sm text-gray-500">Phone: {patientDetails.phoneNumber || "(123) 456-7890"}</div>
-              <div className="text-sm text-gray-500">Insurance: {patientDetails.insuranceCarrier || "HealthCare Co."}</div>
-              <div className="text-sm text-gray-500">Plan: {patientDetails.
-insurancePlanName || "Premium Plan"}</div>
-              <div className="text-sm text-gray-500">
-                <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
-              </div>
-              <div className="text-sm text-gray-500">Last Visit: {patientDetails.
-lastVisit
- || "12/15/2024"}</div>
-            </div>
-          </div>
+      {/* Profile Details */}
+      <div className="flex flex-col space-y-2">
+        <div className="font-semibold text-gray-800">
+          {patient.firstName} {patient.lastName}
         </div>
+        <div className="text-sm text-gray-500">
+          DOB: {patient.dateOfBirth}
+        </div>
+        <div className="text-sm text-gray-500">
+          Phone: {patient.phoneNumber}
+        </div>
+        <div className="text-sm text-gray-500">
+          Insurance: {patient.insuranceCarrier}
+        </div>
+        <div className="text-sm text-gray-500">
+          Plan: {patient.insurancePlanName}
+        </div>
+        <div className="text-sm text-gray-500">
+          <button className="text-blue-600 hover:text-blue-800 text-xs">
+            Pharmacy Details
+          </button>
+        </div>
+        <div className="text-sm text-gray-500">
+          Last Visit: {patient.lastVisit}
+        </div>
+      </div>
+    </>
+  ) : (
+    <div>No patient data available</div>
+  )}
+</div>
+
 
         {/* Sidebar menu */}
         <div className="p-4">
@@ -453,46 +477,20 @@ lastVisit
             )}
           </div>
 
-          {/* Responsible Party dropdown */}
-          <div className="mt-4">
-            <button
-              className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 py-2"
-              onClick={() => setIsResponsibleOpen(!isResponsibleOpen)}
-            >
-              <div className="flex items-center space-x-2">
-                <FaUsers size={20} className="text-blue-500 hover:text-blue-700 transition duration-300" />
-                <span>Plan summary</span>
-              </div>
-              <MdKeyboardArrowDown size={20} className={`${isResponsibleOpen ? 'transform rotate-180' : ''}`} />
-            </button>
-            {isResponsibleOpen && (
-              <div className="ml-6 mt-2 ">
-                <button className="flex items-center text-gray-600 hover:text-blue-600">
-                  <FaClipboardList size={18} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
-                  Orders
-                </button>
-                <button className="flex items-center text-gray-600 hover:text-blue-600">
-                  <FaShoppingCart size={18} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
-                  Products
-                </button>
-              </div>
-            )}
-          </div>
-
           {/* Other Menu Items */}
           <div className="mt-4 space-y-2">
-            <button className="flex items-center text-gray-700 hover:text-blue-600">
+            <Link to={`/inception/${id}`}><button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaUser size={20} className="mr-2 text-purple-500 hover:text-indigo-500 transition duration-300" />
-              Allergies
-            </button>
-            <button className="flex items-center text-gray-700 hover:text-blue-600">
+              Inception
+            </button></Link>
+            <Link to='/reviewsystem'><button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaDollarSign size={20} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
-              Advanced directives
-            </button>
-            <button className="flex items-center text-gray-700 hover:text-blue-600">
+              Review of System
+            </button></Link>
+            <Link to={`/vitals/${id}`} ><button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaBell size={20} className="mr-2 text-orange-500 hover:text-orange-700 transition duration-300" />
               Vitals
-            </button>
+            </button></Link>
             <button className="flex items-center text-gray-700 hover:text-blue-600">
               <FaCalendarAlt size={20} className="mr-2 text-red-500 hover:text-red-700 transition duration-300" />
               Health watcher
@@ -531,6 +529,3 @@ lastVisit
     </div>
   );
 }
-
-
-

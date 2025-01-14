@@ -149,11 +149,11 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Form() {
   // State for form fields
-  const navigate = useNavigate();   
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -180,6 +180,7 @@ function Form() {
 
   // State for validation errors
   const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   // Handle input change
   const handleChange = (e) => {
@@ -216,8 +217,8 @@ function Form() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     if (!validate()) return;  // Stop if validation fails
+    setSubmitted(false);
 
     const formDataToSend = new FormData();
     formDataToSend.append('firstName', formData.firstName);
@@ -252,7 +253,8 @@ function Form() {
         },
       });
       alert('Patient data submitted successfully');
-      
+      setSubmitted(true);
+      // Navigate to '/patientlist' after successful submission
       navigate('/patientlist');
     } catch (error) {
       console.error('Error submitting data:', error);
@@ -262,7 +264,7 @@ function Form() {
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center">
-      <header className="bg-teal-500 w-full py-4 flex justify-between items-center px-4 sm:px-8">
+      {/* <header className="bg-teal-500 w-full py-4 flex justify-between items-center px-4 sm:px-8">
         <h1 className="text-white text-xl sm:text-2xl font-bold">E_Hr</h1>
         <nav className="flex space-x-4 sm:space-x-6">
           <a href="#" className="text-white hover:underline text-sm sm:text-base">Home</a>
@@ -272,7 +274,7 @@ function Form() {
           <a href="#" className="text-white hover:underline text-sm sm:text-base">Contact Us</a>
         </nav>
         <button className="bg-white text-teal-500 px-3 py-2 rounded shadow text-sm sm:text-base">Log In</button>
-      </header>
+      </header> */}
 
       <div className="w-full">
         <img src="https://gctlinfosys.com/wp-content/uploads/2023/03/Hospital-Management-Software-1.jpg" alt="Banner" className="w-full h-auto" />
