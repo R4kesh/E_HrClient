@@ -562,7 +562,7 @@ export function Sidebar() {
     } catch (error) {
       console.error("Error fetching patient details:", error);
     } finally {
-      setLoading(false); // Set loading to false after API call
+      setLoading(false);
     }
   };
 console.log('patient',patient);
@@ -573,7 +573,7 @@ console.log('patient',patient);
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
+     
       <div className="w-64 bg-white shadow-md">
         <div className="p-4 flex items-center space-x-2 border-b">
           <FaFileMedicalAlt size={24} className="text-blue-600" />
