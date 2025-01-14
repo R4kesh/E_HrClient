@@ -83,10 +83,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useTabs } from "../Context/TabProvider";
+import Navbar from "./Navbar";
 
 const PatientList = () => {
   const [patients, setPatients] = useState([]); // State to store patient data
+  const { addTab } = useTabs();
 
+ 
   useEffect(() => {
     fetchPatients(); // Fetch patient data when component mounts
   }, []);
@@ -100,10 +104,15 @@ const PatientList = () => {
       console.error("Error fetching patient data:", error);
     }
   };
-console.log("patients",patients);
+  useEffect(() => {
+    addTab({ id: "/patientlist", name: "Patient List", path: "/patientlist" });
+  }, [addTab]);
+
+ 
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
+      {/* <Navbar/> */}
       <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center">
         Patient List
       </h1>
@@ -143,7 +152,7 @@ console.log("patients",patients);
                 <td className="border px-4 py-2">{patient.insurancePlanName}</td>
                 <td className="border px-4 py-2">{patient.pharmacyName}</td>
                 <td className="border px-4 py-2 text-center">
-                 <Link to='/'><button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                <Link to={`/${patient.id}`}><button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                     Chart
                   </button></Link> 
                 </td>
