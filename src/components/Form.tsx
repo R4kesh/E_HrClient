@@ -149,9 +149,11 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Form() {
   // State for form fields
+  const navigate = useNavigate();   
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -250,6 +252,8 @@ function Form() {
         },
       });
       alert('Patient data submitted successfully');
+      
+      navigate('/patientlist');
     } catch (error) {
       console.error('Error submitting data:', error);
       alert('There was an error submitting the form.');

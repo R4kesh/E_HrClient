@@ -349,13 +349,42 @@
 
 ///////////////////////////////////////////////////////
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaUser, FaShoppingCart, FaClipboardList, FaUsers, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt } from 'react-icons/fa';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export function Sidebar() {
   const [isPatientOpen, setIsPatientOpen] = useState(false);
   const [isResponsibleOpen, setIsResponsibleOpen] = useState(false);
+  const [patientDetails, setPatientDetails] = useState(null);
+  const { id } = useParams(); // Get patient ID from the URL
+
+  useEffect(() => {
+    // Fetch patient details from an API using the patient ID
+    const fetchPatientDetails = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/patient/getDetails/${id}`);
+        console.log('response',response.data)
+        setPatientDetails(response.data);
+      } catch (error) {
+        console.error("Error fetching patient details", error);
+      }
+    };
+
+    if (id) {
+      fetchPatientDetails();
+    }
+  }, [id]);
+
+  if (!patientDetails) {
+    return (
+      <div className="flex justify-center items-center p-6">
+        <p>Loading patient details...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -372,7 +401,7 @@ export function Sidebar() {
             {/* Patient Image Circle */}
             <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
               <img
-                src="https://via.placeholder.com/150" // Replace with actual patient image URL
+                src={patientDetails.image || "https://via.placeholder.com/150"} // Use actual image URL from API
                 alt="Patient"
                 className="w-full h-full object-cover rounded-full"
               />
@@ -380,15 +409,18 @@ export function Sidebar() {
 
             {/* Patient Info */}
             <div>
-              <div className="font-semibold text-gray-800">John Doe</div>
-              <div className="text-sm text-gray-500">DOB: 01/01/1980</div>
-              <div className="text-sm text-gray-500">Phone: (123) 456-7890</div>
-              <div className="text-sm text-gray-500">Insurance: HealthCare Co.</div>
-              <div className="text-sm text-gray-500">Plan: Premium Plan</div>
+              <div className="font-semibold text-gray-800">{patientDetails.firstName || "John Doe"}</div>
+              <div className="text-sm text-gray-500">DOB: {patientDetails.dateOfBirth || "01/01/1980"}</div>
+              <div className="text-sm text-gray-500">Phone: {patientDetails.phoneNumber || "(123) 456-7890"}</div>
+              <div className="text-sm text-gray-500">Insurance: {patientDetails.insuranceCarrier || "HealthCare Co."}</div>
+              <div className="text-sm text-gray-500">Plan: {patientDetails.
+insurancePlanName || "Premium Plan"}</div>
               <div className="text-sm text-gray-500">
                 <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
               </div>
-              <div className="text-sm text-gray-500">Last Visit: 12/15/2024</div>
+              <div className="text-sm text-gray-500">Last Visit: {patientDetails.
+lastVisit
+ || "12/15/2024"}</div>
             </div>
           </div>
         </div>

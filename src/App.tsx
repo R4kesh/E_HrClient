@@ -9,7 +9,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* Routes for the commented pages */}
-        <Route path="/" element={<Sidebar/>} />
+        <Route path="/:id" element={<Sidebar/>} />
         <Route path="/form" element={<Form />} />
         <Route path="/about" element={<h2>About Us</h2>} />
         <Route path="/services" element={<h2>Our Services</h2>} />
