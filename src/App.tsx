@@ -46,15 +46,19 @@ import PatientListPage from './pages/PatientListPage';
 import Tab from './components/Tab';
 import VitalsPage from './pages/VitalsPage';
 import InceptionPage from './pages/InceptionPage';
+import UpperTab from './components/UpperTab';
+import LandingDashboard from './pages/LandingDashboard';
+import ReviewSystemPage from './pages/ReviewSystemPage';
 
 function App() {
   return (
     <TabsProvider>
       <Router>
         <Navbar />
+        <UpperTab />
         {/* <main className="container mx-auto p-6 sm:p-10"> */}
           <Routes>
-          {/* <Route path="/:id" element={<Sidebar/>} /> */}
+          <Route path="/" element={<LandingDashboard/>} />
           <Route path="/dashboard/:id" element={<DashboardPage/>} />
 
          <Route path="/form" element={<FormPage />} />
@@ -64,7 +68,7 @@ function App() {
 
          <Route path="/vitals/:id" element={< VitalsPage/>}/>
          <Route path="/inception/:id" element={<InceptionPage/>}/>
-         <Route path="/reviewsystem" element={<ROSSection/>}/>
+         <Route path="/reviewsystem/:id" element={<ReviewSystemPage/>}/>
 
           </Routes>
         {/* </main> */}

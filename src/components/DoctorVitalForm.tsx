@@ -14,7 +14,7 @@ function DoctorVitalsForm() {
   const handleAddField = () => {
     setExtraFields((prevFields) => [
       ...prevFields,
-      { id: Date.now(), label: "Additional Field", value: "" },
+      { id: Date.now(), label: "Comments", value: "" },
     ]);
   };
 
@@ -70,29 +70,17 @@ function DoctorVitalsForm() {
     }
   };
   useEffect(() => {
-    addTab({ id: "/vitals", name: "vitals", path: `/vitals/${id}` });
+    addTab({ id: "/vitals", name: "Vitals", path: `/vitals/${id}` });
   }, [addTab]);
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-teal-100 min-h-screen flex flex-col">
-      {/* Header */}
-      {/* <header className="bg-teal-600 shadow-lg w-full py-4 px-6 flex justify-between items-center">
-        <h1 className="text-white text-2xl font-bold">E_Hr</h1>
-        <nav className="hidden sm:flex space-x-6">
-          <a href="#" className="text-white hover:underline">Home</a>
-          <a href="#" className="text-white hover:underline">Services</a>
-          <a href="#" className="text-white hover:underline">Specialties</a>
-          <a href="#" className="text-white hover:underline">Contact</a>
-        </nav>
-        <button className="bg-white text-teal-600 py-2 px-4 rounded shadow hover:bg-gray-100">
-          Log In
-        </button>
-      </header> */}
+    <div className="bg-gradient-to-br from-white  to-white min-h-screen flex  flex-col">
+   
 
       {/* Main Content */}
       <main className="flex-grow container mx-auto p-6 sm:p-10">
         <div className="bg-white shadow-lg rounded-lg p-6 sm:p-10">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 text-center mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-blue-800 text-center mb-6">
             Patient Vitals Form
           </h2>
           {submitted && (
@@ -304,10 +292,7 @@ function DoctorVitalsForm() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-teal-600 py-6 text-center text-white text-sm sm:text-base">
-        © {new Date().getFullYear()} MyCarePedia. All rights reserved.
-      </footer>
+    
     </div>
   );
 }

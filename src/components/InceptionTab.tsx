@@ -79,8 +79,7 @@ import EyeSection from './InceptionEye';
 import { useTabs } from '../Context/TabProvider';
 
 function InceptionTabs() {
-  const { id: patientId } = useParams(); // Get patient ID from route params
-    const { addTab } = useTabs();
+  const { id } = useParams(); // Get patient ID from route params
   
   const [activeTab, setActiveTab] = useState('skin');
   const [inceptionFields, setInceptionFields] = useState({
@@ -89,6 +88,7 @@ function InceptionTabs() {
     physicalActivity: {},
     eye: [],
   });
+  const { addTab } = useTabs();
 
   const handleTabChange = (tabName) => setActiveTab(tabName);
 
@@ -102,7 +102,7 @@ function InceptionTabs() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/patient/inception`, {
-        patientId,
+        id,
         inceptionFields,
       });
     
@@ -114,12 +114,12 @@ function InceptionTabs() {
     }
   };
   useEffect(() => {
-    addTab({ id: "/inception", name: "Inception", path: `/inception/${patientId}` });
+    addTab({ id: "/inception", name: "Inception", path: `/inception/${id}` });
   }, [addTab]);
 
   return (
-    <div className="min-h-screen bg-blue-50 py-12 px-6 sm:px-12">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <div className="min-h-screen bg-white py-6 px-4 sm:px-12">
+      <div className="max-w-full mx-auto bg-white rounded-lg shadow-lg p-8">
         <div className="flex space-x-4 mb-8 border-b-2  border-teal-600">
           {['skin', 'ear', 'physicalActivity', 'eye'].map((tab) => (
             <button
