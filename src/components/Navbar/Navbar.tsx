@@ -1,5 +1,4 @@
 
-
 import React, { useState,useEffect } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { Link } from 'react-router-dom'; 
@@ -67,7 +66,7 @@ function Navbar() {
             isMenuOpen ? "block" : "hidden"
           } md:flex md:items-center w-full md:w-auto`}
         >
-          <ul className="text-black flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-2xl font-normal">
+          <ul className="text-black flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-xl font-normal">
             <li>
              <Link to='/'> <a
                 
