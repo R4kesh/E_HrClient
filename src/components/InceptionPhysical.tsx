@@ -67,7 +67,7 @@ const PhysicalActivitySection = ({onChange}) => {
     <div className="space-y-8 p-6 bg-gray-50 rounded-lg shadow-md">
       {/* Frequency */}
       <div>
-        <label className="block text-lg font-medium text-gray-700 mb-2">
+        <label className="block text-lg font-medium text-black mb-2">
           Frequency: How often do you exercise each week?
         </label>
         <input
@@ -81,7 +81,7 @@ const PhysicalActivitySection = ({onChange}) => {
 
       {/* Duration */}
       <div>
-        <label className="block text-lg font-medium text-gray-700 mb-2">
+        <label className="block text-lg font-medium text-black mb-2">
           Duration: How long do your exercise sessions last?
         </label>
         <input
@@ -95,7 +95,7 @@ const PhysicalActivitySection = ({onChange}) => {
 
       {/* Intensity */}
       <div>
-        <label className="block text-lg font-medium text-gray-700 mb-2">
+        <label className="block text-lg font-medium text-black mb-2">
           Intensity: What is the level of intensity?
         </label>
         <select
@@ -112,7 +112,7 @@ const PhysicalActivitySection = ({onChange}) => {
 
       {/* Type */}
       <div>
-        <label className="block text-lg font-medium text-gray-700 mb-2">
+        <label className="block text-lg font-medium text-black mb-2">
           Type: What kinds of activities do you engage in?
         </label>
         <div className="space-y-4">
@@ -125,7 +125,7 @@ const PhysicalActivitySection = ({onChange}) => {
                 onChange={handleActivityChange}
                 className="w-5 h-5 text-teal-500 border-gray-300 rounded-md focus:ring-teal-500 focus:ring-2 transition duration-200"
               />
-              <label htmlFor={activity} className="text-lg text-gray-700 cursor-pointer">{activity}</label>
+              <label htmlFor={activity} className="text-lg text-black cursor-pointer">{activity}</label>
             </div>
           ))}
         </div>
@@ -133,7 +133,7 @@ const PhysicalActivitySection = ({onChange}) => {
 
       {/* Daily Non-Exercise Activity */}
       <div>
-        <label className="block text-lg font-medium text-gray-700 mb-2">
+        <label className="block text-lg font-medium text-black mb-2">
           Daily Non-Exercise Activity: Activities like walking to work, climbing stairs, or household chores
         </label>
         <textarea

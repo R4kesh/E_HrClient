@@ -120,13 +120,13 @@ function InceptionTabs() {
   return (
     <div className="min-h-screen bg-blue-50 py-12 px-6 sm:px-12">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-        <div className="flex space-x-4 mb-8 border-b-2 border-teal-600">
+        <div className="flex space-x-4 mb-8 border-b-2  border-teal-600">
           {['skin', 'ear', 'physicalActivity', 'eye'].map((tab) => (
             <button
               key={tab}
               onClick={() => handleTabChange(tab)}
-              className={`flex-1 text-center py-2 ${
-                activeTab === tab ? 'text-teal-700 border-b-2 border-teal-600' : 'text-gray-600'
+              className={`flex-1 text-center py-2  text-black font-bold ${
+                activeTab === tab ? 'text-teal-700 border-b-2 border-teal-600' : 'text-black'
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}

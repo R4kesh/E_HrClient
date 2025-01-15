@@ -152,7 +152,7 @@ const PatientList = () => {
                 <td className="border px-4 py-2">{patient.insurancePlanName}</td>
                 <td className="border px-4 py-2">{patient.pharmacyName}</td>
                 <td className="border px-4 py-2 text-center">
-                <Link to={`/${patient.id}`}><button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                <Link to={`/dashboard/${patient.id}`}><button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                     Chart
                   </button></Link> 
                 </td>

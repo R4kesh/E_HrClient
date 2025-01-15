@@ -310,7 +310,7 @@ const EyeSection = ({onChange}) => {
               onChange={handleChange}
               className="w-5 h-5 text-teal-500 border-gray-300 rounded-md focus:ring-teal-500 focus:ring-2 transition duration-200"
             />
-            <label htmlFor={option} className="text-lg text-gray-700 cursor-pointer">
+            <label htmlFor={option} className="text-lg text-black cursor-pointer">
               {option}
             </label>
           </div>
@@ -334,7 +334,7 @@ const EyeSection = ({onChange}) => {
                   onChange={handleChange}
                   className="w-5 h-5 text-teal-500 border-gray-300 rounded-md focus:ring-teal-500 focus:ring-2 transition duration-200"
                 />
-                <label htmlFor={option} className="text-lg text-gray-700 cursor-pointer">
+                <label htmlFor={option} className="text-lg text-black cursor-pointer">
                   {option}
                 </label>
               </div>
@@ -354,7 +354,7 @@ const EyeSection = ({onChange}) => {
                 onChange={handleChange}
                 className="w-5 h-5 text-teal-500 border-gray-300 rounded-md focus:ring-teal-500 focus:ring-2 transition duration-200"
               />
-              <label htmlFor={option} className="text-lg text-gray-700 cursor-pointer">
+              <label htmlFor={option} className="text-lg text-black cursor-pointer">
                 {option}
               </label>
             </div>
