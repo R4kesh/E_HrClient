@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useTabs } from '../Context/TabProvider';
 
 const ROSSection = () => {
+  const { id } = useParams(); // Get patient ID from the route
+  console.log("id",id);
+  const { addTab } = useTabs();
+    
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({}); // To store selected answers for each condition
   const [customCondition, setCustomCondition] = useState(''); // State for the custom condition input
   const [conditions, setConditions] = useState([
@@ -33,6 +39,9 @@ const ROSSection = () => {
       setCustomCondition(''); // Clear the input after adding
     }
   };
+  useEffect(() => {
+    addTab({ id: "/reviewsystem", name: "ROS", path: `/reviewsystem/${id}` });
+  }, [addTab]);
 
   return (
     <div className="space-y-6 p-6 bg-white shadow-lg rounded-lg">

@@ -15,7 +15,11 @@ export function Sidebar() {
   const [isPatientOpen, setIsPatientOpen] = useState(false);
   const [patient, setPatient] = useState(null); // State to store patient details
   const [loading, setLoading] = useState(true); // Loading state
+  const [showMore, setShowMore] = useState(false);
 
+  const toggleDetails = () => {
+    setShowMore((prev) => !prev);
+  };
   useEffect(() => {
     if (id) {
       fetchPatientDetails();
@@ -45,87 +49,74 @@ console.log('patient',patient);
     <div className="flex h-screen bg-gray-100">
      
       <div className="w-64 bg-white ">
-        {/* <div className="p-4 flex items-center space-x-2 border-b">
-          <FaFileMedicalAlt size={24} className="text-blue-600" />
-          <h1 className="text-lg font-semibold">Patient Management</h1>
-        </div> */}
-
+        
         {/* Patient Profile Section */}
-        <div className="p-4 border-b flex flex-col space-y-4">
-  {loading ? (
-    <div>Loading...</div>
-  ) : patient ? (
-    <>
-      {/* Profile Image */}
-      {console.log("Image URL:", `${import.meta.env.VITE_BASE_URL}${patient.patientImage}`)} {/* Add console.log here */}
-      <div className="w-full h-32 bg-gray-300 rounded-lg overflow-hidden">
-        <img
-          src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
-          alt="Patient"
-          className="w-full h-full object-cover"
-        />
-      </div>
+        <div className="p-4 bg-white rounded-lg ">
+      {loading ? (
+        <div className="text-center text-gray-500">Loading...</div>
+      ) : patient ? (
+        <>
+          {/* Profile Section */}
+          <div className="flex flex-col items-center space-y-4">
+            {/* Profile Image */}
+            <div className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500">
+              <img
+                src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
+                alt="Patient"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-      {/* Profile Details */}
-      <div className="flex flex-col space-y-2">
-        <div className="font-semibold text-gray-800">
-          {patient.firstName} {patient.lastName}
-        </div>
-        <div className="text-sm text-gray-500">
-          DOB: {patient.dateOfBirth}
-        </div>
-        <div className="text-sm text-gray-500">
-          Phone: {patient.phoneNumber}
-        </div>
-        <div className="text-sm text-gray-500">
-          Insurance: {patient.insuranceCarrier}
-        </div>
-        <div className="text-sm text-gray-500">
-          Plan: {patient.insurancePlanName}
-        </div>
-        <div className="text-sm text-gray-500">
-          <button className="text-blue-600 hover:text-blue-800 text-xs">
-            Pharmacy Details
-          </button>
-        </div>
-        <div className="text-sm text-gray-500">
-          Last Visit: {patient.lastVisit}
-        </div>
-      </div>
-    </>
-  ) : (
-    <div>No patient data available</div>
-  )}
-</div>
+            {/* Patient Name and DOB */}
+            <div className="text-center">
+              <div className="text-lg font-semibold text-gray-800">
+                {patient.firstName} {patient.lastName}
+              </div>
+              <div className="text-sm text-gray-500">
+                DOB: {patient.dateOfBirth}
+              </div>
+            </div>
+          </div>
+
+          {/* More Details Section */}
+          <div className=" text-center border shadow-sm bg-blue-gray-50">
+            {showMore ? (
+              <div className="space-y-2 text-sm bg-cyan-50 text-gray-600">
+                <div>Phone: {patient.phoneNumber}</div>
+                <div>Insurance: {patient.insuranceCarrier}</div>
+                <div>Plan: {patient.insurancePlanName}</div>
+                <div>
+                  <button className="text-blue-600 hover:text-blue-800 text-xs">
+                    Pharmacy Details
+                  </button>
+                </div>
+                <div>Last Visit: {patient.lastVisit}</div>
+                <button
+                  onClick={toggleDetails}
+                  className="text-blue-600 hover:text-blue-800 text-xs mt-2"
+                >
+                  Show Less
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={toggleDetails}
+                className="text-blue-600 hover:text-blue-800 text-xs"
+              >
+                More Details
+              </button>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="text-center text-gray-500">No patient data available</div>
+      )}
+    </div>
 
 
         {/* Sidebar menu */}
         <div className="p-2">
-          {/* Patient dropdown */}
-          {/* <div>
-            <button
-              className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 py-2"
-              onClick={() => setIsPatientOpen(!isPatientOpen)}
-            >
-              <div className="flex items-center space-x-2">
-                <FaUser size={20} className="text-purple-500 hover:text-indigo-500 transition duration-300" />
-                <span>Notes</span>
-              </div>
-              <MdKeyboardArrowDown size={20} className={`${isPatientOpen ? 'transform rotate-180' : ''}`} />
-            </button>
-            {isPatientOpen && (
-              <div className="ml-6 mt-2 space-y-2">
-                <button className="flex items-center text-gray-600 hover:text-blue-600">
-                  <FaClipboardList size={18} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
-                  Orders
-                </button>
-                <button className="flex items-center text-gray-600 hover:text-blue-600">
-                  <FaShoppingCart size={18} className="mr-2 text-yellow-500 hover:text-yellow-700 transition duration-300" />
-                  Products
-                </button>
-              </div>
-            )}
-          </div> */}
+      
 
           {/* Other Menu Items */}
           <div className=" space-y-2">
@@ -133,7 +124,7 @@ console.log('patient',patient);
               <FaUser size={20} className="mr-2 text-purple-500 hover:text-indigo-500 transition duration-300" />
               Inception
             </button></Link>
-            <Link to='/reviewsystem'><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <Link to={`/reviewsystem/${id}`}><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaDollarSign size={20} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
               Review of System
             </button></Link>

@@ -139,7 +139,7 @@ const SkinSection = ({ onChange }) => {
         </div>
       ))}
 
-      {/* Add Custom Condition */}
+      
       <div className="mt-6">
         <h3 className="text-lg font-semibold text-gray-800 mb-2">Add a Custom Condition</h3>
         <div className="flex items-center space-x-3">

@@ -316,7 +316,6 @@ const EyeSection = ({onChange}) => {
           </div>
         ))}
 
-        {/* Age-Related Eye Disorders with Subsections */}
         <div>
           <h3 className="text-xl font-semibold text-teal-500 mb-2">Age-Related Eye Disorders</h3>
           <div className="space-y-3 pl-4">
@@ -342,7 +341,6 @@ const EyeSection = ({onChange}) => {
           </div>
         </div>
 
-        {/* Custom Conditions */}
         <div>
           <h3 className="text-xl font-semibold text-teal-500 mb-2">Custom Conditions</h3>
           {customConditions.map((option) => (
@@ -362,7 +360,6 @@ const EyeSection = ({onChange}) => {
         </div>
       </div>
 
-      {/* Add New Condition */}
       <div className="space-y-4">
         <input
           type="text"
@@ -379,7 +376,6 @@ const EyeSection = ({onChange}) => {
         </button>
       </div>
 
-      {/* Submit Button */}
       <div className="flex justify-end">
         <button
           onClick={() => console.log({ selectedConditions: selectedOptions })}

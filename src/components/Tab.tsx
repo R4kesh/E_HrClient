@@ -61,8 +61,8 @@ function Tab() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-blue-400 to-green-400 shadow-lg w-full px-2 py-1 flex items-center">
-      <div className="flex space-x-2">
+    <header className="bg-gradient-to-r from-blue-gray-200 to-blue-gray-200 shadow-lg h-8 w-full px-1  flex items-center">
+      <div className="flex space-x-1">
         {tabs.map((tab) => (
           <div
             key={tab.id}
