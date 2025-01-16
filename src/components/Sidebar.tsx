@@ -9,12 +9,10 @@ import { useTabs } from '../Context/TabProvider';
 
 export function Sidebar() {
   const { id } = useParams(); // Get patient ID from the route
-  const { addTab } = useTabs();
+  
   const [isPatientOpen, setIsPatientOpen] = useState(false);
 
-  useEffect(() => {
-    addTab({ id: "/", name: "Home", path: `/${id}` });
-  }, [addTab]);
+  
 
   return (
     <div className="flex h-full bg-white">

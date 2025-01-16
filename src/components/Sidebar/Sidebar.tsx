@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { FaUser, FaShoppingCart, FaClipboardList, FaUsers, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt,
+import { FaUser, FaShoppingCart, FaClipboardList,FaMicroscope, FaUsers,FaCog, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt,
   FaPills,FaFileMedical,FaNotesMedical,FaFileInvoice,FaBriefcaseMedical,FaConnectdevelop,FaSyringe
 ,FaHandHoldingMedical,FaHospitalUser,FaHeartbeat } from 'react-icons/fa';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -30,7 +30,7 @@ export function Sidebar() {
     try {
       setLoading(true); // Set loading to true
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/api/patient/${id}`
+        `${import.meta.env.VITE_BASE_URL}/api/patient/getPatient/${id}`
       );
       setPatient(response.data);
     } catch (error) {
@@ -50,15 +50,12 @@ console.log('patient',patient);
      
       <div className="w-64 bg-white ">
         
-        {/* Patient Profile Section */}
-        <div className="p-4 bg-white rounded-lg ">
+        {/* <div className="p-4 bg-white rounded-lg ">
       {loading ? (
         <div className="text-center text-gray-500">Loading...</div>
       ) : patient ? (
         <>
-          {/* Profile Section */}
           <div className="flex flex-col items-center space-y-4">
-            {/* Profile Image */}
             <div className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500">
               <img
                 src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
@@ -67,7 +64,6 @@ console.log('patient',patient);
               />
             </div>
 
-            {/* Patient Name and DOB */}
             <div className="text-center">
               <div className="text-lg font-semibold text-gray-800">
                 {patient.firstName} {patient.lastName}
@@ -78,7 +74,6 @@ console.log('patient',patient);
             </div>
           </div>
 
-          {/* More Details Section */}
           <div className=" text-center border shadow-sm bg-blue-gray-50">
             {showMore ? (
               <div className="space-y-2 text-sm bg-cyan-50 text-gray-600">
@@ -111,7 +106,66 @@ console.log('patient',patient);
       ) : (
         <div className="text-center text-gray-500">No patient data available</div>
       )}
-    </div>
+    </div> */}
+<div className="p-4 bg-white rounded-lg">
+  {loading ? (
+    <div className="text-center text-gray-500">Loading...</div>
+  ) : patient ? (
+    <>
+      <div className="flex flex-col items-center space-y-4">
+        {/* Patient Image */}
+        <div
+          className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500 cursor-pointer"
+          onMouseEnter={() =>
+            document.getElementById('details-section').classList.add('max-h-[300px]')
+          }
+          onMouseLeave={() =>
+            document.getElementById('details-section').classList.remove('max-h-[300px]')
+          }
+        >
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
+            alt="Patient"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Patient Name */}
+        <div
+          className="text-center cursor-pointer"
+          onMouseEnter={() =>
+            document.getElementById('details-section').classList.add('max-h-[300px]')
+          }
+          onMouseLeave={() =>
+            document.getElementById('details-section').classList.remove('max-h-[300px]')
+          }
+        >
+          <div className="text-lg font-semibold text-gray-800">{patient.firstName} {patient.lastName}</div>
+          <div className="text-sm text-gray-500">DOB: {patient.dateOfBirth}</div>
+        </div>
+      </div>
+
+      {/* Additional Details Section (shown on hover) */}
+      <div
+        id="details-section"
+        className="overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-blue-gray-50 rounded-md shadow-md mt-4 p-4 space-y-2"
+      >
+        <div className="text-sm text-gray-600">Phone: {patient.phoneNumber}</div>
+        <div className="text-sm text-gray-600">Insurance: {patient.insuranceCarrier}</div>
+        <div className="text-sm text-gray-600">Plan: {patient.insurancePlanName}</div>
+        <div>
+          <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
+        </div>
+        <div className="text-sm text-gray-600">Last Visit: {patient.lastVisit}</div>
+      </div>
+    </>
+  ) : (
+    <div className="text-center text-gray-500">No patient data available</div>
+  )}
+</div>
+
+
+
 
 
         {/* Sidebar menu */}
@@ -125,7 +179,7 @@ console.log('patient',patient);
               Inception
             </button></Link>
             <Link to={`/reviewsystem/${id}`}><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
-              <FaDollarSign size={20} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
+              <FaCog size={20} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
               Review of System
             </button></Link>
             <Link to={`/vitals/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
@@ -140,10 +194,11 @@ console.log('patient',patient);
               <FaPills size={20} className="mr-3 text-purple-500" />
               Medications
             </button>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
-              <FaShoppingCart size={20} className="mr-3 text-orange-500" />
-              Orders
+            <Link to={`/LabOrders/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+              <FaMicroscope size={20} className="mr-3 text-orange-500" />
+              Lab Orders
             </button>
+            </Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaBell size={20} className="mr-3 text-yellow-500" />
               Messages
@@ -207,6 +262,10 @@ console.log('patient',patient);
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaNotesMedical size={20} className="mr-3 text-teal-500" />
               Referrals
+            </button>
+            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+              <FaDollarSign size={20} className="mr-3 text-teal-500" />
+              Billing
             </button>
           </div>
         </div>

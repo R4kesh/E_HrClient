@@ -53,8 +53,15 @@ import React from "react";
 import PatientSearch from "./PatientSearch";
 import { FiRefreshCw, FiSettings } from "react-icons/fi";
 import { AiOutlineDashboard, AiOutlineCalendar } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
 
 const UpperTab = () => {
+
+  
+    const handleRefresh = () => {
+      window.location.reload(); // This will reload the entire window
+    };
   return (
     <div className="bg-blue-800 text-white flex items-center justify-between px-4 py-3 shadow-md">
       {/* Left Side: Tabs */}
@@ -65,20 +72,21 @@ const UpperTab = () => {
         {/* Dashboard Tab */}
         <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300">
           <AiOutlineDashboard size={20} />
-          <span className="text-sm font-medium">Dashboard</span>
+         <Link to={"/"}> <span className="text-sm font-medium">Dashboard</span></Link>
         </div>
 
         {/* Appointments Tab */}
         <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300">
           <AiOutlineCalendar size={20} />
-          <span className="text-sm font-medium">Appointments</span>
+          <Link to={"/patientList"}><span className="text-sm font-medium">Appointments</span></Link>
         </div>
       </div>
 
       {/* Right Side: Actions */}
       <div className="flex items-center space-x-6">
         {/* Refresh Button */}
-        <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300">
+        <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300"
+         onClick={handleRefresh}>
           <FiRefreshCw size={20} />
           <span className="text-sm font-medium">Refresh</span>
         </div>

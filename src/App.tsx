@@ -49,6 +49,7 @@ import InceptionPage from './pages/InceptionPage';
 import UpperTab from './components/UpperTab';
 import LandingDashboard from './pages/LandingDashboard';
 import ReviewSystemPage from './pages/ReviewSystemPage';
+import LabOrdersPage from './pages/LabOrdersPage';
 
 function App() {
   return (
@@ -69,6 +70,8 @@ function App() {
          <Route path="/vitals/:id" element={< VitalsPage/>}/>
          <Route path="/inception/:id" element={<InceptionPage/>}/>
          <Route path="/reviewsystem/:id" element={<ReviewSystemPage/>}/>
+         <Route path="/LabOrders/:id" element={< LabOrdersPage/>}/>
+
 
           </Routes>
         {/* </main> */}
