@@ -4,7 +4,7 @@ import { useTabs } from '../Context/TabProvider';
 
 const ROSSection = () => {
   const { id } = useParams(); // Get patient ID from the route
-  console.log("id",id);
+  console.log("id", id);
   const { addTab } = useTabs();
     
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({}); // To store selected answers for each condition
@@ -39,6 +39,7 @@ const ROSSection = () => {
       setCustomCondition(''); // Clear the input after adding
     }
   };
+
   useEffect(() => {
     addTab({ id: "/reviewsystem", name: "ROS", path: `/reviewsystem/${id}` });
   }, [addTab]);
@@ -47,26 +48,29 @@ const ROSSection = () => {
     <div className="space-y-6 p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">Review of Systems</h2>
       
-      {conditions.map((condition, index) => (
-        <div key={index} className="space-y-3">
-          <div className="flex items-center">
-            <label htmlFor={`condition-${index}`} className="text-lg text-gray-700">{condition.question}</label>
-          </div>
+      {/* Grid container for the conditions */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {conditions.map((condition, index) => (
+          <div key={index} className="space-y-3">
+            <div className="flex items-center">
+              <label htmlFor={`condition-${index}`} className="text-lg text-gray-700">{condition.question}</label>
+            </div>
 
-          {/* Answer Selection */}
-          <select
-            id={`condition-${index}`}
-            value={selectedAnswers[condition.question] || ''}
-            onChange={(e) => handleAnswerChange(condition.question, e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:ring-teal-500 focus:border-teal-500"
-          >
-            <option value="">Select answer</option>
-            {condition.options.map((option) => (
-              <option key={option} value={option}>{option}</option>
-            ))}
-          </select>
-        </div>
-      ))}
+            {/* Answer Selection */}
+            <select
+              id={`condition-${index}`}
+              value={selectedAnswers[condition.question] || ''}
+              onChange={(e) => handleAnswerChange(condition.question, e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:ring-teal-500 focus:border-teal-500"
+            >
+              <option value="">Select answer</option>
+              {condition.options.map((option) => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </select>
+          </div>
+        ))}
+      </div>
 
       {/* Add Custom Condition */}
       <div className="mt-6">

@@ -18,10 +18,7 @@ const Dashboard = () => {
         transition={{ duration: 0.5 }}
         className="flex items-center space-x-4 mb-8"
       >
-        {/* <FiArrowLeft size={24} className="text-gray-600 cursor-pointer hover:text-blue-600" /> */}
-        {/* <h1 className="text-lg font-bold text-gray-700">
-          Patients &gt; Patient Details &gt; Jaber Abdullah
-        </h1> */}
+        
       </motion.div>
 
       {/* Main Content */}
