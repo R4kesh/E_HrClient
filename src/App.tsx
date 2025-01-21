@@ -57,6 +57,8 @@ import PatientTabs from './components/patientTab/PatientTab';
 import ActivePatient from './components/activetab/ActivePatient';
 import Medicationpage from './pages/Medicationpage';
 import HealthWatcherPage from './pages/HealthWatcherPage';
+import FamilyConnectionPage from './pages/FamilyConnectionPage';
+import RefferalPage from './pages/RefferalPage';
 
 function App() {
   return (
@@ -86,8 +88,8 @@ function App() {
          <Route path="/sample/:id" element={< SamplePage/>}/>
          <Route path="/medication/:id" element={< Medicationpage/>}/>
          <Route path="/healthWatcher/:id" element={< HealthWatcherPage/>}/>
-
-
+         <Route path="/familyConnection/:id" element={< FamilyConnectionPage/>}/>
+         <Route path="/refferal/:id" element={<RefferalPage/>}/>
           </Routes>
         {/* </main> */}
       </Router>

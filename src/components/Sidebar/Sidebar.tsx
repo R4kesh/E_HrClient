@@ -47,7 +47,7 @@ export function Sidebar() {
   return (
     <div className="flex h-screen bg-gray-100">
      
-      <div className="w-52 bg-white ">
+      <div className="w-56 bg-white ">
 <div className="p-4 bg-white rounded-lg">
   {loading ? (
     <div className="text-center text-gray-500">Loading...</div>
@@ -203,18 +203,25 @@ export function Sidebar() {
               <FaHeartbeat size={20} className="mr-3 text-orange-500" />
               Risk Factors
             </button>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-2">
               <FaHospitalUser size={20} className="mr-3 text-purple-500" />
               Implantable Devices
             </button>
+            <Link to={`/familyConnection/${id}`} >
+
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaConnectdevelop size={20} className="mr-3 text-yellow-500" />
               Family Connections
             </button>
+            </Link>
+            <Link to={`/refferal/${id}`} >
+
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaNotesMedical size={20} className="mr-3 text-teal-500" />
               Referrals
             </button>
+            </Link>
+
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaDollarSign size={20} className="mr-3 text-teal-500" />
               Billing
