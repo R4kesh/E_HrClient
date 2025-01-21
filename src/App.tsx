@@ -50,13 +50,24 @@ import UpperTab from './components/UpperTab';
 import LandingDashboard from './pages/LandingDashboard';
 import ReviewSystemPage from './pages/ReviewSystemPage';
 import LabOrdersPage from './pages/LabOrdersPage';
+import AllergiesPage from './pages/AllergiesPage';
+import SamplePage from './pages/SamplePage';
+import { PatientTabProvider } from './Context/PatientTabProvider';
+import PatientTabs from './components/patientTab/PatientTab';
+import ActivePatient from './components/activetab/ActivePatient';
+import Medicationpage from './pages/Medicationpage';
+import HealthWatcherPage from './pages/HealthWatcherPage';
 
 function App() {
   return (
+    <PatientTabProvider> 
     <TabsProvider>
+   
       <Router>
         <Navbar />
         <UpperTab />
+        {/* <PatientTabs/> */}
+        {/* <ActivePatient/> */}
         {/* <main className="container mx-auto p-6 sm:p-10"> */}
           <Routes>
           <Route path="/" element={<LandingDashboard/>} />
@@ -71,12 +82,17 @@ function App() {
          <Route path="/inception/:id" element={<InceptionPage/>}/>
          <Route path="/reviewsystem/:id" element={<ReviewSystemPage/>}/>
          <Route path="/LabOrders/:id" element={< LabOrdersPage/>}/>
+         <Route path="/allergies/:id" element={< AllergiesPage/>}/>
+         <Route path="/sample/:id" element={< SamplePage/>}/>
+         <Route path="/medication/:id" element={< Medicationpage/>}/>
+         <Route path="/healthWatcher/:id" element={< HealthWatcherPage/>}/>
 
 
           </Routes>
         {/* </main> */}
       </Router>
-    </TabsProvider>
+      </TabsProvider>
+      </PatientTabProvider>
   );
 }
 

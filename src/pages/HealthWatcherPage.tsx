@@ -1,9 +1,10 @@
 import React from 'react'
-import Tab from '../components/Tab';
-import Footer from '../components/Footer/Footer';
 import { Sidebar } from '../components/Sidebar/Sidebar'
-import Dashboard from '../components/Dashboard/Dashboard';
-const DashboardPage = () => {
+import Tab from '../components/Tab'
+import Footer from '../components/Footer/Footer'
+import HealthWatcher from '../components/HealthWatcher/HealthWatcher'
+
+const HealthWatcherPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
     {/* Wrapper for Sidebar and Main Content */}
@@ -40,7 +41,7 @@ const DashboardPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col flex-grow bg-white">
+      <div className="flex flex-col flex-grow ">
         {/* Tab */}
         <div className="sticky top-0 left-0 w-full z-10">
           <Tab />
@@ -49,7 +50,9 @@ const DashboardPage = () => {
         {/* PatientList */}
         <div className="flex-grow  ">
 
-<Dashboard/>
+<HealthWatcher/>
+
+
         </div>
       </div>
     </div>
@@ -60,4 +63,4 @@ const DashboardPage = () => {
   )
 }
 
-export default DashboardPage
+export default HealthWatcherPage

@@ -1,10 +1,12 @@
+import React from 'react'
 import { Sidebar } from '../components/Sidebar/Sidebar'
 import Tab from '../components/Tab'
 import InceptionTabs from '../components/InceptionTab'
 import Footer from '../components/Footer/Footer'
 import LabOrderMain from '../components/LabOrders/LabOrderMain'
+import Allergies from '../components/Allergies/Allergies'
 
-const LabOrdersPage = () => {
+const AllergiesPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
     {/* Wrapper for Sidebar and Main Content */}
@@ -41,7 +43,7 @@ const LabOrdersPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col flex-grow bg-green-500">
+      <div className="flex flex-col flex-grow ">
         {/* Tab */}
         <div className="sticky top-0 left-0 w-full z-10">
           <Tab />
@@ -49,7 +51,9 @@ const LabOrdersPage = () => {
 
         {/* PatientList */}
         <div className="flex-grow  ">
-          <LabOrderMain/>
+          {/* <LabOrderMain/> */}
+          <Allergies/>
+
         </div>
       </div>
     </div>
@@ -60,5 +64,4 @@ const LabOrdersPage = () => {
   )
 }
 
-export default LabOrdersPage
-
+export default AllergiesPage

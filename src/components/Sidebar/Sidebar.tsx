@@ -47,65 +47,7 @@ export function Sidebar() {
   return (
     <div className="flex h-screen bg-gray-100">
      
-      <div className="w-60 bg-white ">
-        
-        {/* <div className="p-4 bg-white rounded-lg ">
-      {loading ? (
-        <div className="text-center text-gray-500">Loading...</div>
-      ) : patient ? (
-        <>
-          <div className="flex flex-col items-center space-y-4">
-            <div className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500">
-              <img
-                src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
-                alt="Patient"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="text-center">
-              <div className="text-lg font-semibold text-gray-800">
-                {patient.firstName} {patient.lastName}
-              </div>
-              <div className="text-sm text-gray-500">
-                DOB: {patient.dateOfBirth}
-              </div>
-            </div>
-          </div>
-
-          <div className=" text-center border shadow-sm bg-blue-gray-50">
-            {showMore ? (
-              <div className="space-y-2 text-sm bg-cyan-50 text-gray-600">
-                <div>Phone: {patient.phoneNumber}</div>
-                <div>Insurance: {patient.insuranceCarrier}</div>
-                <div>Plan: {patient.insurancePlanName}</div>
-                <div>
-                  <button className="text-blue-600 hover:text-blue-800 text-xs">
-                    Pharmacy Details
-                  </button>
-                </div>
-                <div>Last Visit: {patient.lastVisit}</div>
-                <button
-                  onClick={toggleDetails}
-                  className="text-blue-600 hover:text-blue-800 text-xs mt-2"
-                >
-                  Show Less
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={toggleDetails}
-                className="text-blue-600 hover:text-blue-800 text-xs"
-              >
-                More Details
-              </button>
-            )}
-          </div>
-        </>
-      ) : (
-        <div className="text-center text-gray-500">No patient data available</div>
-      )}
-    </div> */}
+      <div className="w-52 bg-white ">
 <div className="p-4 bg-white rounded-lg">
   {loading ? (
     <div className="text-center text-gray-500">Loading...</div>
@@ -178,7 +120,7 @@ export function Sidebar() {
       
 
           {/* Other Menu Items */}
-          <div className=" space-y-2">
+          <div className=" space-y-1 ">
             <Link to={`/inception/${id}`}><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaUser size={20} className="mr-2 text-purple-500 hover:text-indigo-500 transition duration-300" />
               Inception
@@ -191,14 +133,17 @@ export function Sidebar() {
               <FaBell size={20} className="mr-2 text-orange-500 hover:text-orange-700 transition duration-300" />
               Vitals
             </button></Link>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <Link to={`/allergies/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaClipboardList size={20} className="mr-3 text-blue-500" />
               Allergies
             </button>
+            </Link>
+            <Link to={`/medication/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaPills size={20} className="mr-3 text-purple-500" />
               Medications
             </button>
+            </Link>
             <Link to={`/LabOrders/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaMicroscope size={20} className="mr-3 text-orange-500" />
               Lab Orders
@@ -208,14 +153,16 @@ export function Sidebar() {
               <FaBell size={20} className="mr-3 text-yellow-500" />
               Messages
             </button>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <button className="flex text-sm items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaFileMedical size={20} className="mr-3 text-green-500" />
               Advanced Directives
             </button>
+            <Link to={`/healthWatcher/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaNotesMedical size={20} className="mr-3 text-blue-500" />
               Health Watcher
             </button>
+            </Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaFileInvoice size={20} className="mr-3 text-teal-500" />
               Encounters

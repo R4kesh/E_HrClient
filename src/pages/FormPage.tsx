@@ -6,7 +6,7 @@ const FormPage = () => {
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-100">
       {/* Sidebar on the left */}
-      <div className="w-full h-screen md:w-64 bg-white ">
+      <div className="w-full h-screen md:w-56 bg-white ">
         <Sidebar />
       </div>
 
