@@ -41,7 +41,7 @@ const ReviewSystemPage = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col flex-grow bg-green-500">
+        <div className="flex flex-col flex-grow ">
           {/* Tab */}
           <div className="sticky top-0 left-0 w-full z-10">
             <Tab />

@@ -29,11 +29,11 @@ function Navbar() {
 
   return (
     <nav
-      className={`bg-white ${darkMode ? "dark:bg-gray-900" : ""} border-b shadow-md`}
+      className={`bg-white ${darkMode ? "dark:bg-gray-900" : ""} border-b shadow-md p-2 h-12`}
     >
-      <div className="max-w-full mx-auto  flex items-center justify-between p-4">
+      <div className="max-w-full mx-auto  flex items-center justify-between ">
         {/* Logo */}
-        <a href="#" className="text-3xl font-semibold dark:text-white text-gray-900">
+        <a href="#" className="text-2xl font-semibold dark:text-white text-gray-900">
           Electronic Health Record
         </a>
 
@@ -66,7 +66,7 @@ function Navbar() {
             isMenuOpen ? "block" : "hidden"
           } md:flex md:items-center w-full md:w-auto`}
         >
-          <ul className="text-black flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-xl font-normal">
+          <ul className="text-black flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0  font-normal">
             <li>
              <Link to='/'> <a
                 
@@ -139,7 +139,7 @@ function Navbar() {
           </button>
 
           <Link to="/login">
-            <button className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg font-bold shadow-lg transition duration-300 ease-in-out">
+            <button className="px-4 py-1 text-white bg-blue-600 hover:bg-blue-700 rounded-lg font-bold shadow-lg transition duration-300 ease-in-out">
               Login
             </button>
           </Link>

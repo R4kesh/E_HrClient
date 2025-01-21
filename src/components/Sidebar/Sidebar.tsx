@@ -39,7 +39,6 @@ export function Sidebar() {
       setLoading(false);
     }
   };
-console.log('patient',patient);
 
   useEffect(() => {
     addTab({ id: "/dashboard", name: "Home", path: `/dashboard/${id}` });
@@ -48,7 +47,7 @@ console.log('patient',patient);
   return (
     <div className="flex h-screen bg-gray-100">
      
-      <div className="w-64 bg-white ">
+      <div className="w-60 bg-white ">
         
         {/* <div className="p-4 bg-white rounded-lg ">
       {loading ? (
@@ -148,15 +147,21 @@ console.log('patient',patient);
       {/* Additional Details Section (shown on hover) */}
       <div
         id="details-section"
-        className="overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-blue-gray-50 rounded-md shadow-md mt-4 p-4 space-y-2"
+        className="overflow-hidden max-h-0 transition-all duration-500 ease-in-out  rounded-md shadow-md  p-4 space-y-2"
       >
+        <p></p>
+        <br />
+
+       
+        <div className="bg-blue-gray-50 space-y-2 text-center">
         <div className="text-sm text-gray-600">Phone: {patient.phoneNumber}</div>
         <div className="text-sm text-gray-600">Insurance: {patient.insuranceCarrier}</div>
-        <div className="text-sm text-gray-600">Plan: {patient.insurancePlanName}</div>
+        <div className=" text-sm text-gray-600">Plan: {patient.insurancePlanName}</div>
         <div>
           <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
         </div>
         <div className="text-sm text-gray-600">Last Visit: {patient.lastVisit}</div>
+        </div>
       </div>
     </>
   ) : (
