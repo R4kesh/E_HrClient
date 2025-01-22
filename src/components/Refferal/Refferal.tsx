@@ -56,7 +56,7 @@ const Referral = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-700 py-5 px-4 lg:px-8">
+    <div className="min-h-screen bg-gray-100 py-5 px-4 lg:px-8">
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Form Section */}
         <div className="w-full lg:w-2/3 bg-white shadow-lg rounded-lg p-6 border border-gray-200">

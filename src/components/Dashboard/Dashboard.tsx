@@ -167,6 +167,7 @@ const Dashboard = () => {
               <p className="text-sm text-gray-600">
                 Potassium: <span className="text-red-600">125 mmol/L</span>
               </p>
+
             </div>
           </div>
         </motion.div>

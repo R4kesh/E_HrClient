@@ -59,6 +59,7 @@ import Medicationpage from './pages/Medicationpage';
 import HealthWatcherPage from './pages/HealthWatcherPage';
 import FamilyConnectionPage from './pages/FamilyConnectionPage';
 import RefferalPage from './pages/RefferalPage';
+import ProblemsPage from './pages/ProblemsPage';
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
          <Route path="/healthWatcher/:id" element={< HealthWatcherPage/>}/>
          <Route path="/familyConnection/:id" element={< FamilyConnectionPage/>}/>
          <Route path="/refferal/:id" element={<RefferalPage/>}/>
+         <Route path="/problems/:id" element={<ProblemsPage/>}/>
           </Routes>
         {/* </main> */}
       </Router>

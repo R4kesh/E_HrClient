@@ -2,9 +2,9 @@ import React from 'react'
 import { Sidebar } from '../components/Sidebar/Sidebar'
 import Tab from '../components/Tab'
 import Footer from '../components/Footer/Footer'
-import Refferal from '../components/Refferal/Refferal'
+import Problems from '../components/Problems/Problems'
 
-const RefferalPage = () => {
+const ProblemsPage = () => {
   return (
     <div className="flex flex-col h-screen bg-white">
     {/* Wrapper for Sidebar and Main Content */}
@@ -49,8 +49,7 @@ const RefferalPage = () => {
 
         {/* PatientList */}
         <div className="flex-grow  ">
-
-<Refferal/>
+<Problems/>
 
         </div>
       </div>
@@ -62,4 +61,4 @@ const RefferalPage = () => {
   )
 }
 
-export default RefferalPage
+export default ProblemsPage

@@ -171,10 +171,12 @@ export function Sidebar() {
               <FaUsers size={20} className="mr-3 text-orange-500" />
               Care Team
             </button>
+            <Link to={`/problems/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaTasks size={20} className="mr-3 text-purple-500" />
               Problems
             </button>
+            </Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaStickyNote size={20} className="mr-3 text-yellow-500" />
               Notes

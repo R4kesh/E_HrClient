@@ -1,8 +1,10 @@
 import React from 'react'
+import Tooltip from './Dashboard/ToolTip';
 
 function LandingDashboardContent() {
   return (
     <div>
+      
          <main className="ml-4 p-8">
         <header className="flex justify-between items-center">
           
@@ -10,12 +12,22 @@ function LandingDashboardContent() {
         </header>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-4 gap-4 mt-8">
-          <Card title="Providers" value="60" />
-          <Card title="Patients" value="100" />
-          <Card title="Devices" value="40" />
+        {/* <div className="grid grid-cols-4 gap-4 mt-8">
+          <Tooltip title="Providers" value="60" />
+          <Tooltip title="Patients" value="100" />
+          <Tooltip title="Devices" value="40" />
           <Card title="Programs" value="125" />
-        </div>
+        
+
+
+        </div> */}
+
+<div className="grid grid-cols-4 gap-4 mt-8">
+  <RhombusTooltip title="Providers" value="60" />
+  <RhombusTooltip title="Patients" value="100" />
+  <RhombusTooltip title="Devices" value="40" />
+  <RhombusCard title="Programs" value="125" />
+</div>
 
         {/* Statistics and Table */}
         <div className="grid grid-cols-3 gap-4 mt-8">
@@ -61,6 +73,7 @@ function LandingDashboardContent() {
             </tbody>
           </table>
         </div>
+
       </main>
     </div>
   )
@@ -72,4 +85,26 @@ const Card = ({ title, value }) => (
       <p className="text-3xl font-bold mt-2">{value}</p>
     </div>
   );
+
+  const RhombusTooltip = ({ title, value }) => (
+    <div className="relative w-24 h-24 transform rotate-45 bg-gradient-to-r from-blue-400 to-blue-600 shadow-md flex items-center justify-center">
+      <div className="transform -rotate-45 text-white text-center">
+        <p className="text-lg font-semibold">{title}</p>
+        <p className="text-xl font-bold">{value}</p>
+      </div>
+    </div>
+  );
+  
+  /* RhombusCard Component */
+  const RhombusCard = ({ title, value }) => (
+    <div className="relative w-24 h-24 transform rotate-45 bg-gradient-to-r from-green-400 to-green-600 shadow-md flex items-center justify-center">
+      <div className="transform -rotate-45 text-white text-center">
+        <p className="text-lg font-semibold">{title}</p>
+        <p className="text-xl font-bold">{value}</p>
+      </div>
+    </div>
+  );
+
+
+  
 export default LandingDashboardContent
