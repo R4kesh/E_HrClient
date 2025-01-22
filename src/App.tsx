@@ -62,6 +62,9 @@ import RefferalPage from './pages/RefferalPage';
 import ProblemsPage from './pages/ProblemsPage';
 import ImplimentationDevicePage from './pages/ImplimentableDevicePage';
 import QuickMemoPage from './pages/QuickMemoPage';
+import ResultPage from './pages/ResultPage';
+import RiskFactorPage from './pages/RiskFactorPage';
+import EncounterPage from './pages/EncounterPage';
 
 function App() {
   return (
@@ -97,6 +100,9 @@ function App() {
          <Route path="/implimentableDevice/:id" element={<ImplimentationDevicePage/>}/>
          <Route path="/quickMemo/:id" element={<QuickMemoPage/>}/>
 
+         <Route path="/result/:id" element={<ResultPage/>}/>
+         <Route path="/riskfactor/:id" element={<RiskFactorPage/>}/>
+         <Route path="/encounter/:id" element={<EncounterPage/>}/>
 
           </Routes>
         {/* </main> */}
