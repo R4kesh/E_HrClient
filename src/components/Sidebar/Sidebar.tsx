@@ -163,10 +163,10 @@ export function Sidebar() {
               Health Watcher
             </button>
             </Link>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <Link to={`/encounter/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaFileInvoice size={20} className="mr-3 text-teal-500" />
               Encounters
-            </button>
+            </button></Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaUsers size={20} className="mr-3 text-orange-500" />
               Care Team
@@ -189,10 +189,11 @@ export function Sidebar() {
               <FaFileMedical size={20} className="mr-3 text-teal-500" />
               Documents
             </button>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
-              <FaFileInvoice size={20} className="mr-3 text-blue-500" />
+            <Link to={`/result/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+          <FaFileInvoice size={20} className="mr-3 text-blue-500" />
               Results
             </button>
+            </Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaSyringe size={20} className="mr-3 text-red-500" />
               Immunizations
@@ -201,10 +202,10 @@ export function Sidebar() {
               <FaHandHoldingMedical size={20} className="mr-3 text-green-500" />
               Immunotherapy
             </button>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <Link to={`/riskfactor/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaHeartbeat size={20} className="mr-3 text-orange-500" />
               Risk Factors
-            </button>
+            </button></Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-2">
               <FaHospitalUser size={20} className="mr-3 text-purple-500" />
               Implantable Devices

@@ -60,6 +60,9 @@ import HealthWatcherPage from './pages/HealthWatcherPage';
 import FamilyConnectionPage from './pages/FamilyConnectionPage';
 import RefferalPage from './pages/RefferalPage';
 import ProblemsPage from './pages/ProblemsPage';
+import ResultPage from './pages/ResultPage';
+import RiskFactorPage from './pages/RiskFactorPage';
+import EncounterPage from './pages/EncounterPage';
 
 function App() {
   return (
@@ -92,6 +95,10 @@ function App() {
          <Route path="/familyConnection/:id" element={< FamilyConnectionPage/>}/>
          <Route path="/refferal/:id" element={<RefferalPage/>}/>
          <Route path="/problems/:id" element={<ProblemsPage/>}/>
+         <Route path="/result/:id" element={<ResultPage/>}/>
+         <Route path="/riskfactor/:id" element={<RiskFactorPage/>}/>
+         <Route path="/encounter/:id" element={<EncounterPage/>}/>
+
           </Routes>
         {/* </main> */}
       </Router>
