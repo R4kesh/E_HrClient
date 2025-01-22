@@ -1,6 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const Referral = () => {
+  const { id } = useParams(); 
+  const { addTab } = useTabs();
   const [selectedRow, setSelectedRow] = useState(null);
   const detailsCardRef = useRef(null);
 
@@ -54,6 +58,10 @@ const Referral = () => {
       detailsCardRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
+
+  useEffect(() => {
+    addTab({ id:"/referrals", name: "Referrals", path: `/refferal/${id}`});
+  }, [addTab]);
 
   return (
     <div className="min-h-screen bg-gray-100 py-5 px-4 lg:px-8">

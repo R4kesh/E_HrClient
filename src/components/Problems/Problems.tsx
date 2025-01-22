@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const Problems = () => {
+  const { id } = useParams(); 
+  const { addTab } = useTabs();
   const staticData = [
     {
       reviewed: "Yes",
@@ -23,6 +27,10 @@ const Problems = () => {
       comment: "No immediate concerns.",
     },
   ];
+
+  useEffect(() => {
+    addTab({ id: "/problems", name: "Problems", path: `/problems/${id}` });
+  }, [addTab])
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-6">
