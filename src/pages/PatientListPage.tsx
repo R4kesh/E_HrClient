@@ -59,10 +59,11 @@
 // export default PatientListPage;
 
 import React from 'react';
-import { Sidebar } from '../components/Sidebar';
+
 import PatientList from '../components/PatientList';
 import Tab from '../components/Tab';
 import Footer from '../components/Footer/Footer';
+import Sidebar from '../components/Sidebar';
 
 const PatientListPage = () => {
   return (

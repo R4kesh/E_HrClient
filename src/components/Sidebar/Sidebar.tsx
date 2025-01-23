@@ -186,10 +186,12 @@ export function Sidebar() {
               Problems
             </button>
             </Link>
+            <Link to={`/notes/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaStickyNote size={20} className="mr-3 text-yellow-500" />
               Notes
             </button>
+            </Link>
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaBriefcaseMedical size={20} className="mr-3 text-green-500" />
               Plan Summary

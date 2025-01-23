@@ -68,6 +68,8 @@ import EncounterPage from './pages/EncounterPage';
 import ImmunizationPage from './pages/ImmunizationPage';
 import ImmunizationMain from './components/Immunization/ImmunizationMain';
 
+import NotesPage from './pages/NotesPage';
+import Sidebarr from './components/Sidebar'
 function App() {
   return (
     <PatientTabProvider> 
@@ -106,6 +108,8 @@ function App() {
          <Route path="/riskfactor/:id" element={<RiskFactorPage/>}/>
          <Route path="/encounter/:id" element={<EncounterPage/>}/>
          <Route path="/immunizations/:id" element={<ImmunizationPage/>}/>
+         <Route path="/notes/:id" element={<NotesPage/>}/>
+         <Route path="/sidebar" element={<Sidebarr/>}/>
 
           </Routes>
         {/* </main> */}

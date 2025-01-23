@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TooltipNew = ({title,value}) => {
+const TooltipNew = ({title,value,img}) => {
   return (
     <StyledWrapper>
       <div className="item-hints">
         <div className="hint" data-position={4}>
           <span className="hint-radius" />
-          <span className="hint-dot">{title}</span>
+          
+          <span className="hint-dot"><img src={img} alt="" /></span>
+          <span className='mt-32 -ml-20'>{title}</span>
           <div className="hint-content do--split-children">
             <p>{value}</p>
           </div>
@@ -34,7 +36,7 @@ const StyledWrapper = styled.div`
   }
   .item-hints .hint-dot {
     z-index: 5;
-    border: 2px solid black;
+   
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -45,7 +47,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
-    background-color:#2a2e2b
+    
   }
   .item-hints .hint-radius {
     background-color: black;

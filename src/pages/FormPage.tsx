@@ -1,6 +1,6 @@
 import React from 'react';
-import { Sidebar } from '../components/Sidebar';
 import Form from '../components/Form';
+import Sidebar from '../components/Sidebar';
 
 const FormPage = () => {
   return (
