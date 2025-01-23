@@ -65,6 +65,8 @@ import QuickMemoPage from './pages/QuickMemoPage';
 import ResultPage from './pages/ResultPage';
 import RiskFactorPage from './pages/RiskFactorPage';
 import EncounterPage from './pages/EncounterPage';
+import ImmunizationPage from './pages/ImmunizationPage';
+import ImmunizationMain from './components/Immunization/ImmunizationMain';
 
 function App() {
   return (
@@ -103,6 +105,7 @@ function App() {
          <Route path="/result/:id" element={<ResultPage/>}/>
          <Route path="/riskfactor/:id" element={<RiskFactorPage/>}/>
          <Route path="/encounter/:id" element={<EncounterPage/>}/>
+         <Route path="/immunizations/:id" element={<ImmunizationPage/>}/>
 
           </Routes>
         {/* </main> */}

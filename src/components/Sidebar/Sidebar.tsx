@@ -203,10 +203,13 @@ export function Sidebar() {
               Results
             </button>
             </Link>
+            <Link to={`/immunizations/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaSyringe size={20} className="mr-3 text-red-500" />
               Immunizations
             </button>
+            </Link>
+
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaHandHoldingMedical size={20} className="mr-3 text-green-500" />
               Immunotherapy
