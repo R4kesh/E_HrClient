@@ -6,7 +6,7 @@ function LandingDashboardContent() {
   return (
     <div>
       
-         <main className="ml-4 p-8">
+         <main className="ml-4 -mt-24">
         <header className="flex justify-between items-center">
           
          
@@ -16,26 +16,30 @@ function LandingDashboardContent() {
         <div>
   {/* First Row */}
   <div className="grid grid-cols-6">
-    <div className="group hover:scale-110 transition-transform duration-300">
+    <div className="group hover:scale-110 transition-transform duration-300 ">
       <TooltipNew 
+          img="https://icon-library.com/images/doctor-icon-png/doctor-icon-png-18.jpg"
         title="Providers" 
-        value="A provider refers to a healthcare professional or organization responsible for delivering medical services, such as doctors, nurses, or hospitals." 
+        value="A provider refers to for delivering medical services, such as doctors, nurses, or hospitals." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img="https://static.thenounproject.com/png/421549-200.png"
         title="Patients" 
         value="The total number of individuals receiving healthcare services in the system, currently at 100." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://static.thenounproject.com/png/2218873-200.png"}
         title="Devices" 
         value="The number of medical devices connected or being tracked within the system, currently at 40." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://www.intellicure.com/wp-content/uploads/2021/04/Interoperable-App-Icon-draft2-150x150-4.png"}
         title="Programs" 
         value="The total number of healthcare programs or initiatives actively running in the system, currently at 125." 
       />
@@ -44,12 +48,14 @@ function LandingDashboardContent() {
     {/* Row 2 */}
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://cdn-icons-png.flaticon.com/512/3533/3533865.png"}
         title="Charge Slips" 
         value="Documents that capture the details of services provided to patients for billing purposes." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://w7.pngwing.com/pngs/933/322/png-transparent-computer-icons-action-item-task-schedule-miscellaneous-angle-text-thumbnail.png"}
         title="Open Items" 
         value="Tasks or items that are pending action or resolution in the system." 
       />
@@ -57,15 +63,17 @@ function LandingDashboardContent() {
   </div>
 
   {/* Second Row */}
-  <div className="grid grid-cols-6 -mt-48">
+  <div className="grid grid-cols-6 -mt-64">
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://cdn-icons-png.flaticon.com/512/1230/1230798.png"}
         title="Held" 
         value="Items or processes that are temporarily on hold, awaiting further action." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://cdn-icons-png.flaticon.com/512/260/260804.png"}
         title="Health Watcher" 
         value="A tool to monitor and track key health metrics and alerts for patients." 
       />
@@ -74,24 +82,28 @@ function LandingDashboardContent() {
     {/* Row 3 */}
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={'https://cdn0.iconfinder.com/data/icons/medicine-outline-part-1-v-2/128/ic_sync-512.png'}
         title="Inbound CIE" 
         value="Incoming clinical information exchange data being processed in the system." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://images.vexels.com/media/users/3/136343/isolated/preview/6debc0c35831c35ff98976d7822325c1-mail-open-message-icon.png"}
         title="Messages" 
         value="Secure communication between healthcare providers and patients or staff members." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={'https://cdn-icons-png.flaticon.com/512/1686/1686760.png'}
         title="Pharmacy Requests" 
         value="Requests submitted for prescription refills or medication-related services." 
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
+      img={"https://cdn-icons-png.flaticon.com/512/32/32139.png"}
         title="Prescriptions" 
         value="Details of medications prescribed to patients, currently managed in the system." 
       />
@@ -113,11 +125,11 @@ function LandingDashboardContent() {
         <div className="grid grid-cols-3 gap-4 mt-8">
           <div className="col-span-2 bg-white p-4 rounded-lg shadow">
             <h2 className="font-bold text-lg">Statistics</h2>
-            <div className="mt-4 h-48 bg-gray-200 rounded animate-pulse"></div>
+            <div className="mt-4 h-48 bg-gray-400 rounded animate-pulse"></div>
           </div>
           <div className="bg-white p-4 rounded-lg shadow">
             <h2 className="font-bold text-lg">Total Monitored Check-ins</h2>
-            <div className="mt-4 h-48 bg-gray-200 rounded animate-pulse"></div>
+            <div className="mt-4 h-48 bg-gray-400 rounded animate-pulse"></div>
           </div>
         </div>
 

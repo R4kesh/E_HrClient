@@ -63,7 +63,8 @@ import ProblemsPage from './pages/ProblemsPage';
 import ResultPage from './pages/ResultPage';
 import RiskFactorPage from './pages/RiskFactorPage';
 import EncounterPage from './pages/EncounterPage';
-
+import NotesPage from './pages/NotesPage';
+import Sidebarr from './components/Sidebar'
 function App() {
   return (
     <PatientTabProvider> 
@@ -98,6 +99,8 @@ function App() {
          <Route path="/result/:id" element={<ResultPage/>}/>
          <Route path="/riskfactor/:id" element={<RiskFactorPage/>}/>
          <Route path="/encounter/:id" element={<EncounterPage/>}/>
+         <Route path="/notes/:id" element={<NotesPage/>}/>
+         <Route path="/sidebar" element={<Sidebarr/>}/>
 
           </Routes>
         {/* </main> */}
