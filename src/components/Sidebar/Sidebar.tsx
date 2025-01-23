@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { FaUser, FaShoppingCart, FaClipboardList,FaMicroscope, FaUsers,FaCog, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt,
+import { FaUser,FaClipboard, FaShoppingCart, FaClipboardList,FaMicroscope, FaUsers,FaCog, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt,
   FaPills,FaFileMedical,FaNotesMedical,FaFileInvoice,FaBriefcaseMedical,FaConnectdevelop,FaSyringe
 ,FaHandHoldingMedical,FaHospitalUser,FaHeartbeat } from 'react-icons/fa';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -153,10 +153,19 @@ export function Sidebar() {
               <FaBell size={20} className="mr-3 text-yellow-500" />
               Messages
             </button>
-            <button className="flex text-sm items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+
+            <Link to={`/quickMemo/${id}`} >
+            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+              <FaClipboard size={20} className="mr-3 text-yellow-500" />
+              Quick Memos
+            </button>
+            </Link>
+
+            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-1">
               <FaFileMedical size={20} className="mr-3 text-green-500" />
               Advanced Directives
             </button>
+
             <Link to={`/healthWatcher/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaNotesMedical size={20} className="mr-3 text-blue-500" />
@@ -207,11 +216,16 @@ export function Sidebar() {
             <Link to={`/riskfactor/${id}`} ><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaHeartbeat size={20} className="mr-3 text-orange-500" />
               Risk Factors
-            </button></Link>
+            </button>
+            </Link>
+            <Link to={`/implimentableDevice/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-2">
               <FaHospitalUser size={20} className="mr-3 text-purple-500" />
               Implantable Devices
             </button>
+            </Link>
+
+
             <Link to={`/familyConnection/${id}`} >
 
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
