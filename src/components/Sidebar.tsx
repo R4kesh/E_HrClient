@@ -303,11 +303,56 @@ const Sidebar = () => {
     { time: "6:30 PM", patient: "RACHEL GREEN", type: "FOLLOW-UP", duration: "30 min" },
   ]);
 
-  const [currentDate, setCurrentDate] = useState("");
+  // const [currentDate, setCurrentDate] = useState("");
   const [selectedTab, setSelectedTab] = useState("dashboard");
   const [isAppointmentsOpen, setIsAppointmentsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [currentTimezone, setCurrentTimezone] = useState("America/New_York");
+  const [currentDate, setCurrentDate] = useState("");
+  const [currentTime, setCurrentTime] = useState("");
+  
+  // Function to handle timezone change
+  const handleTimezoneChange = (timezone) => {
+    setCurrentTimezone(timezone);
+  };
+  
+  // Update the date and time whenever timezone changes
+  useEffect(() => {
+    const updateDateTime = () => {
+      const now = new Date();
+  
+      // Options for date formatting
+      const dateOptions = {
+        timeZone: currentTimezone,
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+  
+      // Options for time formatting
+      const timeOptions = {
+        timeZone: currentTimezone,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      };
+  
+      // Update state with formatted date and time
+      setCurrentDate(now.toLocaleDateString("en-US", dateOptions));
+      setCurrentTime(now.toLocaleTimeString("en-US", timeOptions));
+    };
+  
+    // Initial update
+    updateDateTime();
+  
+    // Update time every second
+    const interval = setInterval(updateDateTime, 1000);
+  
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [currentTimezone]);
+  
   const appointmentsPerPage = 8;
 
   // Calculate the number of pages
@@ -350,10 +395,38 @@ const Sidebar = () => {
   return (
     <div className=" top-0 left-0 h-screen w-64 bg-white  flex flex-col transition-all duration-300">
       {/* Logo Section */}
-      <div className="p-5 border-b">
+      {/* <div className="p-5 border-b">
         <h1 className="text-xl font-bold text-blue-700 animate-pulse">EST | {currentDate}</h1>
-        {/* <p className="text-sm text-gray-500"></p> */}
-      </div>
+       
+      </div> */}
+ <div className="p-3 border-b">
+  <div className="flex items-center justify-between">
+    {/* Date and Time */}
+    <div className="relative">
+      <select
+        className="block appearance-none bg-blue-700 text-white font-bold px-3 py-1  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        value={currentTimezone}
+        onChange={(e) => handleTimezoneChange(e.target.value)}
+      >
+        <option value="America/New_York">EST</option>
+        <option value="America/Chicago">CST</option>
+        <option value="America/Denver">MST</option>
+        <option value="America/Los_Angeles">PST</option>
+      </select>
+    </div>
+    <div className="ml-5">
+      <h1 className="text-xl font-bold text-blue-700 animate-pulse">
+        {currentDate}
+      </h1>
+      <h2 className="text-md font-bold text-green-700">{currentTime}</h2>
+    </div>
+
+    {/* Timezone Dropdown */}
+ 
+  </div>
+</div>
+
+
 
       {/* Navigation Section */}
       <nav className="flex-grow">
