@@ -121,10 +121,10 @@ export function Sidebar() {
 
           {/* Other Menu Items */}
           <div className=" space-y-1 ">
-            <Link to={`/inception/${id}`}><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            {/* <Link to={`/inception/${id}`}><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaUser size={20} className="mr-2 text-purple-500 hover:text-indigo-500 transition duration-300" />
               Inception
-            </button></Link>
+            </button></Link> */}
             <Link to={`/reviewsystem/${id}`}><button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaCog size={20} className="mr-2 text-green-500 hover:text-green-700 transition duration-300" />
               Review of System
@@ -149,10 +149,13 @@ export function Sidebar() {
               Lab Orders
             </button>
             </Link>
+            <Link to={`/message/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaBell size={20} className="mr-3 text-yellow-500" />
               Messages
             </button>
+            </Link>
+
 
             <Link to={`/quickMemo/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
@@ -161,10 +164,10 @@ export function Sidebar() {
             </button>
             </Link>
 
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-1">
+            {/* <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-1">
               <FaFileMedical size={20} className="mr-3 text-green-500" />
               Advanced Directives
-            </button>
+            </button> */}
 
             <Link to={`/healthWatcher/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
@@ -176,10 +179,10 @@ export function Sidebar() {
               <FaFileInvoice size={20} className="mr-3 text-teal-500" />
               Encounters
             </button></Link>
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            {/* <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaUsers size={20} className="mr-3 text-orange-500" />
               Care Team
-            </button>
+            </button> */}
             <Link to={`/problems/${id}`} >
             <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaTasks size={20} className="mr-3 text-purple-500" />
@@ -244,10 +247,10 @@ export function Sidebar() {
             </button>
             </Link>
 
-            <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            {/* <button className="flex items-center text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaDollarSign size={20} className="mr-3 text-teal-500" />
               Billing
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
