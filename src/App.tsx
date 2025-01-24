@@ -65,6 +65,9 @@ import QuickMemoPage from './pages/QuickMemoPage';
 import ResultPage from './pages/ResultPage';
 import RiskFactorPage from './pages/RiskFactorPage';
 import EncounterPage from './pages/EncounterPage';
+import ImmunizationPage from './pages/ImmunizationPage';
+import ImmunizationMain from './components/Immunization/ImmunizationMain';
+
 import NotesPage from './pages/NotesPage';
 import Sidebarr from './components/Sidebar'
 function App() {
@@ -104,6 +107,7 @@ function App() {
          <Route path="/result/:id" element={<ResultPage/>}/>
          <Route path="/riskfactor/:id" element={<RiskFactorPage/>}/>
          <Route path="/encounter/:id" element={<EncounterPage/>}/>
+         <Route path="/immunizations/:id" element={<ImmunizationPage/>}/>
          <Route path="/notes/:id" element={<NotesPage/>}/>
          <Route path="/sidebar" element={<Sidebarr/>}/>
 
