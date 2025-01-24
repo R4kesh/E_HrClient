@@ -70,6 +70,7 @@ import ImmunizationMain from './components/Immunization/ImmunizationMain';
 
 import NotesPage from './pages/NotesPage';
 import Sidebarr from './components/Sidebar'
+import MessagePage from './pages/MessagePage';
 function App() {
   return (
     <PatientTabProvider> 
@@ -110,6 +111,7 @@ function App() {
          <Route path="/immunizations/:id" element={<ImmunizationPage/>}/>
          <Route path="/notes/:id" element={<NotesPage/>}/>
          <Route path="/sidebar" element={<Sidebarr/>}/>
+         <Route path="/message/:id" element={<MessagePage/>}/>
 
           </Routes>
         {/* </main> */}
