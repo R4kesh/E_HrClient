@@ -39,7 +39,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-50 to-indigo-100 p-6 font-sans">
+    <div className="min-h-screen bg-gradient-to-r bg-gray-200 p-6 font-sans">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
