@@ -310,7 +310,7 @@ const LabOrderMain = () => {
         <div className="transition-all duration-500">
           {activeTab === 'orders' && (
             <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Lab Orders</h2>
+              <h2 className="text-2xl font-bold text-gray-8000 mb-4">Lab Orders</h2>
               <div className="text-gray-500">Content for Lab Orders...</div>
             </div>
           )}

@@ -20,6 +20,7 @@ const UpperTab = () => {
       <div className="flex items-center space-x-6">
         {/* Patient Search */}
         <PatientSearch />
+        
         {/* <PatientSearch /> */}
 
 

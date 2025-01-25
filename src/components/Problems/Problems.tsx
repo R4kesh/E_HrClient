@@ -37,7 +37,7 @@ const Problems = () => {
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Form Section */}
         <div className="bg-gradient-to-r from-teal-50 via-white to-blue-50 shadow-md rounded-lg p-8 transition-transform transform hover:scale-105 duration-500">
-          <h2 className="text-2xl font-semibold text-blue-700 mb-6 border-b pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">
             Add Problem Details
           </h2>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6">

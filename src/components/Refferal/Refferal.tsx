@@ -68,7 +68,7 @@ const Referral = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Form Section */}
         <div className="w-full lg:w-2/3 bg-white shadow-lg rounded-lg p-6 border border-gray-200">
-          <h2 className="text-2xl font-semibold text-blue-800 mb-6 border-b pb-2">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">
             Create Referral
           </h2>
           <form className="grid grid-cols-1 md:grid-cols-3 gap-6">
