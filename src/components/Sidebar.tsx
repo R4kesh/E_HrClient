@@ -415,7 +415,7 @@ const Sidebar = () => {
       </select>
     </div>
     <div className="ml-5">
-      <h1 className="text-xl font-bold text-blue-700 animate-pulse">
+      <h1 className="text-md font-bold text-blue-700 animate-pulse">
         {currentDate}
       </h1>
       <h2 className="text-md font-bold text-green-700">{currentTime}</h2>
