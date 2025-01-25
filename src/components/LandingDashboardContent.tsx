@@ -21,9 +21,9 @@ function LandingDashboardContent() {
     15
   </span>
       <TooltipNew 
-img="https://www.clipartmax.com/png/full/115-1155953_electronic-medical-record-emr-functional-requirements-icon-for-hospital-management-system.png"
+img="https://cdn-icons-png.flaticon.com/512/3230/3230599.png"
   title="Priority" 
-        value="A provider refers to for delivering medical services, such as doctors, nurses, or hospitals." 
+        value="Priority levels can be used to arrange the patient list in the EHR, ensuring that the most critical cases are seen first. " 
       />
     
     </div>

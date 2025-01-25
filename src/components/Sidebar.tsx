@@ -380,7 +380,7 @@ const Sidebar = () => {
   const navItems = [
     { label: "Dashboard", icon: HomeIcon, key: "dashboard", color: "text-blue-600" },
     { label: "Appointments", icon: CalendarIcon, key: "appointments", color: "text-green-600" },
-    { label: "Settings", icon: SettingsIcon, key: "settings", color: "text-orange-600" },
+    // { label: "Settings", icon: SettingsIcon, key: "settings", color: "text-orange-600" },
     { label: "Logout", icon: LogOutIcon, key: "logout", color: "text-red-600" },
   ];
 
@@ -404,7 +404,7 @@ const Sidebar = () => {
     {/* Date and Time */}
     <div className="relative">
       <select
-        className="block appearance-none bg-blue-700 text-white font-bold px-3 py-1  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="block appearance-none bg-blue-700 text-white font-bold px-3 py-1   rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         value={currentTimezone}
         onChange={(e) => handleTimezoneChange(e.target.value)}
       >
@@ -415,10 +415,10 @@ const Sidebar = () => {
       </select>
     </div>
     <div className="ml-5">
-      <h1 className="text-md font-bold text-blue-700 animate-pulse">
+      <h1 className="text-xs font-bold text-blue-700 animate-pulse">
         {currentDate}
       </h1>
-      <h2 className="text-md font-bold text-green-700">{currentTime}</h2>
+      <h2 className="text-xs font-bold text-green-700">{currentTime}</h2>
     </div>
 
     {/* Timezone Dropdown */}
