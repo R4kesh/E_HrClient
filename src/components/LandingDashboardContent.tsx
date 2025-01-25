@@ -17,13 +17,20 @@ function LandingDashboardContent() {
   {/* First Row */}
   <div className="grid grid-cols-6">
     <div className="group hover:scale-110 transition-transform duration-300 ">
+    <span className="absolute mt-44 ml-24 rounded-full bg-red-600 py-1 px-1 text-xs text-white">
+    15
+  </span>
       <TooltipNew 
 img="https://www.clipartmax.com/png/full/115-1155953_electronic-medical-record-emr-functional-requirements-icon-for-hospital-management-system.png"
   title="Priority" 
         value="A provider refers to for delivering medical services, such as doctors, nurses, or hospitals." 
       />
+    
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
+    <span className="absolute mt-44 ml-24 rounded-full bg-red-600 py-1 px-1 text-xs text-white">
+    22
+  </span>
       <TooltipNew 
       img="https://cdn0.iconfinder.com/data/icons/medical-services-set-2-1/64/x-17-512.png"
         title="Patients" 
@@ -31,6 +38,9 @@ img="https://www.clipartmax.com/png/full/115-1155953_electronic-medical-record-e
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
+    <span className="absolute mt-44 ml-24 rounded-full bg-red-600 py-1 px-1 text-xs text-white">
+    25
+  </span>
       <TooltipNew 
       img={"https://cdn-icons-png.flaticon.com/512/4138/4138912.png"}
         title="Docs & image" 
@@ -59,17 +69,20 @@ img="https://www.clipartmax.com/png/full/115-1155953_electronic-medical-record-e
         title="Open Items" 
         value="Tasks or items that are pending action or resolution in the system." 
       />
+      
     </div>
   </div>
 
   {/* Second Row */}
   <div className="grid grid-cols-6 -mt-64">
     <div className="group hover:scale-110 transition-transform duration-300">
+   
       <TooltipNew 
       img={"https://cdn-icons-png.flaticon.com/512/11902/11902792.png"}
         title="Held" 
         value="Items or processes that are temporarily on hold, awaiting further action." 
       />
+      
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
@@ -88,6 +101,9 @@ img="https://www.clipartmax.com/png/full/115-1155953_electronic-medical-record-e
       />
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
+    <span className="absolute mt-44 ml-24 rounded-full bg-red-600 py-1 px-1 text-xs text-white">
+    18
+  </span>
       <TooltipNew 
       img={"https://cdn-icons-png.flaticon.com/512/8802/8802461.png"}
         title="Messages" 
@@ -100,6 +116,7 @@ img="https://www.clipartmax.com/png/full/115-1155953_electronic-medical-record-e
         title="Pharmacy Requests" 
         value="Requests submitted for prescription refills or medication-related services." 
       />
+       
     </div>
     <div className="group hover:scale-110 transition-transform duration-300">
       <TooltipNew 
