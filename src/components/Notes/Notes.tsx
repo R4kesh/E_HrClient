@@ -169,7 +169,7 @@ import {
         <div className="bg-white w-full max-w-5xl p-10 rounded-lg shadow-lg transition-all duration-300">
           {/* Header */}
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-bold text-gray-800">EHR Note Section</h2>
+            <h2 className="text-2xl font-bold text-gray-800"> Note Section</h2>
            
           </div>
   

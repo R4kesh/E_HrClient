@@ -39,7 +39,7 @@ const HealthWatcher = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-2xl font-medium text-gray-800 text-center mb-4">Health Watcher Form</h1>
+          <h1 className="text-2xl font-bold text-gray-800 text-center mb-4">Health Watcher Form</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>

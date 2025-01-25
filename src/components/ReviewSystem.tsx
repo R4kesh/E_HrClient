@@ -46,7 +46,7 @@ const ROSSection = () => {
 
   return (
     <div className="space-y-6 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Review of Systems</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-4">Review of Systems</h2>
       
       {/* Grid container for the conditions */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

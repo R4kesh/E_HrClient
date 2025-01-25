@@ -6,7 +6,7 @@ const Immunization = () => {
         <div className="max-w-7xl mx-auto p-2 bg-gray-100">
           {/* Header Section */}
           <div className="flex justify-between items-center mb-2">
-            <h1 className="text-xl font-bold">Immunization Record</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Immunization Record</h1>
             <div className="flex gap-2">
       {/* Save Button */}
       <button className="bg-blue-300 text-white px-2 h-5 rounded flex items-center gap-2 hover:bg-blue-600">

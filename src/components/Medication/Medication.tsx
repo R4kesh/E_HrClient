@@ -76,7 +76,7 @@ const Medication = () => {
           {/* Left Section: Form */}
           <section className="lg:col-span-2 bg-white shadow-xl rounded-lg p-8 border-l-4 border-blue-400 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
             <motion.h2
-              className="text-3xl font-semibold text-gray-800 mb-6 font-['Poppins']"
+              className="text-2xl font-bold text-gray-800 mb-6 "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -184,7 +184,7 @@ const Medication = () => {
           {/* Right Section: Dynamic Cards */}
           <aside className="bg-white shadow-xl rounded-lg p-8 border-l-4 border-blue-400 mt-10 lg:mt-0 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
             <motion.h3
-              className="text-3xl font-semibold text-gray-800 mb-6 font-['Poppins']"
+              className="text-2xl font-bold text-gray-8000 mb-6 "
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -209,7 +209,7 @@ const Medication = () => {
 
         {/* Table Section: Medication List */}
         <div className="mt-16">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-6 font-['Poppins']">Medication List</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6 ">Medication List</h3>
           <div className="overflow-x-auto bg-white shadow-xl rounded-lg">
             <table className="min-w-full table-auto">
               <thead className="bg-blue-200">

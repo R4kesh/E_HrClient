@@ -763,7 +763,7 @@ function DoctorVitalsForm() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           <div className="bg-white shadow-lg rounded-lg p-4 h-auto sm:p-3 col-span-2 hover:shadow-2xl transition-all duration-500 transform hover:scale-100 border-2 border-transparent hover:border-gray-700 hover:rounded-xl">
-            <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 text-center mb-4">
+            <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
               Patient Vitals Form
             </h2>
             {submitted && (

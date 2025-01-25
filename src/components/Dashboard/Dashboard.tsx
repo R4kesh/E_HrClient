@@ -1,41 +1,12 @@
-import React,{useEffect,useState} from "react";
+import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import { GiHeartOrgan, GiKidneys, GiLungs } from "react-icons/gi";
 import { motion } from "framer-motion";
-import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
-
-
 
 const Dashboard = () => {
-  const { id } = useParams(); // Get patient ID from the route
-  const [isPatientOpen, setIsPatientOpen] = useState(false);
-  const [patient, setPatient] = useState(null); // State to store patient details
-  const [loading, setLoading] = useState(true); // Loading state
-
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  };
-
-  useEffect(() => {
-    if (id) {
-      fetchPatientDetails();
-    }
-  }, [id]);
-
-  const fetchPatientDetails = async () => {
-    try {
-      setLoading(true); // Set loading to true
-      const response = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/api/patient/getPatient/${id}`
-      );
-      setPatient(response.data);
-    } catch (error) {
-      console.error("Error fetching patient details:", error);
-    } finally {
-      setLoading(false);
-    }
   };
 
   return (
@@ -118,10 +89,7 @@ const Dashboard = () => {
               </div>
             </motion.div>
           </div>
-          <p className="mt-4 text-center font-semibold text-gray-700">
-  {patient ? patient.firstName : "Loading..."}
-</p>
-
+          <p className="mt-4 text-center font-semibold text-gray-700">Mohammad Jaber Abdullah</p>
         </motion.div>
 
         {/* Middle: Patient Info */}
@@ -135,13 +103,13 @@ const Dashboard = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Patient Info Card */}
             <div className="bg-white shadow-lg rounded-xl p-6 flex items-center space-x-6">
-              {/* <img
+              <img
                 src="https://via.placeholder.com/100"
                 alt="Patient"
                 className="w-24 h-24 rounded-full object-cover shadow-lg"
-              /> */}
+              />
               <div>
-                <h2 className="text-lg font-bold text-gray-800">{patient ? patient.firstName : "Loading..."} {patient ?patient.lastName: "Loading..."}</h2>
+                <h2 className="text-lg font-bold text-gray-800">Mohammad Jaber Abdullah</h2>
                 <p className="text-sm text-gray-500">Age: 64 & Weight: 70 Kg</p>
                 <p className="text-sm text-gray-500">Blood Group: A+</p>
                 <p className="mt-2 text-sm font-medium text-red-500">
