@@ -9,7 +9,7 @@ const DashboardPage = () => {
     {/* Wrapper for Sidebar and Main Content */}
     <div className="flex flex-grow">
       {/* Sidebar */}
-      <div className="w-full md:w-56 bg-white h-auto md:h-full">
+      <div className="w-full md:w-64 bg-white h-auto md:h-full">
        <div
          className="h-full overflow-y-auto"
          style={{

@@ -294,7 +294,7 @@ const NavMenu = ({ title, items }) => {
 
                 {/* Subitems */}
                 {item.subItems && openSubItems === index && (
-                  <div className="-mt-20 ml-64 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                  <div className="-mt-20 ml-60 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
                     {item.subItems.map((subItem, subIndex) => (
                       <Link
                         key={subIndex}
