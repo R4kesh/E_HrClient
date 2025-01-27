@@ -271,17 +271,17 @@ const FamilyConnections = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Form Section */}
           <motion.div 
-            className="lg:col-span-7 bg-white rounded-lg shadow-xl p-10 border-2 border-teal-200 hover:border-teal-400 transition-all"
+            className="lg:col-span-7 bg-white rounded-lg shadow-xl p-10 border-2 border-blue-200 hover:border-blue-400 transition-all"
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-semibold text-teal-600 mb-8">Add Family Member</h2>
+            <h2 className="text-2xl font-semibold text-gray-700 mb-8">Add Family Member</h2>
             <form onSubmit={handleFormSubmit} className="space-y-6">
               {/* Name Input */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  <FaUser className="inline-block text-teal-500 mr-2" />
+                  <FaUser className="inline-block text-blue-500 mr-2" />
                   Full Name
                 </label>
                 <input
@@ -291,14 +291,14 @@ const FamilyConnections = () => {
                   value={form.name}
                   onChange={handleInputChange}
                   placeholder="Enter full name"
-                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 transition-all"
+                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
                 />
               </div>
 
               {/* Age Input */}
               <div>
                 <label htmlFor="age" className="block text-sm font-medium text-gray-700">
-                  <FaBirthdayCake className="inline-block text-teal-500 mr-2" />
+                  <FaBirthdayCake className="inline-block text-blue-500 mr-2" />
                   Age
                 </label>
                 <input
@@ -308,14 +308,14 @@ const FamilyConnections = () => {
                   value={form.age}
                   onChange={handleInputChange}
                   placeholder="Enter age (e.g., 84y)"
-                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 transition-all"
+                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
                 />
               </div>
 
               {/* Relationship Dropdown */}
               <div>
                 <label htmlFor="relationship" className="block text-sm font-medium text-gray-700">
-                  <FaUserTie className="inline-block text-teal-500 mr-2" />
+                  <FaUserTie className="inline-block text-blue-500 mr-2" />
                   Relationship
                 </label>
                 <select
@@ -323,7 +323,7 @@ const FamilyConnections = () => {
                   name="relationship"
                   value={form.relationship}
                   onChange={handleInputChange}
-                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 transition-all"
+                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
                 >
                   <option value="">Select Relationship</option>
                   {dropdownData.relationships.map((relationship, index) => (
@@ -337,7 +337,7 @@ const FamilyConnections = () => {
               {/* Payer Dropdown */}
               <div>
                 <label htmlFor="payer" className="block text-sm font-medium text-gray-700">
-                  <FaMoneyCheckAlt className="inline-block text-teal-500 mr-2" />
+                  <FaMoneyCheckAlt className="inline-block text-blue-500 mr-2" />
                   Payer
                 </label>
                 <select
@@ -345,7 +345,7 @@ const FamilyConnections = () => {
                   name="payer"
                   value={form.payer}
                   onChange={handleInputChange}
-                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-teal-500 transition-all"
+                  className="w-full mt-2 px-5 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all"
                 >
                   {dropdownData.payers.map((payer, index) => (
                     <option key={index} value={payer}>
@@ -357,7 +357,7 @@ const FamilyConnections = () => {
 
               <button
                 type="submit"
-                className="w-full bg-teal-600 text-white font-medium py-3 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 transition-all"
+                className="w-full bg-blue-600 text-white font-medium py-3 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 transition-all"
               >
                 Add Member
               </button>
@@ -366,22 +366,22 @@ const FamilyConnections = () => {
 
           {/* Family Connections Listing in Cards */}
           <div className="lg:col-span-5 space-y-8">
-            <h2 className="text-3xl font-semibold text-teal-600 mb-6">Family Connections</h2>
+            <h2 className="text-2xl font-semibold text-gray-700 mb-6">Family Connections</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {familyConnections.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white rounded-lg shadow-lg p-6 border-2 border-teal-200 hover:border-teal-400 transition-transform transform hover:scale-105"
+                  className="bg-white rounded-lg shadow-lg p-6 border-2 border-blue-200 hover:border-blue-400 transition-transform transform hover:scale-105"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className=" font-semibold text-teal-600">{member.name}</p>
+                      <p className=" font-semibold text-blue-600">{member.name}</p>
                       <p className="text-sm text-gray-500">{member.relationship}</p>
                     </div>
-                    <FaUser className="text-teal-500 text-4xl" />
+                    <FaUser className="text-blue-500 text-4xl" />
                   </div>
 
                   <div>

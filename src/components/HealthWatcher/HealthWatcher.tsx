@@ -103,7 +103,7 @@ const HealthWatcher = () => {
             </div>
 
             <div>
-              <button type="submit" className="w-full py-2 bg-teal-600 text-white font-medium rounded-md hover:bg-teal-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400">
+              <button type="submit" className="w-full py-2 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400">
                 Save Health Watcher
               </button>
             </div>

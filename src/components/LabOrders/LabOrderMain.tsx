@@ -247,7 +247,7 @@ const LabOrderMain = () => {
 
   // Handle submit
   const handleSubmit = () => {
-    console.log('Selected categories:', selectedCategories);
+    // console.log('Selected categories:', selectedCategories);
   };
 
   // Paginate categories based on current page
@@ -286,8 +286,8 @@ const LabOrderMain = () => {
           <button
             className={`px-1 py-2 rounded-t-lg w-36 focus:outline-none transition duration-300 transform ${
               activeTab === 'orders'
-                ? 'bg-teal-500 text-white border-teal-600 scale-110 shadow-lg'
-                : 'text-teal-500 hover:bg-teal-100 border-transparent bg-teal-100'
+                ? 'bg-blue-600 text-white border-blue-600 scale-110 shadow-lg'
+                : 'text-blue-800 hover:bg-blue-300 border-transparent bg-blue-200'
             }`}
             onClick={() => handleTabChange('orders')}
           >
@@ -297,8 +297,8 @@ const LabOrderMain = () => {
           <button
             className={`px-6 py-2 w-36 rounded-t-lg focus:outline-none transition duration-300 transform ${
               activeTab === 'test'
-                ? 'bg-teal-500 text-white border-teal-600 scale-110 shadow-lg'
-                : 'text-teal-500 hover:bg-teal-100 border-transparent bg-teal-100'
+                    ? 'bg-blue-600 text-white border-blue-600 scale-110 shadow-lg'
+                : 'text-blue-800 hover:bg-blue-300 border-transparent bg-blue-200'
             }`}
             onClick={() => handleTabChange('test')}
           >
@@ -377,7 +377,7 @@ const LabOrderMain = () => {
                           id={`category-${category}`}
                           value={category}
                           onChange={handleCategoryCheckboxChange}
-                          className="text-teal-600 border-gray-300 rounded focus:ring-teal-500 transition duration-200"
+                          className="text-teal-600 border-gray-300 rounded focus:ring-blue-500 transition duration-200"
                         />
                         <label
                           htmlFor={`category-${category}`}
@@ -395,7 +395,7 @@ const LabOrderMain = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 bg-teal-500 text-white rounded-lg disabled:opacity-50"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg disabled:opacity-50"
                 >
                   Previous
                 </button>
@@ -405,7 +405,7 @@ const LabOrderMain = () => {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 bg-teal-500 text-white rounded-lg disabled:opacity-50"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg disabled:opacity-50"
                 >
                   Next
                 </button>
@@ -415,7 +415,7 @@ const LabOrderMain = () => {
               <div className="mt-6 text-center">
                 <button
                   onClick={handleSubmit}
-                  className="items-center px-6 py-2 bg-teal-500 text-white rounded-lg shadow-lg hover:bg-teal-600 focus:outline-none transition duration-300"
+                  className="items-center px-6 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none transition duration-300"
                 >
                   Submit
                 </button>
