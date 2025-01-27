@@ -382,7 +382,7 @@ const Dashboard = () => {
         <svg viewBox="0 0 48 48" fill="none" height={48} width={48} xmlns="http://www.w3.org/2000/svg">
           <path d="M37.99 38.293C37.785 34.785 34.733 32 31 32H17c-3.735 0-6.786 2.785-6.99 6.293m27.98 0A19.94 19.94 0 0 0 44 24c0-11.046-8.954-20-20-20S4 12.954 4 24a19.94 19.94 0 0 0 6.01 14.293m27.98 0A19.935 19.935 0 0 1 24 44a19.935 19.935 0 0 1-13.99-5.707M30 20a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z" strokeWidth={2} strokeLinejoin="round" strokeLinecap="round" stroke="#B49A18" />
         </svg>
-        <p className="text-[1.25rem] font-semibold">Manpreet</p>
+        <p className="text-[1.25rem] font-semibold">Vitals</p>
       </div>
       <div className="flex h-fit w-full items-center justify-center gap-[0.5em]">
         <div className="group relative flex h-[10em] w-[10em] items-center justify-center rounded-[1.5em] bg-[#ffffff] px-[0.5rem] pt-[1rem]">
