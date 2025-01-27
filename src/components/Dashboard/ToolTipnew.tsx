@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TooltipNew = ({title,value,img}) => {
+const TooltipNew = ({title,value,icon,style}) => {
   return (
     <StyledWrapper>
       <div className="item-hints">
         <div className="hint" data-position={4}>
           <span className="hint-radius" />
           
-          <span className="hint-dot"><img src={img} alt="" /></span>
+          {/* <span className="hint-dot"><img src={img} alt="" /></span> */}
           <span className='mt-32 -ml-20'>{title}</span>
           <div className="hint-content do--split-children">
             <p>{value}</p>
