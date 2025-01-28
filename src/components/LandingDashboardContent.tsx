@@ -318,21 +318,35 @@ function LandingDashboard() {
         </header>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-4 gap-6 gap-y-10">
-          {tooltipData.map((item, index) => (
-            <div
-              key={index}
-              className="group hover:scale-105 transition-transform duration-300 text-center"
-            >
-              <TooltipNew
-                title={item.title}
-                value={item.value}
-                icon={item.icon}
-                style={{ fontSize: "3rem", color: "#15579d" }}
-              />
-            </div>
-          ))}
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-y-10">
+  {/* Icons Section */}
+  <div className="col-span-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    {tooltipData.map((item, index) => (
+      <div
+        key={index}
+        className="group hover:scale-105 transition-transform duration-300 text-center"
+      >
+        <TooltipNew
+          title={item.title}
+          value={item.value}
+          icon={item.icon}
+          style={{ fontSize: "3rem", color: "#49a5d6" }}
+        />
+      </div>
+    ))}
+  </div>
+
+  {/* Card Section */}
+  <div className="col-span-1 ">
+    <div className="bg-white p-4 rounded-lg shadow">
+      <h2 className="font-bold text-lg">Contents</h2>
+      <div className="mt-4 h-64 bg-gray-400 rounded animate-pulse"></div>
+    </div>
+  </div>
+</div>
+
+
+        
 
 
 
