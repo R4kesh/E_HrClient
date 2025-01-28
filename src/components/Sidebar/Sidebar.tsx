@@ -215,10 +215,10 @@ export function Sidebar() {
             </button>
             </Link>
 
-            <button className="flex items-center text-black hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
+            <Link to={`/immunotherapy/${id}`} > <button className="flex items-center text-black hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaHandHoldingMedical size={20} className="mr-3 text-green-500" />
               Immunotherapy
-            </button>
+            </button></Link>
             <Link to={`/riskfactor/${id}`} ><button className="flex items-center text-black hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaHeartbeat size={20} className="mr-3 text-orange-500" />
               Risk Factors
