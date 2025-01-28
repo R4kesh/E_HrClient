@@ -271,7 +271,7 @@ const Dashboard = () => {
         >
           <div className="relative">
             {/* Rotating Human Body */}
-            <div className="w-full h-[300px] bg-gray-100 rounded-lg flex items-center justify-center relative">
+            <div className="w-full h-[320px] bg-gray-100  rounded-lg flex items-center justify-center relative">
               <motion.div
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 360 }}
@@ -294,7 +294,7 @@ const Dashboard = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="absolute top-6 left-6 bg-white p-4 shadow-lg rounded-md flex items-center space-x-2"
+              className="absolute top-6 left-6 bg-white p-4 shadow-lg  rounded-md flex items-center space-x-2"
             >
               <GiHeartOrgan className="text-red-500" size={24} />
               <div>
@@ -318,7 +318,7 @@ const Dashboard = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="absolute top-52 right-8 bg-white p-4 shadow-lg rounded-md flex items-center space-x-2"
+              className="absolute top-56 right-8 bg-white p-4 shadow-lg rounded-md flex items-center space-x-2"
             >
               <GiLungs className="text-blue-500" size={24} />
               <div>
@@ -406,17 +406,25 @@ const Dashboard = () => {
           </div>
           <div className="flex w-full flex-1 items-center justify-center rounded-[1.5rem] bg-[#ffffff] group relative overflow-hidden">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[1rem] font-bold duration-300 group-hover:-translate-y-[300%]">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" height="48" width="48">
-  <g>
-    <rect x="4" y="18" width="6" height="12" fill="#B49A18" />
-    <rect x="10" y="16" width="4" height="16" fill="#B49A18" />
-
-    <rect x="14" y="22" width="20" height="4" fill="#B49A18" />
-
-    <rect x="34" y="16" width="4" height="16" fill="#B49A18" />
-    <rect x="38" y="18" width="6" height="12" fill="#B49A18" />
-  </g>
+            <svg viewBox="0 0 48 48" fill="none" height={48} width={48} xmlns="http://www.w3.org/2000/svg">
+  <circle cx="24" cy="24" r="18" strokeWidth={4} stroke="#B49A18" fill="none" />
+  <circle cx="24" cy="6" r="1.5" fill="#B49A18" />
+  <circle cx="35.4" cy="12.6" r="1.5" fill="#B49A18" />
+  <circle cx="42" cy="24" r="1.5" fill="#B49A18" />
+  <circle cx="35.4" cy="35.4" r="1.5" fill="#B49A18" />
+  <circle cx="24" cy="42" r="1.5" fill="#B49A18" />
+  <circle cx="12.6" cy="35.4" r="1.5" fill="#B49A18" />
+  <circle cx="6" cy="24" r="1.5" fill="#B49A18" />
+  <circle cx="12.6" cy="12.6" r="1.5" fill="#B49A18" />
+  <line x1="24" y1="24" x2="35" y2="13" stroke="#B49A18" strokeWidth={4} strokeLinecap="round" />
+  <circle cx="24" cy="24" r="2" fill="#B49A18" />
 </svg>
+
+
+
+
+
+
 
 
 
@@ -430,19 +438,13 @@ const Dashboard = () => {
       <div className="flex h-[4.5rem] w-full flex-row items-center justify-center gap-[0.5rem]">
         <div className="flex h-full w-[10rem] items-center justify-center rounded-[1.5rem] bg-[#ffffff] group relative overflow-hidden">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[1rem] font-bold duration-300 group-hover:-translate-y-[300%]">
-          <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <ellipse cx="100" cy="50" rx="30" ry="40" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
-  
-  <rect x="85" y="90" width="30" height="20" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
-  
-  <path d="M65,110 C60,170 60,200 100,200 C140,200 140,170 135,110 Z" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
-  
-  <path d="M65,120 C50,150 50,160 65,180" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
-  <path d="M135,120 C150,150 150,160 135,180" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
-  
-  <path d="M80,200 C75,250 75,350 90,350" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
-  <path d="M120,200 C125,250 125,350 110,350" fill="#FFC4A3" stroke="#B49A18" stroke-width="2" />
+          <svg viewBox="0 0 48 48" fill="none" height={48} width={48} xmlns="http://www.w3.org/2000/svg">
+  <path 
+    d="M24 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4zM18 14h12c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2h-2v7h2c.6 0 1 .4 1 1v4c0 .6-.4 1-1 1h-2v6c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1v-6h-2c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h2v-7h-2c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2z" 
+    fill="#B49A18" 
+  />
 </svg>
+
 
 
 
@@ -474,10 +476,10 @@ const Dashboard = () => {
       </div>
       <div className="group relative flex h-[5em] w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#ffffff]">
         <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[1rem] font-bold duration-500 group-hover:-translate-x-[250%]">
-          Today's Quote
+          Insurance
         </p>
         <p className="absolute left-1/2 top-1/2 h-fit w-full -translate-y-1/2 translate-x-1/2 px-[1rem] text-left text-[0.75rem] font-bold duration-500 group-hover:-translate-x-1/2 text-center">
-          “The real workout starts when you want to stop.” – Ronnie Coleman
+        insurance provider, policy number, plan type, effective dates
         </p>
       </div>
     </div>
@@ -486,7 +488,7 @@ const Dashboard = () => {
     
           
       </div>
-    <div className="bg-gray-200 shadow-lg rounded-xl p-6 mt-2 hover:scale-105 ml-10 mr-10 w-auto">
+    <div className="bg-gray-200 shadow-lg rounded-xl p-6 mt-2 mb-6 hover:scale-105 ml-10 mr-10 w-auto">
             <h3 className="text-lg font-bold text-gray-700 mb-4">Health Composition</h3>
             <div className="grid grid-cols-2 gap-4">
               <p className="text-sm text-gray-600">
