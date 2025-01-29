@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DiabetesComponent from './DiabetesComponent';
 import PainManagementComponent from './PainManagementComponent';
+import CommonResults from './CommonResults';
 
 const options = [
   "Anticoagulation",
@@ -34,6 +35,9 @@ const ImmunoTherapyMain = () => {
       case "Pain Management":
         return <PainManagementComponent />;
       // Add more cases for other categories
+
+      case "Common Results":
+        return <CommonResults />;
       default:
         return null;
     }
