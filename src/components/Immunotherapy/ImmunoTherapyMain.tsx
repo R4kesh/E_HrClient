@@ -33,7 +33,7 @@ const ImmunoTherapyMain = () => {
         return <DiabetesComponent />;
       case "Pain Management":
         return <PainManagementComponent />;
-      // Add more cases for other categories
+        case "Pain Management":
       default:
         return null;
     }
