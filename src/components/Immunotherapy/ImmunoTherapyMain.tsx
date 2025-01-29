@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import DiabetesComponent from './DiabetesComponent';
 import PainManagementComponent from './PainManagementComponent';
+import WoundCare from './WoundCare';
+import EchoResult from './EchoResult';
+import HyperTension from './HyperTension';
+import LabResultBmp from './LabResultBmp';
+import LabResultCmp from './LabResultCmp';
+import PrenatalVisit from './PrenatalVisit';
 
 const options = [
   "Anticoagulation",
@@ -33,7 +39,18 @@ const ImmunoTherapyMain = () => {
         return <DiabetesComponent />;
       case "Pain Management":
         return <PainManagementComponent />;
-        case "Pain Management":
+        case "Wound Care for 1 to 3 Wounds":
+          return <WoundCare/>
+          case "Echo Results":
+          return <EchoResult/>
+          case "Hypertension Trending Blood Pressure":
+            return <HyperTension/>
+            case "Lab Results BMP":
+            return <LabResultBmp/>
+            case "Lab Results CMP":
+            return <LabResultCmp/>
+            case "Prenatal Visits":
+              return <PrenatalVisit/>
       default:
         return null;
     }
