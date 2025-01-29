@@ -3,6 +3,7 @@ import { Sidebar } from '../components/Sidebar/Sidebar'
 import Tab from '../components/Tab'
 import ROSSection from '../components/ReviewSystem'
 import Footer from '../components/Footer/Footer'
+import ImmunoTherapyMain from '../components/Immunotherapy/ImmunoTherapyMain'
 
 function Immunotherapy() {
   return (
@@ -49,7 +50,9 @@ function Immunotherapy() {
 
           {/* PatientList */}
           <div className="flex-grow  ">
-            {/* <ROSSection /> */}
+<ImmunoTherapyMain/>
+
+
           </div>
         </div>
       </div>
