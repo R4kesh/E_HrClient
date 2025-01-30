@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import DiabetesComponent from './DiabetesComponent';
 import PainManagementComponent from './PainManagementComponent';
@@ -71,11 +72,12 @@ const ImmunoTherapyMain = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex  space-x-6">
       {/* Left Side - Selected Component /}
+      {/* Left Side - Selected Component */}
       <div className="flex-1 bg-white  shadow-md rounded-lg">
         {renderComponent()}
       </div>
 
-      {/ Right Side - Card Options with Smooth Scroll */}
+      {/* Right Side - Card Options with Smooth Scroll */}
       <div className="w-64 space-y-4     ">
         <h1 className="text-xl font-semibold text-gray-700 mb-4">Select a Category</h1>
         <div className="space-y-4 ">
@@ -86,9 +88,9 @@ const ImmunoTherapyMain = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
               onClick={() => setSelectedCategory(option)}
-              className={cursor-pointer p-4  border-2 shadow-sm rounded-lg hover:shadow-lg transition border-l-4 duration-100 transform hover:-translate-y-6 text-center ${cardColors[index % cardColors.length]} ${
+              className={`cursor-pointer p-4  border-2 shadow-sm rounded-lg hover:shadow-lg transition border-l-4 duration-100 transform hover:-translate-y-6 text-center ${cardColors[index % cardColors.length]} ${
                 selectedCategory === option ? "text-blue-700 font-bold border-opacity-100" : "text-slate-900 font-medium border-opacity-50 hover:border-opacity-80"
-              }}
+              }`}
             >
               {option}
             </motion.div>
