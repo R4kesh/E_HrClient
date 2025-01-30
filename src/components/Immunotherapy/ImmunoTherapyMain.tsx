@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import DiabetesComponent from './DiabetesComponent';
 import PainManagementComponent from './PainManagementComponent';
@@ -7,6 +9,8 @@ import HyperTension from './HyperTension';
 import LabResultBmp from './LabResultBmp';
 import LabResultCmp from './LabResultCmp';
 import PrenatalVisit from './PrenatalVisit';
+import Anticoagulation from './Anticoagulation';
+import { motion } from 'framer-motion';
 
 const options = [
   "Anticoagulation",
@@ -26,12 +30,20 @@ const options = [
   "Vitals",
 ];
 
-const ImmunoTherapyMain = () => {
-  const [selectedCategory, setSelectedCategory] = useState("");
+const cardColors = [
+  "bg-blue-100 border-blue-500",
+  "bg-green-100 border-green-500",
+  "bg-yellow-100 border-yellow-500",
+  "bg-orange-100 border-orange-500",
+  "bg-purple-100 border-purple-500",
+  "bg-pink-100 border-pink-500",
+  "bg-teal-100 border-teal-500",
+  "bg-red-100 border-red-500",
+  "bg-indigo-100 border-indigo-500",
+];
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
+const ImmunoTherapyMain = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const renderComponent = () => {
     switch (selectedCategory) {
@@ -39,67 +51,51 @@ const ImmunoTherapyMain = () => {
         return <DiabetesComponent />;
       case "Pain Management":
         return <PainManagementComponent />;
-        case "Wound Care for 1 to 3 Wounds":
-          return <WoundCare/>
-          case "Echo Results":
-          return <EchoResult/>
-          case "Hypertension Trending Blood Pressure":
-            return <HyperTension/>
-            case "Lab Results BMP":
-            return <LabResultBmp/>
-            case "Lab Results CMP":
-            return <LabResultCmp/>
-            case "Prenatal Visits":
-              return <PrenatalVisit/>
+      case "Wound Care for 1 to 3 Wounds":
+        return <WoundCare />;
+      case "Echo Results":
+        return <EchoResult />;
+      case "Hypertension Trending Blood Pressure":
+        return <HyperTension />;
+      case "Lab Results BMP":
+        return <LabResultBmp />;
+      case "Lab Results CMP":
+        return <LabResultCmp />;
+      case "Prenatal Visits":
+        return <PrenatalVisit />;
+      case "Anticoagulation":
+        return <Anticoagulation />;
       default:
-        return null;
+        return <Anticoagulation/>;
     }
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen p-4 relative">
-      {/* Selection Box (Top-Right Corner) */}
-      <div className="absolute top-4 right-4 bg-white shadow-lg rounded-lg p-6 w-64">
-        <h1 className="text-xl font-semibold text-gray-700 mb-4">
-          Select a Category
-        </h1>
-        <div className="relative">
-          <select
-            className="block appearance-none w-full bg-gray-50 border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 text-sm"
-            value={selectedCategory}
-            onChange={handleCategoryChange}
-          >
-            <option value="" disabled>
-              Choose an option
-            </option>
-            {options.map((option, index) => (
-              <option key={index} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
-            <svg
-              className="w-4 h-4"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </div>
-        </div>
+    <div className="bg-gray-100 min-h-screen flex  space-x-6">
+      {/* Left Side - Selected Component */}
+      <div className="flex-1 bg-white  shadow-md rounded-lg">
+        {renderComponent()}
       </div>
 
-      {/* Render the Selected Component (Left Side) */}
-      <div className="mt-8 mr-80">
-        {renderComponent()}
+      {/* Right Side - Card Options with Smooth Scroll */}
+      <div className="w-64 space-y-4     ">
+        <h1 className="text-xl font-semibold text-gray-700 mb-4">Select a Category</h1>
+        <div className="space-y-4 ">
+          {options.map((option, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              onClick={() => setSelectedCategory(option)}
+              className={`cursor-pointer p-4  border-2 shadow-sm rounded-lg hover:shadow-lg transition border-l-4 duration-100 transform hover:-translate-y-6 text-center ${cardColors[index % cardColors.length]} ${
+                selectedCategory === option ? "text-blue-700 font-bold border-opacity-100" : "text-slate-900 font-medium border-opacity-50 hover:border-opacity-80"
+              }`}
+            >
+              {option}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

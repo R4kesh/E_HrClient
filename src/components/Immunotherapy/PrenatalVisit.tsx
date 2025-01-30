@@ -31,7 +31,7 @@ const PrenatalVisit = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto my-8 bg-white rounded-lg shadow-lg">
+    <div className="max-w-6xl mx-auto my-8  bg-white rounded-lg shadow-lg">
       <div className="bg-blue-600 p-6 rounded-t-lg">
         <h1 className="text-2xl font-bold text-white">Prenatal Visit</h1>
       </div>

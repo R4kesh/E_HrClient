@@ -36,7 +36,7 @@ function LabResultCmp() {
   };
 
   return (
-    <div className="p-6 bg-gray-50 rounded-lg shadow-md max-w-4xl mx-auto">
+    <div className="p-4 bg-gray-50 rounded-lg shadow-md max-w-4xl mx-auto">
       <h2 className="text-2xl font-semibold text-blue-800 text-center mb-6">Lab Results CMP</h2>
       <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md">
         <thead>
