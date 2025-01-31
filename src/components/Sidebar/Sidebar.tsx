@@ -560,10 +560,205 @@
 
 
 
+// import axios from 'axios';
+// import React, { useEffect, useState } from 'react';
+// import { FaUser, FaClipboard, FaShoppingCart, FaClipboardList, FaMicroscope, FaUsers, FaCog, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt, FaPills, FaFileMedical,  FaFileInvoice, FaBriefcaseMedical, FaConnectdevelop, FaSyringe, FaHandHoldingMedical, FaHospitalUser, FaHeartbeat, FaFile, FaEnvelope, FaNotesMedical, FaStethoscope, FaProcedures, FaUserMd, FaBriefcase, FaBookMedical, FaAllergies, FaSearch } from 'react-icons/fa';
+// import { MdKeyboardArrowDown } from 'react-icons/md';
+// import { Link, useParams } from 'react-router-dom';
+// import { useTabs } from '../../Context/TabProvider';
+
+// export function Sidebar() {
+//   const { id } = useParams();
+//   const { addTab } = useTabs();
+
+//   const [isPatientOpen, setIsPatientOpen] = useState(false);
+//   const [patient, setPatient] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [showMore, setShowMore] = useState(false);
+//   const [searchQuery, setSearchQuery] = useState('');
+
+  // useEffect(() => {
+  //   if (id) {
+  //     fetchPatientDetails();
+  //   }
+  // }, [id]);
+
+//   const fetchPatientDetails = async () => {
+//     try {
+//       setLoading(true);
+//       const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/patient/getPatient/${id}`);
+//       setPatient(response.data);
+//     } catch (error) {
+//       console.error("Error fetching patient details:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleSearch = (e) => {
+//     setSearchQuery(e.target.value);
+//   };
+//   useEffect(() => {
+//     addTab({ id: "/dashboard", name: "Home", path: `/dashboard/${id}` });
+//   }, [addTab]);
+
+//   return (
+//     <div className="flex h-screen bg-gray-100">
+//       <div className="w-64 bg-[#F8FCFF] shadow-md">
+        
+
+
+//  <div className="p-4 bg-white rounded-lg">
+//   {loading ? (
+//     <div className="text-center text-gray-500">Loading...</div>
+//   ) : patient ? (
+//     <>
+//       <div className="flex flex-col items-center space-y-4">
+        
+//         <div
+//           className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500 cursor-pointer"
+//           onMouseEnter={() =>
+//             document.getElementById('details-section').classList.add('max-h-[300px]')
+//           }
+//           onMouseLeave={() =>
+//             document.getElementById('details-section').classList.remove('max-h-[300px]')
+//           }
+//         >
+//           <img
+//             src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`}
+//             alt="Patient"
+//             className="w-full h-full object-cover"
+//           />
+//         </div>
+
+        
+//         <div
+//           className="text-center cursor-pointer"
+//           onMouseEnter={() =>
+//             document.getElementById('details-section').classList.add('max-h-[300px]')
+//           }
+//           onMouseLeave={() =>
+//             document.getElementById('details-section').classList.remove('max-h-[300px]')
+//           }
+//         >
+//           <div className="text-lg font-semibold text-gray-800">{patient.firstName} {patient.lastName}</div>
+//           <div className="text-sm text-gray-500">DOB: {patient.dateOfBirth}</div>
+//         </div>
+//       </div>
+
+     
+//       <div
+//         id="details-section"
+//         className="overflow-hidden max-h-0 transition-all duration-500 ease-in-out  rounded-md shadow-md  p-4 space-y-2"
+//       >
+//         <p></p>
+//         <br />
+
+       
+//         <div className="bg-blue-gray-50 space-y-2 text-center">
+//         <div className="text-sm text-gray-600">Phone: {patient.phoneNumber}</div>
+//         <div className="text-sm text-gray-600">Insurance: {patient.insuranceCarrier}</div>
+//         <div className=" text-sm text-gray-600">Plan: {patient.insurancePlanName}</div>
+//         <div>
+//           <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
+//         </div>
+//         <div className="text-sm text-gray-600">Last Visit: {patient.lastVisit}</div>
+//         </div>
+//       </div>
+//     </>
+//   ) : (
+//     <div className="text-center text-gray-500">No patient data available</div>
+//   )}
+// </div> 
+//         <div className="p-2 ">
+//           <ul className="space-y-2 ">
+//           <li className="bg-[#002D62] text-white flex items-center gap-3 p-3 rounded-lg font-bold ">
+         
+//             <input
+//               type="text"
+//               placeholder="Search..."
+//               value={searchQuery}
+//               onChange={handleSearch}
+//               className="w-full p-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+//             />
+//             <FaSearch className="absolute left-3 top-3 text-gray-500" size={18} />
+         
+//             </li>
+            
+//             <Link to={`/reviewsystem/${id}`}> <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3  font-medium shadow-sm rounded-lg hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaStethoscope size={18} /> Review of System
+//             </li></Link>
+//             <Link to={`/vitals/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3  font-medium rounded-lg shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaHeartbeat size={18} /> Vitals
+//             </li></Link>
+//             <Link to={`/allergies/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaAllergies size={18} /> Allergies
+//             </li></Link>
+//             <Link to={`/medication/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaPills size={18} /> Medications
+//             </li></Link>
+//             <Link to={`/LabOrders/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaMicroscope size={18} /> Lab Orders
+//             </li></Link>
+//             <Link to={`/message/${id}`} > <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaEnvelope size={18} /> Messages
+//             </li></Link>
+//             <Link to={`/quickMemo/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaStickyNote size={18} /> Quick Memo
+//             </li></Link>
+//             <Link to={`/healthWatcher/${id}`} >
+//             <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaNotesMedical size={18} /> Health Watcher
+//             </li></Link>
+//             <Link to={`/encounter/${id}`} > <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaFileMedicalAlt size={18} /> Encounters
+//             </li></Link>
+//             <Link to={`/problems/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaTasks size={18} /> Problems
+//             </li></Link>
+//             <Link to={`/notes/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaStickyNote size={18} /> Notes
+//             </li></Link>
+//             <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//             <FaBriefcaseMedical size={18} /> Plan Summary
+//             </li>
+//             <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//             <FaClipboard size={18}/> Documents
+//             </li>
+//             <Link to={`/result/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm hover:bg-blue-100  hover:shadow-lg transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaMicroscope size={18} /> Results
+//             </li></Link>
+
+//             <Link to={`/immunizations/${id}`} > <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaSyringe size={18} /> Immunizations
+//             </li></Link>
+//             <Link to={`/immunotherapy/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaHandHoldingMedical size={18} /> Immunotherapy
+//             </li></Link>
+//             <Link to={`/riskfactor/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//               <FaHeartbeat size={18} /> Risk Factors
+//             </li></Link>
+//             <Link to={`/implimentableDevice/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//             <FaHospitalUser size={18} /> Implantable Device
+//             </li></Link>
+//             <Link to={`/familyConnection/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//             <FaConnectdevelop size={18} /> Family Connections
+//             </li></Link>
+//             <Link to={`/refferal/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm  hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+//             <FaNotesMedical size={18} /> Referrals
+//             </li>
+//             </Link>
+//           </ul>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { FaUser, FaClipboard, FaShoppingCart, FaClipboardList, FaMicroscope, FaUsers, FaCog, FaBell, FaCalendarAlt, FaTasks, FaHistory, FaStickyNote, FaDollarSign, FaFileMedicalAlt, FaPills, FaFileMedical,  FaFileInvoice, FaBriefcaseMedical, FaConnectdevelop, FaSyringe, FaHandHoldingMedical, FaHospitalUser, FaHeartbeat, FaFile, FaEnvelope, FaNotesMedical, FaStethoscope, FaProcedures, FaUserMd, FaBriefcase, FaBookMedical, FaAllergies } from 'react-icons/fa';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { FaSearch, FaStethoscope, FaHeartbeat, FaAllergies, FaPills, FaMicroscope, FaEnvelope, FaStickyNote, FaNotesMedical, FaFileMedicalAlt, FaTasks, FaBriefcaseMedical, FaClipboard, FaSyringe, FaHandHoldingMedical, FaHospitalUser, FaConnectdevelop } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { useTabs } from '../../Context/TabProvider';
 
@@ -572,17 +767,43 @@ export function Sidebar() {
   const { addTab } = useTabs();
 
   const [isPatientOpen, setIsPatientOpen] = useState(false);
-  const [patient, setPatient] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [showMore, setShowMore] = useState(false);
 
+  const [loading, setLoading] = useState(true);
+  const [patient, setPatient] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const sidebarItems = [
+    { label: 'Review of System', icon: <FaStethoscope size={18} />, path: `/reviewsystem/${id}` },
+    { label: 'Vitals', icon: <FaHeartbeat size={18} />, path: `/vitals/${id}` },
+    { label: 'Allergies', icon: <FaAllergies size={18} />, path: `/allergies/${id}` },
+    { label: 'Medications', icon: <FaPills size={18} />, path: `/medication/${id}` },
+    { label: 'Lab Orders', icon: <FaMicroscope size={18} />, path: `/LabOrders/${id}` },
+    { label: 'Messages', icon: <FaEnvelope size={18} />, path: `/message/${id}` },
+    { label: 'Quick Memo', icon: <FaStickyNote size={18} />, path: `/quickMemo/${id}` },
+    { label: 'Health Watcher', icon: <FaNotesMedical size={18} />, path: `/healthWatcher/${id}` },
+    { label: 'Encounters', icon: <FaFileMedicalAlt size={18} />, path: `/encounter/${id}` },
+    { label: 'Problems', icon: <FaTasks size={18} />, path: `/problems/${id}` },
+    { label: 'Notes', icon: <FaStickyNote size={18} />, path: `/notes/${id}` },
+    { label: 'Plan Summary', icon: <FaBriefcaseMedical size={18} />, path: '#' },
+    { label: 'Documents', icon: <FaClipboard size={18} />, path: '#' },
+    { label: 'Results', icon: <FaMicroscope size={18} />, path: `/result/${id}` },
+    { label: 'Immunizations', icon: <FaSyringe size={18} />, path: `/immunizations/${id}` },
+    { label: 'Immunotherapy', icon: <FaHandHoldingMedical size={18} />, path: `/immunotherapy/${id}` },
+    { label: 'Risk Factors', icon: <FaHeartbeat size={18} />, path: `/riskfactor/${id}` },
+    { label: 'Implantable Device', icon: <FaHospitalUser size={18} />, path: `/implimentableDevice/${id}` },
+    { label: 'Family Connections', icon: <FaConnectdevelop size={18} />, path: `/familyConnection/${id}` },
+    { label: 'Referrals', icon: <FaNotesMedical size={18} />, path: `/refferal/${id}` },
+  ];
+
+  const filteredItems = sidebarItems.filter(item =>
+    item.label.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   useEffect(() => {
     if (id) {
       fetchPatientDetails();
     }
   }, [id]);
-
-  const fetchPatientDetails = async () => {
+    const fetchPatientDetails = async () => {
     try {
       setLoading(true);
       const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/patient/getPatient/${id}`);
@@ -594,35 +815,10 @@ export function Sidebar() {
     }
   };
 
-  useEffect(() => {
-    addTab({ id: "/dashboard", name: "Home", path: `/dashboard/${id}` });
-  }, [addTab]);
-
   return (
     <div className="flex h-screen bg-gray-100">
       <div className="w-64 bg-[#F8FCFF] shadow-md">
-        {/* <div className="p-4 bg-white rounded-lg">
-          {loading ? (
-            <div className="text-center text-gray-500">Loading...</div>
-          ) : patient ? (
-            <>
-              <div className="flex flex-col items-center space-y-4">
-                <div className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500 cursor-pointer">
-                  <img src={`${import.meta.env.VITE_BASE_URL}${patient.patientImage}`} alt="Patient" className="w-full h-full object-cover" />
-                </div>
-                <div className="text-center cursor-pointer">
-                  <div className="text-lg font-semibold text-gray-800">{patient.firstName} {patient.lastName}</div>
-                  <div className="text-sm text-gray-500">DOB: {patient.dateOfBirth}</div>
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="text-center text-gray-500">No patient data available</div>
-          )}
-        </div> */}
-
-
-<div className="p-4 bg-white rounded-lg">
+      <div className="p-4 bg-white rounded-lg">
   {loading ? (
     <div className="text-center text-gray-500">Loading...</div>
   ) : patient ? (
@@ -685,78 +881,24 @@ export function Sidebar() {
   )}
 </div>
         <div className="p-2">
-          <ul className="space-y-2 ">
-          <li className="bg-[#002D62] text-white flex items-center gap-3 p-3 rounded-lg font-bold">
-              <FaUser size={20} /> Search
-            </li>
-            
-            <Link to={`/reviewsystem/${id}`}> <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaStethoscope size={18} /> Review of System
-            </li></Link>
-            <Link to={`/vitals/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaHeartbeat size={18} /> Vitals
-            </li></Link>
-            <Link to={`/allergies/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaAllergies size={18} /> Allergies
-            </li></Link>
-            <Link to={`/medication/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaPills size={18} /> Medications
-            </li></Link>
-            <Link to={`/LabOrders/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaMicroscope size={18} /> Lab Orders
-            </li></Link>
-            <Link to={`/message/${id}`} > <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaEnvelope size={18} /> Messages
-            </li></Link>
-            <Link to={`/quickMemo/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaStickyNote size={18} /> Quick Memo
-            </li></Link>
-            <Link to={`/healthWatcher/${id}`} >
-            <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaNotesMedical size={18} /> Health Watcher
-            </li></Link>
-            <Link to={`/encounter/${id}`} > <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaFileMedicalAlt size={18} /> Encounters
-            </li></Link>
-            <Link to={`/problems/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaTasks size={18} /> Problems
-            </li></Link>
-            <Link to={`/notes/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaStickyNote size={18} /> Notes
-            </li></Link>
-            <Link to={`/planSummary/${id}`} >
-            <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-            <FaBriefcaseMedical size={18} /> Plan Summary
-            </li>
-            </Link>
-            <Link to={`/document/${id}`} >
-            <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-            <FaClipboard size={18}/> Documents
-            </li>
-            </Link>
-            <Link to={`/result/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaMicroscope size={18} /> Results
-            </li></Link>
-
-            <Link to={`/immunizations/${id}`} > <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaSyringe size={18} /> Immunizations
-            </li></Link>
-            <Link to={`/immunotherapy/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaHandHoldingMedical size={18} /> Immunotherapy
-            </li></Link>
-            <Link to={`/riskfactor/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-              <FaHeartbeat size={18} /> Risk Factors
-            </li></Link>
-            <Link to={`/implimentableDevice/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-            <FaHospitalUser size={18} /> Implantable Device
-            </li></Link>
-            <Link to={`/familyConnection/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-            <FaConnectdevelop size={18} /> Family Connections
-            </li></Link>
-            <Link to={`/refferal/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
-            <FaNotesMedical size={18} /> Referrals
-            </li>
-            </Link>
+          <div className="relative mb-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full p-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <FaSearch className="absolute left-3 top-3 text-gray-500" size={18} />
+          </div>
+          <ul className="space-y-2">
+            {filteredItems.map((item, index) => (
+              <Link key={index} to={item.path}>
+                <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+                  {item.icon} {item.label}
+                </li>
+              </Link>
+            ))}
           </ul>
         </div>
       </div>
