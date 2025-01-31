@@ -199,10 +199,12 @@ export function Sidebar() {
               <FaBriefcaseMedical size={20} className="mr-3 text-green-500" />
               Plan Summary
             </button>
+            <Link to={`/document/${id}`} >
             <button className="flex items-center text-black hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
               <FaFileMedical size={20} className="mr-3 text-teal-500" />
               Documents
             </button>
+            </Link>
             <Link to={`/result/${id}`} ><button className="flex items-center text-black hover:text-teal-600 hover:bg-teal-50 py-2 rounded-lg transition duration-300 px-3">
           <FaFileInvoice size={20} className="mr-3 text-blue-500" />
               Results

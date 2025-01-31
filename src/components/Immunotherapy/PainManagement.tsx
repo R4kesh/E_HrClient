@@ -477,7 +477,6 @@
 
 // export default PainManagement
 
-
 import React, { useState, useEffect } from 'react';
 
 const PainManagement = () => {
@@ -502,7 +501,8 @@ const PainManagement = () => {
   const [PainLocation2Data, setPainLocation2Data] = useState([]);
   const [PainLocation2Column, setPainLocation2Columns] = useState(1);
 
-  const [selectedOption, setSelectedOption] = useState('pain management'); // Default selected option
+  const [selectedOption, setSelectedOption] = useState('all'); // Default to show all
+  const [isFilterActive, setIsFilterActive] = useState(false); // Track if filter is active
 
   useEffect(() => {
     const PainManagementData = [
@@ -572,19 +572,75 @@ const PainManagement = () => {
   const addPainLocation2 = () => setPainLocation2Columns(PainLocation2Column + 1);
 
   const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
+    const value = event.target.value;
+    setSelectedOption(value);
+    setIsFilterActive(value !== 'all'); // Activate filter if not 'all'
   };
 
+  // Helper function to render a table
+  const renderTable = (title, data, columns, addColumnsFunction, bgColor = 'blue') => (
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+      <h2 className={`px-6 py-4 text-xl font-semibold text-gray-800 bg-gradient-to-r from-blue-600 to-blue-600 text-white`}>
+        {title}
+      </h2>
+      <table className="min-w-full">
+        <thead className={`bg-gradient-to-r from-blue-600 to-blue-600`}>
+          <tr>
+            <th className="px-8 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
+              Measure
+            </th>
+            {Array.from({ length: columns }).map((_, index) => (
+              <th
+                key={index}
+                className="px-8 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider"
+              >
+                Result {index + 1}
+              </th>
+            ))}
+            <th className="py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
+              <button
+                onClick={addColumnsFunction}
+                className={`bg-white text-${bgColor}-600 px-4 py-2 rounded-lg shadow-md hover:bg-${bgColor}-50 transition duration-200`}
+              >
+                Add Column
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-200">
+          {data.map((test, index) => (
+            <tr key={index} className="hover:bg-gray-50 transition duration-200">
+              <td className="px-4 py-2 whitespace-nowrap text-base font-medium text-gray-900">
+                {test}
+              </td>
+              {Array.from({ length: columns }).map((_, colIndex) => (
+                <td key={colIndex} className="px-8 py-4 whitespace-nowrap">
+                  <input
+                    type="text"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                    placeholder="Enter value"
+                  />
+                </td>
+              ))}
+              <td className="px-8 py-4 whitespace-nowrap"></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-purple-50 min-h-screen">
+    <div className="bg-gradient-to-r  min-h-screen">
       <div className="max-w-7xl mx-auto space-y-12 p-6">
         {/* Filter Dropdown */}
-        <div className="flex justify-end">
+        <div className="flex justify-start">
           <select
             value={selectedOption}
             onChange={handleOptionChange}
             className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
+            <option value="all">Show All</option>
             <option value="pain management">Pain Management</option>
             <option value="pain enhance visit">Pain Enhance Visit</option>
             <option value="pain1 data">Pain 1 Data</option>
@@ -595,112 +651,38 @@ const PainManagement = () => {
           </select>
         </div>
 
-        {/* Conditional Rendering Based on Selected Option */}
-        {selectedOption === 'pain management' && (
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <h2 className="px-6 py-4 text-xl font-semibold text-gray-800 bg-gradient-to-r from-blue-600 to-blue-600 text-white">
-              Pain Management
-            </h2>
-            <table className="min-w-full">
-              <thead className="bg-gradient-to-r from-blue-600 to-blue-600">
-                <tr>
-                  <th className="px-8 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                    Measure
-                  </th>
-                  {Array.from({ length: PainManagementColumn }).map((_, index) => (
-                    <th
-                      key={index}
-                      className="px-8 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider"
-                    >
-                      Result {index + 1}
-                    </th>
-                  ))}
-                  <th className="py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                    <button
-                      onClick={addPainManagementColumns}
-                      className="bg-white text-blue-600 px-4 py-2 rounded-lg shadow-md hover:bg-blue-50 transition duration-200"
-                    >
-                      Add Column
-                    </button>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {PainManagementData.map((test, index) => (
-                  <tr key={index} className="hover:bg-gray-50 transition duration-200">
-                    <td className="px-4 py-2 whitespace-nowrap text-base font-medium text-gray-900">
-                      {test}
-                    </td>
-                    {Array.from({ length: PainManagementColumn }).map((_, colIndex) => (
-                      <td key={colIndex} className="px-8 py-4 whitespace-nowrap">
-                        <input
-                          type="text"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
-                          placeholder="Enter value"
-                        />
-                      </td>
-                    ))}
-                    <td className="px-8 py-4 whitespace-nowrap"></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        {/* Render All Tables if No Filter is Active */}
+        {!isFilterActive && (
+          <>
+            {renderTable('Pain Management', PainManagementData, PainManagementColumn, addPainManagementColumns, 'blue')}
+            {renderTable('Pain Enhanced Visit', PainEnhanceData, PainEnhanceColumn, addPainEnhanceColumns, 'purple')}
+            {renderTable('Pain 1 Data', Pain1Data, Pain1DataColumn, addPain1DataColumns, 'green')}
+            {renderTable('Pain 2 Data', Pain2Data, Pain2DataColumn, addPain2DataColumns, 'red')}
+            {renderTable('Pain 3 Data', Pain3Data, Pain3DataColumn, addPain3DataColumns, 'yellow')}
+            {renderTable('Pain Management Visit_Pain Location 1', PainLocation1Data, PainLocation1Column, addPainLocation1, 'indigo')}
+            {renderTable('Pain Management Visit_Pain Location 2', PainLocation2Data, PainLocation2Column, addPainLocation2, 'pink')}
+          </>
         )}
 
-        {selectedOption === 'pain enhance visit' && (
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <h2 className="px-3 py-1 text-xl font-semibold text-gray-800 bg-gradient-to-r from-blue-600 to-blue-600 text-white">
-              Pain Enhanced Visit
-            </h2>
-            <table className="min-w-full">
-              <thead className="bg-gradient-to-r from-blue-600 to-blue-600">
-                <tr>
-                  <th className="px-8 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                    Measure
-                  </th>
-                  {Array.from({ length: PainEnhanceColumn }).map((_, index) => (
-                    <th
-                      key={index}
-                      className="px-8 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider"
-                    >
-                      Result {index + 1}
-                    </th>
-                  ))}
-                  <th className="py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
-                    <button
-                      onClick={addPainEnhanceColumns}
-                      className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow-md hover:bg-purple-50 transition duration-200"
-                    >
-                      Add Column
-                    </button>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {PainEnhanceData.map((test, index) => (
-                  <tr key={index} className="hover:bg-gray-50 transition duration-200">
-                    <td className="px-4 py-2 whitespace-nowrap text-base font-medium text-gray-900">
-                      {test}
-                    </td>
-                    {Array.from({ length: PainEnhanceColumn }).map((_, PainEnhanceIndex) => (
-                      <td key={PainEnhanceIndex} className="px-8 py-4 whitespace-nowrap">
-                        <input
-                          type="text"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
-                          placeholder="Enter value"
-                        />
-                      </td>
-                    ))}
-                    <td className="px-8 py-4 whitespace-nowrap"></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        {/* Render Only Selected Table if Filter is Active */}
+        {isFilterActive && (
+          <>
+            {selectedOption === 'pain management' &&
+              renderTable('Pain Management', PainManagementData, PainManagementColumn, addPainManagementColumns, 'blue')}
+            {selectedOption === 'pain enhance visit' &&
+              renderTable('Pain Enhanced Visit', PainEnhanceData, PainEnhanceColumn, addPainEnhanceColumns, 'purple')}
+            {selectedOption === 'pain1 data' &&
+              renderTable('Pain 1 Data', Pain1Data, Pain1DataColumn, addPain1DataColumns, 'green')}
+            {selectedOption === 'pain2 data' &&
+              renderTable('Pain 2 Data', Pain2Data, Pain2DataColumn, addPain2DataColumns, 'red')}
+            {selectedOption === 'pain3 data' &&
+              renderTable('Pain 3 Data', Pain3Data, Pain3DataColumn, addPain3DataColumns, 'yellow')}
+            {selectedOption === 'pain location 1' &&
+              renderTable('Pain Management Visit_Pain Location 1', PainLocation1Data, PainLocation1Column, addPainLocation1, 'indigo')}
+            {selectedOption === 'pain location 2' &&
+              renderTable('Pain Management Visit_Pain Location 2', PainLocation2Data, PainLocation2Column, addPainLocation2, 'pink')}
+          </>
         )}
-
-        {/* Add similar conditional blocks for other options like Pain 1 Data, Pain 2 Data, etc. */}
       </div>
     </div>
   );
