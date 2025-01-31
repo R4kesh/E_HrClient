@@ -246,7 +246,7 @@ const NavMenu = ({ title, items }) => {
     >
       <button
         onClick={toggleMenu}
-        className="px-4 py-2 text-gray-700 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 font-medium inline-flex items-center"
+        className="px-4 py-2 text-[#002D62]  dark:text-white hover:text-blue-500 dark:hover:text-blue-400  hover:bg-[#CCE5FF] hover:shadow-xl transition duration-200 font-semibold inline-flex items-center"
       >
         {title}
         <svg
