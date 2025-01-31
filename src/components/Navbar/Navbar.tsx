@@ -227,7 +227,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaMoon, FaSun, FaChevronRight } from "react-icons/fa";
+import { FaMoon, FaSun, FaChevronRight, FaUserCircle } from "react-icons/fa";
 
 const NavMenu = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -456,9 +456,16 @@ const Navbar = () => {
             <NavMenu title="Help" items={menuItems.Help} />
           </div>
 
+        
+
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
+          <FaUserCircle className="text-2xl text-gray-700 dark:text-gray-300" />
+          <div className="flex flex-col ">
+    <p className="text-lg font-semibold text-gray-700 dark:text-white">Rakesh</p>
+    <p className="text-sm text-gray-500 dark:text-gray-400">(Staff)</p>
+  </div>
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"

@@ -1,36 +1,38 @@
+import React,{useState,useEffect} from 'react'
 
+const Ob_Prenatal = () => {
 
-  import React,{useState,useEffect} from 'react'
-  
-  const DiabetesComponent = () => {
-
-    const [diabeticTestData,setdiabeticTest]=useState([]);
-    const [diabeticTestColumns, setdiabeticTestColumns] = useState(1);
+    const [Ob_Prenatal,setOb_PrenatalTest]=useState([]);
+    const [Ob_PrenatalTestColumns, setOb_PrenatalTestColumns] = useState(1);
 
     useEffect(() => {
-    const diabeticTestData = [
-      "Hemoglobin A1c",
-      "BMI",
-      "Weight",
-      "BP-Systolic",
-      "BP-Diastolic",
-      "Fasting Blood Glucose",
-      "Random Blood Sugar",
-      "Oral Glucose Tolerance Test",
-      "Insulin"
+
+    const Ob_Prenatal = [
+        "EGA",
+        "Fundal Height (cm)",
+        "Presentation",
+        "Fetal Movement",
+        "Preterm Labor",
+        "Dilation",
+        "Effacement",
+        "Edema",
+        "Urinalysis - Glucose",
+        "Urinalysis - Protein",
+        "Weight",
+        "BP Systolic",
+        "BP Diastolic",
+        "Next Appointment"
+      ];
+      setOb_PrenatalTest(Ob_Prenatal)
+
+    }, []);
+
+    const addOb_PrenatalTestColumns = () => setOb_PrenatalTestColumns(Ob_PrenatalTestColumns+1)
       
-    ];
-
-    setdiabeticTest(diabeticTestData)
-
-  }, []);
-
-  const adddiabeticTestColumns = () =>setdiabeticTestColumns(diabeticTestColumns+1)
-    
-    return (
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+  return (
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
       <h2 className="px-3 py-1 text-xl font-semibold text-gray-800 bg-gradient-to-r from-blue-600 to-blue-600 text-white">
-      Diabetes
+     OB_Prenatal
       </h2>
       <table className="min-w-full">
         <thead className="bg-gradient-to-r from-blue-600 to-blue-600">
@@ -38,7 +40,7 @@
             <th className="px-8  text-left text-sm font-semibold text-white uppercase tracking-wider">
               Test Name
             </th>
-            {Array.from({ length: diabeticTestColumns }).map((_, index) => (
+            {Array.from({ length: Ob_PrenatalTestColumns }).map((_, index) => (
               <th
                 key={index}
                 className="px-8 py-4 text-left text-sm font-semibold text-white uppercase tracking-wider"
@@ -48,7 +50,7 @@
             ))}
             <th className=" py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
               <button
-                onClick={adddiabeticTestColumns}
+                onClick={addOb_PrenatalTestColumns}
                 className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow-md hover:bg-purple-50 transition duration-200"
               >
                 Add Column
@@ -57,13 +59,13 @@
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
-          {diabeticTestData.map((test, index) => (
+          {Ob_Prenatal.map((test, index) => (
             <tr key={index} className="hover:bg-gray-50 transition duration-200">
               <td className="px-4 py-2 whitespace-nowrap text-base font-medium text-gray-900">
                 {test} {/* Render CBC test name */}
               </td>
-              {Array.from({ length: diabeticTestColumns }).map((_, diabeticTestIndex) => (
-                <td key={diabeticTestIndex} className="px-8 py-4 whitespace-nowrap">
+              {Array.from({ length: Ob_PrenatalTestColumns }).map((_, Ob_PrenatalTestIndex) => (
+                <td key={Ob_PrenatalTestIndex} className="px-8 py-4 whitespace-nowrap">
                   <input
                     type="text"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
@@ -77,8 +79,7 @@
         </tbody>
       </table>
     </div>
-    )
-  }
-  
-  export default DiabetesComponent
-  
+  )
+}
+
+export default Ob_Prenatal
