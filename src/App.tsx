@@ -74,6 +74,7 @@ import MessagePage from './pages/MessagePage';
 import Immunotherapy from './pages/Immunotherapy';
 import LabOrderContent from './components/LabOrders/LabOrderContent';
 import DocumentPage from './pages/DocumentPage';
+import PlanSummaryPage from './pages/PlanSummaryPage';
 function App() {
   return (
     <PatientTabProvider> 
@@ -118,6 +119,7 @@ function App() {
          <Route path="/immunotherapy/:id" element={<Immunotherapy/>}/>
          <Route path="/labordercontent/:id" element={<LabOrderContent/>}/>
          <Route path="/document/:id" element={<DocumentPage/>}/>
+         <Route path="/planSummary/:id" element={<PlanSummaryPage/>}/>
 
           </Routes>
         {/* </main> */}

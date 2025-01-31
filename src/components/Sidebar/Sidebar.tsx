@@ -724,12 +724,16 @@ export function Sidebar() {
             <Link to={`/notes/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
               <FaStickyNote size={18} /> Notes
             </li></Link>
+            <Link to={`/planSummary/${id}`} >
             <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
             <FaBriefcaseMedical size={18} /> Plan Summary
             </li>
+            </Link>
+            <Link to={`/document/${id}`} >
             <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
             <FaClipboard size={18}/> Documents
             </li>
+            </Link>
             <Link to={`/result/${id}`} ><li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium">
               <FaMicroscope size={18} /> Results
             </li></Link>
