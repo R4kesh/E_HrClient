@@ -159,7 +159,7 @@ const ROSSection = () => {
         {conditions.map((condition, index) => (
           <div key={index} className="space-y-3">
             <div className="flex items-center">
-              <label htmlFor={`condition-${index}`} className="text-lg text-[#1f3f63]">{condition.question}</label>
+              <label htmlFor={`condition-${index}`} className="text-md font-semibold text-[#1c4b85]">{condition.question}</label>
             </div>
 
             {/* Answer Selection */}
@@ -167,11 +167,11 @@ const ROSSection = () => {
               id={`condition-${index}`}
               value={selectedAnswers[condition.question] || ''}
               onChange={(e) => handleAnswerChange(condition.question, e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="w-full px-4 py-2 border text-[#3972c7] rounded-md focus:ring-teal-500 focus:border-teal-500"
             >
-              <option value="">Select answer</option>
+              <option value="" >Select answer</option>
               {condition.options.map((option) => (
-                <option key={option} value={option}>{option}</option>
+                <option  key={option} value={option}>{option}</option>
               ))}
             </select>
           </div>
@@ -180,7 +180,7 @@ const ROSSection = () => {
 
       {/* Add Custom Condition */}
       <div className="mt-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">Add Custom Condition</h3>
+        <h3 className="text-lg font-semibold text-[#002D62] mb-2">Add Custom Condition</h3>
         <div className="flex items-center space-x-3">
           <input
             type="text"

@@ -1126,13 +1126,13 @@ function DoctorVitalsForm() {
     <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-3 items-center">
       {labels.map((label) => (
         <div key={label.key}>
-          <label className="block text-sm text-gray-600">
+          <label className="block text-md font-semibold text-[#1c4b85]">
             {label.label} {label.unit && `(${label.unit})`}
           </label>
           {label.type === "select" ? (
             <select
               name={label.key}
-              className="w-full border rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-300"
+              className="w-full border rounded  px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-300"
               required={label.required}
             >
               {label.options.map((option, index) => (
@@ -1146,7 +1146,7 @@ function DoctorVitalsForm() {
               type={label.type || "text"}
               step={label.step || "any"}
               name={label.key}
-              className="w-full border rounded px-2 py-1 transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-blue-300"
+              className="w-full border rounded mt-3 placeholder-[#6786b4] px-2 py-1 transition-all duration-300 ease-in-out focus:outline-none  focus:ring-2 focus:ring-blue-500 hover:border-blue-300"
               placeholder={` ${label.placeholder}`}
               required={label.required}
             />
@@ -1201,7 +1201,7 @@ function DoctorVitalsForm() {
 
           </div>
                      <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-auto p-8">
-       <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+       <h3 className="text-2xl font-bold text-[#002D62] mb-6 text-center">
          Additional Information
        </h3>
        <div className="flex flex-col gap-6 items-center">

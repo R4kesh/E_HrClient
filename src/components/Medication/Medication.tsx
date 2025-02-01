@@ -87,11 +87,11 @@ const Medication = () => {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {/* Medication Selection */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Select Medication</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Select Medication</label>
                   <select
                     value={selectedMedicine}
                     onChange={handleMedicineChange}
-                    className="w-full p-3 border rounded-md bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+                    className="w-full p-3 border rounded-md  text-[#3972c7] bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
                   >
                     <option value="">Choose a medicine</option>
                     {medicines.map((medicine, index) => (
@@ -104,25 +104,25 @@ const Medication = () => {
 
                 {/* Pharmacy */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Pharmacy</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Pharmacy</label>
                   <input
                     type="text"
                     value={medicationData.pharmacy || ""}
                     readOnly
                     placeholder="Pharmacy will autofill"
-                    className="w-full p-3 border rounded-md bg-gray-100 focus:outline-none transition duration-300"
+                    className="w-full p-3 text-[#3972c7] border rounded-md bg-gray-100 focus:outline-none transition duration-300"
                   />
                 </div>
 
                 {/* Status */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Status</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Status</label>
                   <input
                     type="text"
                     value={medicationData.status || ""}
                     readOnly
                     placeholder="Status will autofill"
-                    className="w-full p-3 border rounded-md bg-gray-100 focus:outline-none transition duration-300"
+                    className="w-full p-3 border text-[#3972c7] rounded-md bg-gray-100 focus:outline-none transition duration-300"
                   />
                 </div>
               </div>
@@ -130,37 +130,37 @@ const Medication = () => {
               <div className="grid gap-6 md:grid-cols-3 mt-6">
                 {/* Dosage */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Dosage</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Dosage</label>
                   <input
                     type="text"
                     value={medicationData.dosage || ""}
                     readOnly
                     placeholder="Dosage will autofill"
-                    className="w-full p-3 border rounded-md bg-gray-100 focus:outline-none transition duration-300"
+                    className="w-full p-3 border text-[#3972c7] rounded-md bg-gray-100 focus:outline-none transition duration-300"
                   />
                 </div>
 
                 {/* Form */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Form</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Form</label>
                   <input
                     type="text"
                     value={medicationData.form || ""}
                     readOnly
                     placeholder="Form will autofill"
-                    className="w-full p-3 border rounded-md bg-gray-100 focus:outline-none transition duration-300"
+                    className="w-full p-3 border rounded-md text-[#3972c7] bg-gray-100 focus:outline-none transition duration-300"
                   />
                 </div>
 
                 {/* Date */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Date</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Date</label>
                   <input
                     type="date"
                     value={medicationData.date || ""}
                     readOnly
                     placeholder="Date will autofill"
-                    className="w-full p-3 border rounded-md bg-gray-100 focus:outline-none transition duration-300"
+                    className="w-full p-3 border rounded-md text-[#3972c7] bg-gray-100 focus:outline-none transition duration-300"
                   />
                 </div>
               </div>
@@ -168,13 +168,13 @@ const Medication = () => {
               <div className="grid gap-6 md:grid-cols-3 mt-6">
                 {/* Refills */}
                 <div>
-                  <label className="block text-gray-600 mb-2">Refills</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-2">Refills</label>
                   <input
                     type="number"
                     value={medicationData.refills || ""}
                     readOnly
                     placeholder="Refills will autofill"
-                    className="w-full p-3 border rounded-md bg-gray-100 focus:outline-none transition duration-300"
+                    className="w-full p-3 border rounded-md text-[#3972c7] bg-gray-100 focus:outline-none transition duration-300"
                   />
                 </div>
               </div>
@@ -199,7 +199,7 @@ const Medication = () => {
                     className="bg-gray-50 shadow-lg rounded-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <h4 className="text-xl font-semibold text-gray-800 mb-2">{card.title}</h4>
+                    <h4 className="text-xl font-semibold text-[#1c4b85] mb-2">{card.title}</h4>
                     <p className="text-gray-600">{card.description}</p>
                   </motion.div>
                 ))}
@@ -209,7 +209,7 @@ const Medication = () => {
 
         {/* Table Section: Medication List */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 ">Medication List</h3>
+          <h3 className="text-2xl font-bold text-[#002D62] mb-6 ">Medication List</h3>
           <div className="overflow-x-auto bg-white shadow-xl rounded-lg">
             <table className="min-w-full table-auto">
               <thead className="bg-blue-200">
