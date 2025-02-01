@@ -240,7 +240,7 @@ export default function Notes() {
       <div className="bg-white w-full  p-8 rounded-lg shadow-lg transition-all duration-300">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">Note Section</h2>
+          <h2 className="text-2xl font-bold text-[#002D62]">Note Section</h2>
         </div>
 
         {/* Form */}

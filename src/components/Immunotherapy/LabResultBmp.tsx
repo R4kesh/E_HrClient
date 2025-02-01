@@ -29,7 +29,7 @@ const LabResultBmp = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-6xl">
-        <h2 className="text-3xl font-semibold text-blue-700 text-center mb-8">Lab Results BMP</h2>
+        <h2 className="text-3xl font-semibold text-[#002D62] text-center mb-8">Lab Results BMP</h2>
         <div className="overflow-x-auto">
           <table className="w-full table-auto border-collapse text-left">
             <thead>

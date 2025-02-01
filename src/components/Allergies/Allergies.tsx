@@ -333,7 +333,7 @@ const Allergies = () => {
       <div className="max-w-7xl mx-auto p-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800mb-2">Allergy Management</h1>
+            <h1 className="text-2xl font-bold  mb-2  text-[#002D62]">Allergy Management</h1>
             <p className="text-gray-600">Track and manage patient allergies</p>
           </div>
           <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-lg">

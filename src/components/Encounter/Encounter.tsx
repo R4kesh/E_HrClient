@@ -180,7 +180,7 @@ function Encounter() {
         {/* Header */}
         <div className="bg-white shadow-lg rounded-lg p-6 flex justify-between items-center border-t-4 border-blue-600">
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-gray-800">Encounters</h1>
+            <h1 className="text-2xl font-bold text-[#002D62]">Encounters</h1>
             <p className="text-gray-600">Keep track of all your patient interactions</p>
           </div>
           <Calendar className="h-6 w-6 text-blue-600" />
@@ -188,7 +188,7 @@ function Encounter() {
 
         {/* Encounter List */}
         <div className="bg-white shadow-md rounded-lg p-6 divide-y divide-gray-200">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Patient Encounters</h2>
+          <h2 className="text-xl font-semibold text-[#002D62] mb-4">Patient Encounters</h2>
           {loading ? (
             <div className="text-center text-gray-500 py-8">Loading encounters...</div>
           ) : (

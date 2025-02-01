@@ -6,7 +6,7 @@ const Immunization = () => {
         <div className="max-w-7xl mx-auto p-2 bg-gray-100">
           {/* Header Section */}
           <div className="flex justify-between items-center mb-2">
-            <h1 className="text-2xl font-bold text-gray-800">Immunization Record</h1>
+            <h1 className="text-2xl font-bold text-[#002D62]">Immunization Record</h1>
             <div className="flex gap-2">
       {/* Save Button */}
       <button className="bg-blue-300 text-white px-2 h-5 rounded flex items-center gap-2 hover:bg-blue-600">
@@ -57,7 +57,7 @@ const Immunization = () => {
           <div className="space-y-4">
             {/* Administration Card */}
             <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-bold mb-3">Administration</h2>
+              <h2 className="text-lg text-[#002D62] font-bold mb-3">Administration</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div>
                   <input type="checkbox" id="stateRegistries" />
@@ -108,7 +108,7 @@ const Immunization = () => {
     
             {/* Medication and Procedure Details */}
             <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-bold mb-3">Medication and Procedure Details</h2>
+              <h2 className="text-lg text-[#002D62] font-bold mb-3">Medication and Procedure Details</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {/* Dosage */}
                 <div>
@@ -132,7 +132,7 @@ const Immunization = () => {
     
             {/* Vaccine Information */}
             <div className="bg-white p-4 rounded shadow-md">
-              <h2 className="text-lg font-bold mb-3">Vaccine Information</h2>
+              <h2 className="text-lg text-[#002D62] font-bold mb-3">Vaccine Information</h2>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-1">

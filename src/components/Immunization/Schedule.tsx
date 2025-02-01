@@ -34,7 +34,7 @@ const Schedule = () => {
       </p>
 
       <div className="bg-white shadow-lg rounded-lg p-1">
-        <h2 className="text-lg font-semibold text-blue-700 mb-4">
+        <h2 className="text-lg font-semibold text-[#002D62] mb-4">
           Customize Schedule for Patient
         </h2>
         <table className="w-full border-collapse border border-gray-300">

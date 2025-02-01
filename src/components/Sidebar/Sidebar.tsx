@@ -851,7 +851,7 @@ export function Sidebar() {
             document.getElementById('details-section').classList.remove('max-h-[300px]')
           }
         >
-          <div className="text-lg font-semibold text-gray-800">{patient.firstName} {patient.lastName}</div>
+          <div className="text-lg font-semibold text-[#002D62]">{patient.firstName} {patient.lastName}</div>
           <div className="text-sm text-gray-500">DOB: {patient.dateOfBirth}</div>
         </div>
       </div>

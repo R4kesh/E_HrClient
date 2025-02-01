@@ -152,14 +152,14 @@ const ROSSection = () => {
 
   return (
     <div className="space-y-6 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Review of Systems</h2>
+      <h2 className="text-2xl font-bold text-[#002D62]  mb-4">Review of Systems</h2>
       
       {/* Grid container for the conditions */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {conditions.map((condition, index) => (
           <div key={index} className="space-y-3">
             <div className="flex items-center">
-              <label htmlFor={`condition-${index}`} className="text-lg text-gray-700">{condition.question}</label>
+              <label htmlFor={`condition-${index}`} className="text-lg text-[#1f3f63]">{condition.question}</label>
             </div>
 
             {/* Answer Selection */}

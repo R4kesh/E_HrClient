@@ -249,7 +249,7 @@ const Referral = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Form Section */}
         <div className="w-full lg:w-2/3 bg-white shadow-lg rounded-lg p-6 border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">
+          <h2 className="text-2xl font-bold text-[#002D62] mb-6 border-b pb-2">
             Create Referral
           </h2>
           <form className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -288,7 +288,7 @@ const Referral = () => {
 
       {/* Table Section */}
       <div className="mt-12">
-        <h3 className="text-xl font-semibold text-blue-800 mb-4">Referral Table</h3>
+        <h3 className="text-xl font-semibold text-[#002D62] mb-4">Referral Table</h3>
         <div className="overflow-x-auto bg-white shadow-lg rounded-lg p-4 border border-gray-200">
           <table className="w-full table-auto border-collapse border border-gray-300">
             <thead className="bg-blue-50">

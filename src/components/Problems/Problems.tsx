@@ -182,11 +182,11 @@ const Problems = () => {
   }, [addTab, id]);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-6">
-      <div className="max-w-5xl mx-auto space-y-12">
+    <div className="min-h-screen bg-gray-50 py-4 px-6">
+      <div className=" mx-auto space-y-12">
         {/* Form Section */}
         <div className="bg-gradient-to-r from-teal-50 via-white to-blue-50 shadow-md rounded-lg p-8 transition-transform transform hover:scale-105 duration-500">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">
+          <h2 className="text-2xl font-bold text-[#002D62] mb-6 border-b pb-2">
             Add Problem Details
           </h2>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -226,7 +226,7 @@ const Problems = () => {
 
         {/* Table Section */}
         <div className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 duration-500">
-          <h3 className="text-xl font-semibold text-blue-700 mb-4">Problem History</h3>
+          <h3 className="text-xl font-semibold text-[#002D62] mb-4">Problem History</h3>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-200">
               <thead className="bg-gradient-to-r from-blue-100 to-blue-200">

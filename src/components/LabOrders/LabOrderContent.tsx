@@ -256,7 +256,7 @@
 
 
 import React from 'react';
-import { Calendar, User, FileText, Clock, Users, MessageSquare, AlertCircle, Building, CreditCard, ChevronDown, Plus, Shield } from 'lucide-react';
+import { Calendar, User, FileText,  Users, MessageSquare, AlertCircle, Building, CreditCard, ChevronDown, Plus, Shield } from 'lucide-react';
 
 const Card = ({ children, className = '' }) => (
   <div className={`bg-white rounded-lg shadow-lg overflow-hidden ${className}`}>
@@ -271,7 +271,7 @@ const CardHeader = ({ children, className = '' }) => (
 );
 
 const CardTitle = ({ children, className = '' }) => (
-  <h2 className={`text-xl font-semibold ${className}`}>
+  <h2 className={`text-xl  font-semibold ${className}`}>
     {children}
   </h2>
 );
@@ -320,7 +320,7 @@ const LabOrderContent = () => {
     <div className="min-h-screen bg-gray-50 p-6">
       <Card className="max-w-5xl mx-auto">
         <CardHeader className="bg-blue-600">
-          <CardTitle className="text-white flex items-center gap-2">
+          <CardTitle className="text-white flex items-center gap-2 ">
             <FileText className="h-6 w-6" />
             Lab Order Form
           </CardTitle>

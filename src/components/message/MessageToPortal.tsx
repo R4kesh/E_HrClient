@@ -48,7 +48,7 @@ const MessageToPortal = () => {
 
         <div className="grid grid-cols-2 gap-6">
           <div>
-            <h2 className="text-lg font-medium mb-2">Recipients</h2>
+            <h2 className="text-lg text-[#002D62] font-medium mb-2">Recipients</h2>
             <div className="bg-gray-200 rounded-md p-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-700 font-medium">Account Name</span>
@@ -61,7 +61,7 @@ const MessageToPortal = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-lg font-medium mb-2">Patient</h2>
+            <h2 className="text-lg text-[#002D62] font-medium mb-2">Patient</h2>
             <div className="bg-gray-200 rounded-md p-4">
               <div className="flex justify-between items-center">
                 <span className="text-gray-700 font-medium">
@@ -76,7 +76,7 @@ const MessageToPortal = () => {
         </div>
 
         <div className="mt-8">
-          <h2 className="text-lg font-medium mb-2">Message</h2>
+          <h2 className="text-lg text-[#002D62] font-medium mb-2">Message</h2>
           <textarea
             rows={8}
             className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
