@@ -220,6 +220,7 @@ import React,{useEffect,useState} from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import { GiHeartOrgan, GiKidneys, GiLungs } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { useTabs } from '../../Context/TabProvider';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 
@@ -229,6 +230,8 @@ const cardVariants = {
 };
 
 const Dashboard = () => {
+  const { addTab } = useTabs();
+
   const { id } = useParams(); // Get patient ID from the route
   const [isPatientOpen, setIsPatientOpen] = useState(false);
   const [patient, setPatient] = useState(null); // State to store patient details
@@ -243,7 +246,8 @@ const Dashboard = () => {
     if (id) {
       fetchPatientDetails();
     }
-  }, [id]);
+    addTab({ id: "/", name: "Home", path:`/dashboard/${id}` });
+  }, [addTab,id]);
 
   const fetchPatientDetails = async () => {
     try {
