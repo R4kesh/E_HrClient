@@ -43,7 +43,7 @@ const Vitals = () => {
             <th className=" py-4 text-left text-sm font-semibold text-white uppercase tracking-wider">
               <button
                 onClick={addVitalsColumns}
-                className="bg-white text-purple-600 px-4 py-2 rounded-lg shadow-md hover:bg-purple-50 transition duration-200"
+                className="bg-white text-[#1c4b85] px-4 py-2 rounded-lg shadow-md hover:bg-purple-50 transition duration-200"
               >
                 Add Column
               </button>
@@ -53,14 +53,14 @@ const Vitals = () => {
         <tbody className="divide-y divide-gray-200">
           {VitalsData.map((test, index) => (
             <tr key={index} className="hover:bg-gray-50 transition duration-200">
-              <td className="px-4 py-2 whitespace-nowrap text-base font-medium text-gray-900">
+              <td className="px-4 py-2 whitespace-nowrap ttext-sm font-semibold text-[#1c4b85]">
                 {test} {/* Render CBC test name */}
               </td>
               {Array.from({ length: VitalsColumns }).map((_, vitalsIndex) => (
                 <td key={vitalsIndex} className="px-8 py-4 whitespace-nowrap">
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                    className="w-full px-4 py-2 border placeholder-[#6786b4] border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
                     placeholder="Enter value"
                   />
                 </td>

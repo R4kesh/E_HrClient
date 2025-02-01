@@ -49,7 +49,7 @@ function LabResultCmp() {
         <tbody>
           {labResults.map((result, index) => (
             <tr key={index} className="hover:bg-blue-50 transition-colors">
-              <td className="py-3 px-6 text-sm font-medium text-gray-700">{result.measure}</td>
+              <td className="py-3 px-6 text-sm text-[#3972c7] font-semibold">{result.measure}</td>
               <td className="py-3 px-6">
                 <div className="flex gap-3">
                   {result.values.map((value, valueIndex) => (
@@ -59,7 +59,7 @@ function LabResultCmp() {
                       value={value}
                       onChange={(e) => handleInputChange(index, valueIndex, e.target.value)}
                       placeholder="Enter value"
-                      className="w-full max-w-xs px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                      className="w-full max-w-xs px-3 py-2 placeholder-[#6786b4] border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                     />
                   ))}
                 </div>

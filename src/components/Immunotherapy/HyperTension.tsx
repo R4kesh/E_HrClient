@@ -30,11 +30,11 @@ const HyperTension = () => {
           <table className="w-full">
             <thead>
               <tr className="bg-blue-50">
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 w-1/4">
+                <th className="px-4 py-3 text-left text-sm font-semibold text-[#1c4b85] w-1/4">
                   Measure
                 </th>
                 {readings.map((reading, index) => (
-                  <th key={index} className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
+                  <th key={index} className="px-4 py-3 text-left text-sm font-semibold text-[#1c4b85]">
                     {reading}
                   </th>
                 ))}
@@ -46,7 +46,7 @@ const HyperTension = () => {
                   key={measurement.id}
                   className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50 hover:bg-blue-50 transition-colors'}
                 >
-                  <td className="px-4 py-3 text-sm text-gray-700 font-medium border-b">
+                  <td className="px-4 py-3 text-sm text-[#3972c7] font-semibold border-b">
                     {measurement.name}
                   </td>
                   {measurement.values.map((value, valueIdx) => (
@@ -60,7 +60,7 @@ const HyperTension = () => {
                           setMeasurements(newMeasurements);
                         }}
                         placeholder="Enter value"
-                        className="w-full p-2 border border-gray-300 rounded-md 
+                        className="w-full p-2 border placeholder-[#6786b4] border-gray-300 rounded-md 
                                  focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
                                  transition-all"
                       />

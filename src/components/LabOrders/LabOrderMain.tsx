@@ -207,13 +207,13 @@ const LabOrderMain = () => {
   
   const InsuranceSection = ({ title, defaultInsurance = "", defaultSubscriber = "", defaultGroup = "", showNone = false }) => (
     <div className="space-y-2">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
+      <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
         <div className="flex items-center gap-2">
           <Shield className="h-4 w-4 text-blue-600" />
           {title}
         </div>
       </label>
-      <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+      <select className="w-full px-3 py-2 rounded-md text-[#3972c7] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
         {showNone && <option>(None)</option>}
         {defaultInsurance && <option>{defaultInsurance}</option>}
       </select>
@@ -223,7 +223,7 @@ const LabOrderMain = () => {
             type="text"
             placeholder="Subscriber ID/Claim #"
             defaultValue={defaultSubscriber}
-            className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-3 py-2 rounded-md border placeholder-[#6786b4] border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         <div>
@@ -231,7 +231,7 @@ const LabOrderMain = () => {
             type="text"
             placeholder="Group/Policy"
             defaultValue={defaultGroup}
-            className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-3 py-2 rounded-md border placeholder-[#6786b4] border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
       </div>
@@ -392,7 +392,7 @@ const LabOrderMain = () => {
             {/* Left Column */}
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <FileText className="h-4 w-4 text-blue-600" />
                     Order #
@@ -405,43 +405,43 @@ const LabOrderMain = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-blue-600" />
                     Provider
                   </div>
                 </label>
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 rounded-md text-[#3972c7] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>SMITH, TRACY MD</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <Users className="h-4 w-4 text-blue-600" />
                     Signers
                   </div>
                 </label>
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 text-[#3972c7] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>Select Signers</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <Building className="h-4 w-4 text-blue-600" />
                     Folder
                   </div>
                 </label>
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 text-[#3972c7] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>Orders</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-blue-600" />
                     Order Date
@@ -450,12 +450,12 @@ const LabOrderMain = () => {
                 <input
                   type="date"
                   defaultValue="2025-01-17"
-                  className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 text-[#3972c7] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Bill To:</label>
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Bill To:</label>
                 <div className="flex gap-4">
                   <label className="flex items-center">
                     <input type="radio" name="billTo" value="provider" className="mr-2" />
@@ -473,7 +473,7 @@ const LabOrderMain = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <AlertCircle className="h-4 w-4 text-blue-600" />
                     Priority
@@ -481,7 +481,7 @@ const LabOrderMain = () => {
                   
                 </label>
                 
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 text-[#3972c7] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>Routine</option>
                 </select>
               </div>
@@ -490,33 +490,33 @@ const LabOrderMain = () => {
             {/* Right Column */}
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <Building className="h-4 w-4 text-blue-600" />
                     Department
                   </div>
                 </label>
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 text-[#3972c7] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>Select Department</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <Building className="h-4 w-4 text-blue-600" />
                     Facility
                   </div>
                 </label>
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 text-[#3972c7] rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>Select Facility</option>
                 </select>
               </div>
 
               {/* Insurance Sections */}
-              <div className="space-y-6">
+              <div className="space-y-6 ">
                 <InsuranceSection 
-                  title="Primary Insurance"
+                  title="Primary Insurance "
                   defaultInsurance="AETNA / U.S. HEALTHCARE"
                   defaultSubscriber="10000044"
                   defaultGroup="825822-10-0"
@@ -527,14 +527,14 @@ const LabOrderMain = () => {
                   showNone={true}
                 />
 
-                <InsuranceSection 
+                <InsuranceSection  
                   title="Tertiary Insurance"
                   showNone={true}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4 text-blue-600" />
                     Date of Injury
@@ -542,7 +542,7 @@ const LabOrderMain = () => {
                 </label>
                 <input
                   type="date"
-                  className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 rounded-md text-[#3972c7] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
@@ -551,14 +551,14 @@ const LabOrderMain = () => {
           {/* Bottom Section */}
           <div className="mt-6 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-blue-600" />
                   CC Providers
                 </div>
               </label>
               <div className="flex gap-2">
-                <select className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full px-3 py-2 rounded-md text-[#3972c7] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>BABBIT - BABBIT, CASEY</option>
                 </select>
                 <button className="p-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">
@@ -568,14 +568,14 @@ const LabOrderMain = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="h-4 w-4 text-blue-600" />
                   Comment
                 </div>
               </label>
               <textarea
-                className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 rounded-md border text-[#3972c7] border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 rows={3}
               />
             </div>
@@ -583,23 +583,23 @@ const LabOrderMain = () => {
             <div className="flex flex-wrap gap-4">
               <label className="flex items-center">
                 <input type="checkbox" className="rounded border-gray-300 text-blue-600" />
-                <span className="ml-2 text-sm text-gray-700">Hold</span>
+                <span className="ml-2 text-sm font-semibold text-[#1c4b85]">Hold</span>
               </label>
               <label className="flex items-center">
                 <input type="checkbox" className="rounded border-gray-300 text-blue-600" />
-                <span className="ml-2 text-sm text-gray-700">High Priority</span>
+                <span className="ml-2 text-sm font-semibold text-[#1c4b85]">High Priority</span>
               </label>
               <label className="flex items-center">
                 <input type="checkbox" className="rounded border-gray-300 text-blue-600" />
-                <span className="ml-2 text-sm text-gray-700">PSC Hold</span>
+                <span className="ml-2 text-sm font-semibold text-[#1c4b85]">PSC Hold</span>
               </label>
               <label className="flex items-center">
                 <input type="checkbox" className="rounded border-gray-300 text-blue-600" />
-                <span className="ml-2 text-sm text-gray-700">Assistant</span>
+                <span className="ml-2 text-sm font-semibold text-[#1c4b85]">Assistant</span>
               </label>
               <label className="flex items-center">
                 <input type="checkbox" className="rounded border-gray-300 text-blue-600" />
-                <span className="ml-2 text-sm text-gray-700">Confidential-Only discuss w/patient</span>
+                <span className="ml-2 text-sm font-semibold text-[#1c4b85]">Confidential-Only discuss w/patient</span>
               </label>
             </div>
           </div>
@@ -619,7 +619,7 @@ const LabOrderMain = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Test Type Dropdown */}
                 <div className="relative">
-                  <label className="block text-sm font-medium text-gray-700">Type of Test</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85]">Type of Test</label>
                   <select
                     value={testType}
                     onChange={handleTestTypeChange}
@@ -638,7 +638,7 @@ const LabOrderMain = () => {
 
                 {/* Test Category Dropdown */}
                 <div className="relative">
-                  <label className="block text-sm font-medium text-gray-700">Test Category</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85]">Test Category</label>
                   <select
                     value={testCategory}
                     onChange={handleTestCategoryChange}
@@ -664,7 +664,7 @@ const LabOrderMain = () => {
                 
               </div>
               <div className="border-t mt-6 pt-2">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Select Categories</h3>
+                  <h3 className="text-lg  font-semibold text-[#1c4b85] mb-4">Select Categories</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 mt-4">
                     {paginatedCategories.map((category, index) => (
                       <div

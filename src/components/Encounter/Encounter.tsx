@@ -181,7 +181,7 @@ function Encounter() {
         <div className="bg-white shadow-lg rounded-lg p-6 flex justify-between items-center border-t-4 border-blue-600">
           <div className="space-y-2">
             <h1 className="text-2xl font-bold text-[#002D62]">Encounters</h1>
-            <p className="text-gray-600">Keep track of all your patient interactions</p>
+            <p className="text-[#3972c7]">Keep track of all your patient interactions</p>
           </div>
           <Calendar className="h-6 w-6 text-blue-600" />
         </div>
@@ -198,7 +198,7 @@ function Encounter() {
                 className="flex justify-between items-center py-4 px-2 hover:bg-blue-50 transition-all duration-200 group rounded-lg"
               >
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-700 group-hover:text-blue-600">
+                  <h3 className="text-lg font-semibold text-[#3972c7] group-hover:text-blue-600">
                     {encounter.title}
                   </h3>
                   <p className="text-sm text-gray-500 group-hover:text-blue-500">{encounter.doctor}</p>

@@ -127,7 +127,7 @@ const NewMessage = () => {
         <div className="mb-6">
           <label
             htmlFor="contactFilter"
-            className="block text-sm font-semibold text-gray-600 mb-2"
+            className="block text-sm font-semibold text-[#002D62] mb-2"
           >
             Filter Contacts
           </label>

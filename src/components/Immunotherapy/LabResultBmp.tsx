@@ -50,7 +50,7 @@ const LabResultBmp = () => {
                   key={rowIndex}
                   className="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition-all duration-200"
                 >
-                  <td className="py-4 px-6 font-medium text-gray-700">{test.name}</td>
+                  <td className="py-4 px-6 text-sm text-[#3972c7] font-semibold">{test.name}</td>
                   {/* Dynamically render inputs for each result */}
                   {test.results.map((result, colIndex) => (
                     <td key={colIndex} className="py-4 px-6">
@@ -59,7 +59,7 @@ const LabResultBmp = () => {
                         value={result}
                         onChange={(e) => handleResultChange(rowIndex, colIndex, e.target.value)}
                         placeholder="Enter result"
-                        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                        className="w-full px-4 py-2 border placeholder-[#6786b4] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
                       />
                     </td>
                   ))}

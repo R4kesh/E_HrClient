@@ -322,7 +322,7 @@ const LabOrderContent = () => {
         <CardHeader className="bg-blue-600">
           <CardTitle className="text-white flex items-center gap-2 ">
             <FileText className="h-6 w-6" />
-            Lab Order Form
+            Lab Order Formssss
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -330,7 +330,7 @@ const LabOrderContent = () => {
             {/* Left Column */}
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <FileText className="h-4 w-4 text-blue-600" />
                     Order #
@@ -343,7 +343,7 @@ const LabOrderContent = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4 text-blue-600" />
                     Provider
