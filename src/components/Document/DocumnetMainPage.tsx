@@ -18,7 +18,7 @@ const DocumnetMainPage = () => {
     }
   };
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center ">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-y-2 ">
     <div className="w-full max-w-full bg-white rounded-lg shadow-md">
       {/* Tab Header */}
       <div className="flex justify-center border-b">

@@ -6,7 +6,7 @@ const Information = () => {
     <div className="min-h-screen bg-gray-100 flex justify-center items-center ">
       <div className="bg-white shadow-lg rounded-2xl w-full  -mt-48">
         {/* Header */}
-        <div className="bg-blue-600 text-white p-4 rounded-t-2xl text-center text-2xl font-semibold">
+        <div className="bg-blue-600 text-white p-4 rounded-t-2xl text-start text-2xl font-semibold">
           Document Information
         </div>
 
