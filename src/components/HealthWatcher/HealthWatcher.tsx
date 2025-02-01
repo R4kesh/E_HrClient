@@ -39,7 +39,7 @@ const HealthWatcher = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-2xl font-bold text-gray-800 text-center mb-4">Health Watcher Form</h1>
+          <h1 className="text-2xl font-bold text-[#002D62] text-center mb-4">Health Watcher Form</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -112,7 +112,7 @@ const HealthWatcher = () => {
 
         {/* Right Column: Completed Health Watchers List */}
         <div className="bg-white shadow-xl rounded-lg p-6">
-          <h2 className="text-2xl font-medium text-gray-800 mb-4 text-center">Completed Health Watchers</h2>
+          <h2 className="text-2xl font-medium text-[#002D62] mb-4 text-center">Completed Health Watchers</h2>
           <div className="space-y-4">
             {completedHealthWatchers.map((entry, index) => (
               <div

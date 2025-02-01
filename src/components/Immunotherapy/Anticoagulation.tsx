@@ -291,7 +291,7 @@ const Anticoagulation: React.FC = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-blue-600 text-white p-6 rounded-t-lg">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Anticoagulation Management</h1>
+            <h1 className="text-2xl  font-bold">Anticoagulation Management</h1>
             <div className="flex items-center space-x-2">
               <CalendarIcon />
               <span>{date}</span>

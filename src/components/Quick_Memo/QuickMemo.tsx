@@ -206,7 +206,7 @@ const QuickMemo = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Quick Memo</h1>
+        <h1 className="text-2xl font-bold text-[#002D62] mb-6">Quick Memo</h1>
 
         <div className="flex gap-6">
           {/* Left Side - Memo Form */}

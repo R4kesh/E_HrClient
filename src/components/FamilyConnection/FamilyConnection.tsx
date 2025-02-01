@@ -276,7 +276,7 @@ const FamilyConnections = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-2xl font-semibold text-gray-700 mb-8">Add Family Member</h2>
+            <h2 className="text-2xl font-semibold text-[#002D62] mb-8">Add Family Member</h2>
             <form onSubmit={handleFormSubmit} className="space-y-6">
               {/* Name Input */}
               <div>
@@ -366,7 +366,7 @@ const FamilyConnections = () => {
 
           {/* Family Connections Listing in Cards */}
           <div className="lg:col-span-5 space-y-8">
-            <h2 className="text-2xl font-semibold text-gray-700 mb-6">Family Connections</h2>
+            <h2 className="text-2xl font-semibold text-[#002D62] mb-6">Family Connections</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {familyConnections.map((member, index) => (
                 <motion.div

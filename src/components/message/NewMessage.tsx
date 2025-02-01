@@ -140,7 +140,7 @@ const NewMessage = () => {
           </select>
         </div>
 
-        <h3 className="text-lg font-bold text-gray-800 mb-3">Contacts</h3>
+        <h3 className="text-lg font-bold text-[#002D62] mb-3">Contacts</h3>
         <ul className="space-y-2">
           <li className="text-gray-700 hover:bg-gray-100 rounded-lg px-3 py-2 cursor-pointer transition">
             EHR User Only
@@ -160,7 +160,7 @@ const NewMessage = () => {
       {/* Message Details */}
       <main className="flex-1 p-6">
         <div className="mb-6 pb-4 border-b">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Route To</h2>
+          <h2 className="text-2xl font-bold text-[#002D62] mb-4">Route To</h2>
           <div className="flex items-center space-x-6">
             <label className="inline-flex items-center text-gray-700">
               <input
@@ -186,7 +186,7 @@ const NewMessage = () => {
         <div className="mb-6">
           <label
             htmlFor="message"
-            className="block text-lg font-semibold text-gray-800 mb-2"
+            className="block text-lg font-semibold text-[#002D62] mb-2"
           >
             Message
           </label>
@@ -201,7 +201,7 @@ const NewMessage = () => {
           <div className="mb-6">
             <label
               htmlFor="routeDate"
-              className="block text-lg font-semibold text-gray-800 mb-2"
+              className="block text-lg font-semibold text-[#002D62] mb-2"
             >
               Route Date and Time
             </label>
@@ -211,7 +211,7 @@ const NewMessage = () => {
           <div className="mb-6">
             <label
               htmlFor="messageType"
-              className="block text-lg font-semibold text-gray-800 mb-2"
+              className="block text-lg font-semibold text-[#002D62] mb-2"
             >
               Message Type
             </label>
@@ -229,7 +229,7 @@ const NewMessage = () => {
           <div className="mb-6">
             <label
               htmlFor="priority"
-              className="block text-lg font-semibold text-gray-800 mb-2"
+              className="block text-lg font-semibold text-[#002D62] mb-2"
             >
               Priority
             </label>
@@ -239,7 +239,7 @@ const NewMessage = () => {
           <div className="mb-6">
             <label
               htmlFor="linkedItem"
-              className="block text-lg font-semibold text-gray-800 mb-2"
+              className="block text-lg font-semibold text-[#002D62] mb-2"
             >
               Linked/Routed Item
             </label>
@@ -250,7 +250,7 @@ const NewMessage = () => {
         <div>
           <label
             htmlFor="patient"
-            className="block text-lg font-semibold text-gray-800 mb-2"
+            className="block text-lg font-semibold text-[#002D62] mb-2"
           >
             Patient
           </label>
