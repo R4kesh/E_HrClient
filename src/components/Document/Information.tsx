@@ -4,9 +4,9 @@ import React from 'react';
 const Information = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center ">
-      <div className="bg-white shadow-lg rounded-2xl w-full  -mt-48">
+      <div className="bg-white shadow-lg rounded-2xl w-full ">
         {/* Header */}
-        <div className="bg-blue-600 text-white p-4 rounded-t-2xl text-start text-2xl font-semibold">
+        <div className="bg-blue-600 text-white p-4  -mt-24 rounded-t-2xl text-start text-2xl font-semibold">
           Document Information
         </div>
 
@@ -14,15 +14,15 @@ const Information = () => {
         <div className="grid grid-cols-3 gap-6 p-6">
           {/* Row 1 */}
           <div>
-            <label className="block font-medium mb-1">Provider:</label>
-            <input type="text" value="SMITH, TRACY, MD" readOnly className="w-full border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
+            <label className="block text-md font-semibold text-[#1c4b85]  mb-1">Provider:</label>
+            <input type="text" value="SMITH, TRACY, MD" readOnly className="w-full text-[#3972c7] border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Dept:</label>
-            <input type="text" value="ARCHES MEDICAL CENTER" readOnly className="w-full border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Dept:</label>
+            <input type="text" value="ARCHES MEDICAL CENTER" readOnly className="w-full border text-[#3972c7] rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Signers:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Signers:</label>
             <select className="w-full border rounded-lg px-3 py-2 focus:outline-none">
               <option>-</option>
             </select>
@@ -30,17 +30,17 @@ const Information = () => {
 
           {/* Row 2 */}
           <div>
-            <label className="block font-medium mb-1">Template:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Template:</label>
             <select className="w-full border rounded-lg px-3 py-2 focus:outline-none">
               <option>-</option>
             </select>
           </div>
           <div>
-            <label className="block font-medium mb-1">Folder:</label>
-            <input type="text" value="Docs" readOnly className="w-full border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Folder:</label>
+            <input type="text" value="Docs" readOnly className="w-full text-[#3972c7] border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Doc. Type:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Doc. Type:</label>
             <select className="w-full border rounded-lg px-3 py-2 focus:outline-none">
               <option>-</option>
             </select>
@@ -48,25 +48,25 @@ const Information = () => {
 
           {/* Row 3 */}
           <div>
-            <label className="block font-medium mb-1">ICD:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">ICD:</label>
             <input type="text" placeholder="Click here to add codes" className="w-full border rounded-lg px-3 py-2 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Date:</label>
-            <input type="date" value="2025-01-17" className="w-full border rounded-lg px-3 py-2 focus:outline-none" />
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Date:</label>
+            <input type="date" value="2025-01-17" className="w-full text-[#3972c7] border rounded-lg px-3 py-2 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Status:</label>
-            <input type="text" value="New" readOnly className="w-full border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Status:</label>
+            <input type="text" value="New" readOnly className="w-full text-[#3972c7] border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
           </div>
 
           {/* Row 4 */}
           <div>
-            <label className="block font-medium mb-1">Name:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Name:</label>
             <input type="text" className="w-full border rounded-lg px-3 py-2 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Description:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Description:</label>
             <input type="text" className="w-full border rounded-lg px-3 py-2 focus:outline-none" />
           </div>
         </div>
@@ -74,11 +74,11 @@ const Information = () => {
         {/* Additional Fields */}
         <div className="grid grid-cols-2 gap-6 px-6">
           <div>
-            <label className="block font-medium mb-1">Document Ext:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Document Ext:</label>
             <input type="text" value="TEXT" readOnly className="w-full border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
           </div>
           <div>
-            <label className="block font-medium mb-1">Size:</label>
+            <label className="block text-md font-semibold text-[#1c4b85] mb-1">Size:</label>
             <input type="text" value="0 bytes" readOnly className="w-full border rounded-lg px-3 py-2 bg-gray-50 focus:outline-none" />
           </div>
         </div>

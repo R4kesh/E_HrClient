@@ -82,7 +82,7 @@ const RiskFactor = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {/* Risk Factor Selection */}
               <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
-                <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                <h2 className="text-md font-semibold text-[#1c4b85] mb-4 flex items-center">
                   <Plus className="h-5 w-5 mr-2 text-blue-600" />
                   Add Risk Factor
                 </h2>
@@ -103,13 +103,13 @@ const RiskFactor = () => {
                   value={comments}
                   onChange={(e) => setComments(e.target.value)}
                   placeholder="Enter comments"
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 mb-4"
+                  className="w-full placeholder-[#6786b4] p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 mb-4"
                 />
                 <div className="flex space-x-4 mb-4">
                 <select 
   value={status} 
   onChange={(e) => setStatus(e.target.value)} 
-  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+  className="w-full text-[#3972c7] p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
 >
   <option value="Current">Current</option>
   <option value="Historic">Historic</option>
@@ -125,7 +125,7 @@ const RiskFactor = () => {
 
               {/* Active Risk Factors List */}
               <div className="bg-white rounded-lg shadow-md p-4 border border-gray-200">
-                <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                <h2 className="text-md font-semibold text-[#1c4b85] mb-4 flex items-center">
                   <History className="h-5 w-5 mr-2 text-blue-600" />
                   Current Risk Factors
                 </h2>
@@ -176,7 +176,7 @@ const RiskFactor = () => {
 
         {/* Summary Section */}
         <div className="bg-white rounded-xl shadow-lg p-6 animate-fadeIn">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Risk Factor Summary</h2>
+          <h2 className="text-md font-semibold text-[#1c4b85] mb-4">Risk Factor Summary</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-blue-50 rounded-lg p-4">
               <h3 className="text-sm font-medium text-blue-800">Total Risk Factors</h3>

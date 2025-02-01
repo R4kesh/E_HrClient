@@ -6,7 +6,7 @@ import HealthWatcher from '../components/HealthWatcher/HealthWatcher'
 
 const HealthWatcherPage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white">
     {/* Wrapper for Sidebar and Main Content */}
     <div className="flex flex-grow">
       {/* Sidebar */}

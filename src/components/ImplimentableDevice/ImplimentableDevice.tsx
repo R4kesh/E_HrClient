@@ -326,7 +326,7 @@ const ImplantableDevice = () => {
               {filterOptions.map((status) => (
                 <button
                   key={status}
-                  className="w-full text-left px-4 py-2 text-sm hover:bg-gray-50"
+                  className="w-full text-[#3972c7] text-left px-4 py-2 text-sm hover:bg-gray-50"
                   onClick={() => {
                     setFilterStatus(status);
                     setIsDropdownOpen(false);

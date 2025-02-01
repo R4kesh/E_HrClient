@@ -93,14 +93,14 @@ const Immunotherapy = () => {
       <tbody className="divide-y divide-gray-200">
         {ImmunotherapyData.map((test, index) => (
           <tr key={index} className="hover:bg-gray-50 transition duration-200">
-            <td className="px-4 py-2 whitespace-nowrap text-base font-medium text-gray-900">
+            <td className="px-4 py-2 whitespace-nowrap font-semibold text-md text-[#3972c7]">
               {test} {/* Render CBC test name */}
             </td>
             {Array.from({ length: ImmunotherapyColumns }).map((_, immunotherapyIndex) => (
               <td key={immunotherapyIndex} className="px-8 py-4 whitespace-nowrap">
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
+                  className="w-full placeholder-[#6786b4] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200"
                   placeholder="Enter value"
                 />
               </td>

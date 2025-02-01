@@ -65,29 +65,29 @@ const Result = () => {
             {/* Provider & Department Section */}
             <div className="grid grid-cols-3 gap-6">
               <div className="group">
-                <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="flex items-center text-sm font-semibold text-[#1c4b85] mb-2 group-hover:text-blue-600 transition-colors">
                   <UserCircle className="h-4 w-4 mr-2" />
                   Provider
                 </label>
-                <select className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
+                <select className="w-full text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
                   <option>MILLER ALEX MC</option>
                 </select>
               </div>
               <div className="group">
-                <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="flex items-center text-sm font-semibold text-[#1c4b85] mb-2 group-hover:text-blue-600 transition-colors">
                   <Building className="h-4 w-4 mr-2" />
                   Department
                 </label>
-                <select className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
+                <select className="w-full text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
                   <option>ARCHE'S MEDICAL CENTER</option>
                 </select>
               </div>
               <div className="group">
-                <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="flex items-center text-sm font-semibold text-[#1c4b85] group-hover:text-blue-600 transition-colors">
                   <FileText className="h-4 w-4 mr-2" />
                   Folder
                 </label>
-                <select className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
+                <select className="w-full text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
                   {resultOptions.map(option => (
                     <option key={option}>{option}</option>
                   ))}
@@ -97,14 +97,14 @@ const Result = () => {
 
             {/* Signers Grid */}
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <h3 className="text-lg font-medium text-gray-800 mb-4">Authorized Signers</h3>
+              <h3 className="text-lg font-medium text-[#1c4b85] mb-4">Authorized Signers</h3>
               <div className="grid grid-cols-4 gap-4">
                 {[1, 2, 3, 4].map((num) => (
                   <div key={num} className="group">
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                    <label className="flex items-center text-sm font-semibold text-[#1c4b85] mb-2 group-hover:text-blue-600 transition-colors">
                       Signer {num}
                     </label>
-                    <select className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
+                    <select className="w-full text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
                       <option>Select Signer</option>
                     </select>
                   </div>
@@ -115,10 +115,10 @@ const Result = () => {
             {/* DateTime Section */}
             <div className="grid grid-cols-4 gap-6">
               <div className="group">
-                <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="flex items-center text-sm font-semibold text-[#1c4b85] mb-2 group-hover:text-blue-600 transition-colors">
                   Company
                 </label>
-                <select className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
+                <select className="w-full text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
                   {companyOptions.map(option => (
                     <option key={option}>{option}</option>
                   ))}
@@ -130,13 +130,13 @@ const Result = () => {
                 { label: 'Notified', icon: Bell }
               ].map((field) => (
                 <div key={field.label} className="group">
-                  <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
-                    <field.icon className="h-4 w-4 mr-2" />
+                  <label className="flex items-center text-sm font-semibold text-[#1c4b85] group-hover:text-blue-600 transition-colors">
+                    <field.icon className="h-4 w-4 mr-2 " />
                     {field.label}
                   </label>
                   <input
                     type={field.label === 'Date Performed' ? 'date' : 'datetime-local'}
-                    className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors"
+                    className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors"
                   />
                 </div>
               ))}
@@ -145,20 +145,20 @@ const Result = () => {
             {/* Template & Comments */}
             <div className="space-y-4 bg-white p-4 rounded-lg border border-gray-200">
               <div className="group">
-                <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="flex items-center text-sm font-semibold text-[#1c4b85] group-hover:text-blue-600 transition-colors">
                   Template
                 </label>
-                <select className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
+                <select className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors">
                   <option>Select Template</option>
                 </select>
               </div>
               <div className="group">
-                <label className="flex items-center text-sm font-medium text-gray-700 mb-2 group-hover:text-blue-600 transition-colors">
+                <label className="flex items-center text-sm font-semibold text-[#1c4b85] mb-2 group-hover:text-blue-600 transition-colors">
                   Comments
                 </label>
                 <textarea
                   rows={3}
-                  className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors resize-none"
+                  className="w-full placeholder-[#6786b4] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 hover:border-blue-400 transition-colors resize-none"
                   placeholder="Enter medical notes or comments..."
                 />
               </div>
@@ -193,7 +193,7 @@ const Result = () => {
                   <thead className="bg-gray-50">
                     <tr>
                       {['Test Name', 'Result Name', 'Results', 'Out of Range', 'Flag', 'Units', 'Range', 'Stat', 'Actions'].map((header) => (
-                        <th key={header} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th key={header} className="px-6 py-3 text-left text-sm font-semibold text-[#1c4b85] uppercase tracking-wider">
                           {header}
                         </th>
                       ))}
