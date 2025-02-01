@@ -338,7 +338,7 @@ const Allergies = () => {
           </div>
           <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-lg">
             <AlertCircle className="text-blue-600 w-5 h-5" />
-            <span className="text-sm text-blue-700 font-medium">Active Allergies: {mockAllergies.length}</span>
+            <span className="text-sm text-[#1c4b85] font-medium">Active Allergies: {mockAllergies.length}</span>
           </div>
         </div>
         
@@ -347,7 +347,7 @@ const Allergies = () => {
           <div className="lg:w-[70%]">
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
               <div className="border-b border-gray-100 bg-gray-50 px-6 py-4">
-                <h2 className="text-lg font-semibold text-gray-800">Add New Allergy</h2>
+                <h2 className="text-lg font-semibold text-[#1c4b85]">Add New Allergy</h2>
               </div>
               
               <div className="p-6">
@@ -359,7 +359,7 @@ const Allergies = () => {
                       checked={formData.reviewed}
                       onChange={(e) => setFormData({...formData, reviewed: e.target.checked})}
                     />
-                    <span className="text-sm font-medium text-gray-700">Reviewed</span>
+                    <span className="text-sm font-medium text-[#1c4b85]">Reviewed</span>
                   </label>
                   <label className="flex items-center space-x-2 cursor-pointer">
                     <input
@@ -368,31 +368,31 @@ const Allergies = () => {
                       checked={formData.nkda}
                       onChange={(e) => setFormData({...formData, nkda: e.target.checked})}
                     />
-                    <span className="text-sm font-medium text-gray-700">NKDA</span>
+                    <span className="text-sm font-medium text-[#1c4b85]">NKDA</span>
                   </label>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-1.5">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-semibold text-[#1c4b85]">
                       {dropdownData.fields.date}
                     </label>
                     <input
                       type="date"
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full rounded-lg  text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       value={formData.date}
                       onChange={(e) => setFormData({...formData, date: e.target.value})}
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-semibold text-[#1c4b85]">
                       {dropdownData.fields.allergy}
                     </label>
                     <div className="relative">
                       <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
                       <select
-                        className="w-full pl-10 rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                        className="w-full pl-10 py-2 text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                         value={formData.allergy}
                         onChange={(e) => setFormData({...formData, allergy: e.target.value})}
                       >
@@ -405,11 +405,11 @@ const Allergies = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-semibold text-[#1c4b85]">
                       {dropdownData.fields.severity}
                     </label>
                     <select
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       value={formData.severity}
                       onChange={(e) => setFormData({...formData, severity: e.target.value})}
                     >
@@ -421,11 +421,11 @@ const Allergies = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-semibold text-[#1c4b85]">
                       {dropdownData.fields.status}
                     </label>
                     <select
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       value={formData.status}
                       onChange={(e) => setFormData({...formData, status: e.target.value})}
                     >
@@ -439,12 +439,12 @@ const Allergies = () => {
 
                 <div className="space-y-6 mb-8">
                   <div className="space-y-1.5">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-semibold text-[#1c4b85]">
                       {dropdownData.fields.reaction}
                     </label>
                     <input
                       type="text"
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full  py-2 placeholder-[#6786b4] border rounded text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       placeholder="Describe the allergic reaction"
                       value={formData.reaction}
                       onChange={(e) => setFormData({...formData, reaction: e.target.value})}
@@ -452,12 +452,12 @@ const Allergies = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label className="block text-sm font-semibold text-[#1c4b85]">
                       {dropdownData.fields.treatment}
                     </label>
                     <input
                       type="text"
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full  py-2 border rounded placeholder-[#6786b4] text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       placeholder="Specify treatment protocol"
                       value={formData.treatment}
                       onChange={(e) => setFormData({...formData, treatment: e.target.value})}
@@ -476,14 +476,14 @@ const Allergies = () => {
           {/* Cards Section */}
           <div className="lg:w-[30%] space-y-4">
             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-4">
-              <h2 className="text-lg font-semibold text-gray-800 mb-2">Active Allergies</h2>
+              <h2 className="text-lg font-semibold text-[#1c4b85] mb-2">Active Allergies</h2>
               <p className="text-sm text-gray-600">Current allergy records</p>
             </div>
             
             {mockAllergies.map((allergy, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-semibold text-gray-900 text-lg">{allergy.allergy}</h3>
+                  <h3 className="font-semibold text-[#1c4b85] text-lg">{allergy.allergy}</h3>
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     allergy.severity === 'Severe' 
                       ? 'bg-red-100 text-red-800' 
