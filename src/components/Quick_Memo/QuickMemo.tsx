@@ -218,7 +218,7 @@ const QuickMemo = () => {
                   {/* Date Field */}
                   {formFields.date && (
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                         {formFields.date.label}
                       </label>
                       <div className="relative">
@@ -228,7 +228,7 @@ const QuickMemo = () => {
                           value={formData.date}
                           onChange={handleInputChange}
                           placeholder={formFields.date.placeholder}
-                          className="w-full border border-gray-300 rounded-md p-2 pr-8 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full border text-[#3972c7] border-gray-300 rounded-md p-2 pr-8 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                         {/* <Calendar className="absolute right-2 top-2 w-4 h-4 text-gray-400" /> */}
                       </div>
@@ -238,14 +238,14 @@ const QuickMemo = () => {
                   {/* Type Field */}
                   {formFields.type && (
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                         {formFields.type.label}
                       </label>
                       <select
                         name="type"
                         value={formData.type}
                         onChange={handleInputChange}
-                        className="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full border text-[#3972c7] border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
                         <option value="">Select a type</option>
                         {formFields.type.options.map((option) => (
@@ -260,7 +260,7 @@ const QuickMemo = () => {
                   {/* Note Field */}
                   {formFields.note && (
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                      <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                         {formFields.note.label}
                       </label>
                       <div className="relative">
@@ -270,7 +270,7 @@ const QuickMemo = () => {
                           onChange={handleInputChange}
                           placeholder={formFields.note.placeholder}
                           maxLength={formFields.note.maxLength}
-                          className="w-full border border-gray-300 rounded-md p-2 text-sm h-32 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full border border-gray-300 placeholder-[#6786b4] rounded-md p-2 text-sm h-32 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                         <div className="absolute bottom-2 right-2 text-xs text-gray-500">
                           {formData.note.length}/{formFields.note.maxLength}
@@ -302,7 +302,7 @@ const QuickMemo = () => {
                 placeholder="Search memos..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full border border-gray-300 rounded-md p-2 pl-10 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full border border-gray-300  placeholder-[#6786b4] rounded-md p-2 pl-10 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
               <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
             </div>
@@ -316,7 +316,7 @@ const QuickMemo = () => {
                 >
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <div className="text-sm font-semibold text-blue-600">
+                      <div className="text-sm font-semibold text-[#1c4b85]">
                         {memo.type}
                       </div>
                       <div className="text-xs text-gray-500">{memo.date}</div>
@@ -332,7 +332,7 @@ const QuickMemo = () => {
                     {memo.note}
                   </div>
                   <div className="mt-2 flex justify-end">
-                    <button className="text-blue-600 hover:text-blue-700 flex items-center gap-1 text-xs">
+                    <button className="text-[#3972c7] hover:text-[#1c4b85] flex items-center gap-1 text-xs">
                       <Edit2 className="w-3 h-3" />
                       Edit
                     </button>

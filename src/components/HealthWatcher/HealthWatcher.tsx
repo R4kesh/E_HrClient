@@ -43,14 +43,14 @@ const HealthWatcher = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-700 font-medium mb-1 block">Provider:</label>
-                <select name="provider" className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
+                <label className="text-sm font-semibold text-[#1c4b85] mb-1 block">Provider:</label>
+                <select name="provider" className="w-full p-3 text-[#3972c7] bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
                   <option>Other Provider</option>
                 </select>
               </div>
               <div>
-                <label className="text-sm text-gray-700 font-medium mb-1 block">Type:</label>
-                <select name="type" className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
+                <label className="text-sm font-semibold text-[#1c4b85] mb-1 block">Type:</label>
+                <select name="type" className="w-full p-3 text-[#3972c7] bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
                   <option>Reminder</option>
                   <option>Question</option>
                 </select>
@@ -59,12 +59,12 @@ const HealthWatcher = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-700 font-medium mb-1 block">Due:</label>
-                <input type="date" className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none" />
-                <span className="text-xs text-gray-500">+3wks, +6wks, +9wks, +12mos</span>
+                <label className="text-sm font-semibold text-[#1c4b85] mb-1 block">Due:</label>
+                <input type="date" className="w-full p-3 text-[#3972c7] bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none" />
+                <span className="text-xs text-[#3972c7]">+3wks, +6wks, +9wks, +12mos</span>
               </div>
               <div>
-                <label className="text-sm text-gray-700 font-medium mb-1 block">Frequency:</label>
+                <label className="text-sm font-semibold text-[#1c4b85] mb-1 block">Frequency:</label>
                 <select value={frequency} onChange={(e) => setFrequency(e.target.value)} className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
                   <option>Days</option>
                   <option>Weeks</option>
@@ -74,14 +74,14 @@ const HealthWatcher = () => {
             </div>
 
             <div>
-              <label className="text-sm text-gray-700 font-medium mb-1 block">Text:</label>
+              <label className="text-sm font-semibold text-[#1c4b85] mb-1 block">Text:</label>
               <textarea name="text" className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none"></textarea>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-gray-700 font-medium mb-1 block">Change Status:</label>
-                <select value={status} onChange={(e) => setStatus(e.target.value)} className="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
+                <label className="text-sm font-semibold text-[#1c4b85] mb-1 block">Change Status:</label>
+                <select value={status} onChange={(e) => setStatus(e.target.value)} className="w-full p-3 text-[#3972c7] bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-400 focus:outline-none">
                   <option>Open</option>
                   <option>Advised</option>
                   <option>Ordered Booked</option>
@@ -98,7 +98,7 @@ const HealthWatcher = () => {
                   onChange={() => setPatientViewable(!patientViewable)}
                   className="rounded-md focus:ring-teal-400"
                 />
-                <span className="text-sm text-gray-700 font-medium">Patient Viewable</span>
+                <span className="text-sm font-semibold text-[#1c4b85]">Patient Viewable</span>
               </div>
             </div>
 
@@ -117,7 +117,7 @@ const HealthWatcher = () => {
             {completedHealthWatchers.map((entry, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center border-b border-gray-300 pb-3"
+                className="flex justify-between  items-center border-b border-gray-300 pb-3"
               >
                 <div className="flex items-center space-x-3">
                   <div className="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center">
@@ -137,7 +137,7 @@ const HealthWatcher = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm font-medium text-gray-800">{entry.title}</h3>
+                    <h3 className="text-sm font-medium text-[#1c4b85]">{entry.title}</h3>
                     <p className="text-xs text-gray-500">{entry.dueDate}</p>
                   </div>
                 </div>

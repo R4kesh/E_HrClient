@@ -191,14 +191,14 @@ const Problems = () => {
           </h2>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Reviewed</label>
+              <label className="block text-sm font-semibold text-[#1c4b85]">Reviewed</label>
               <input
                 type="checkbox"
                 className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-blue-500"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700">No Known Problems</label>
+              <label className="block text-sm font-semibold text-[#1c4b85]">No Known Problems</label>
               <input
                 type="checkbox"
                 className="mt-1 h-5 w-5 border-gray-300 rounded focus:ring-blue-500"
@@ -217,7 +217,7 @@ const Problems = () => {
             />
             <InputField label="Comment" type="text" placeholder="Enter comment" />
             <div className="col-span-2 text-right">
-              <button className="px-6 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-all duration-300">
+              <button className="px-6 py-2 bg-blue-600  text-white rounded-md shadow hover:bg-blue-700 transition-all duration-300">
                 Add Problem
               </button>
             </div>
@@ -243,7 +243,7 @@ const Problems = () => {
                   ].map((header, idx) => (
                     <th
                       key={idx}
-                      className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold text-gray-700"
+                      className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold text-[#1c4b85]"
                     >
                       {header}
                     </th>
@@ -259,7 +259,7 @@ const Problems = () => {
                     {Object.values(row).map((value, subIdx) => (
                       <td
                         key={subIdx}
-                        className="border border-gray-300 px-4 py-2 text-gray-600 text-sm"
+                        className="border border-gray-300 px-4 py-2 text-[#1c4b85] text-sm"
                       >
                         {value}
                       </td>
@@ -278,19 +278,19 @@ const Problems = () => {
 /* Components */
 const InputField = ({ label, type = "text", placeholder }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-700">{label}</label>
+    <label className="block text-sm font-semibold text-[#1c4b85]">{label}</label>
     <input
       type={type}
       placeholder={placeholder}
-      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+      className="mt-1 block w-full p-2 border text-[#3972c7] placeholder-[#6786b4] border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
     />
   </div>
 );
 
 const DropdownField = ({ label, options }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-700">{label}</label>
-    <select className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    <label className="block text-sm font-semibold text-[#1c4b85]">{label}</label>
+    <select className="mt-1 block w-full p-2 border text-[#3972c7] border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
       <option value="">Select {label.toLowerCase()}</option>
       {options.map((option, idx) => (
         <option key={idx} value={option}>
