@@ -37,11 +37,11 @@ const EchoResult = () => {
           <table className="w-full">
             <thead>
               <tr className="bg-gray-50">
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 w-1/3">
+                <th className="px-4 py-3 text-left text-sm font-semibold text-[#1c4b85] w-1/3">
                   Measurements
                 </th>
                 {measurements[0].values.map((_, index) => (
-                  <th key={index} className="px-4 py-3 text-left text-sm font-semibold text-gray-700">
+                  <th key={index} className="px-4 py-3 text-left text-sm font-semibold text-[#1c4b85]">
                     Reading {index + 1}
                   </th>
                 ))}
@@ -54,7 +54,7 @@ const EchoResult = () => {
                   key={measurement.id}
                   className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
                 >
-                  <td className="px-4 py-3 text-sm text-gray-700 font-medium">
+                  <td className="px-4 py-3 font-semibold text-md text-[#3972c7] font-medium">
                     {measurement.name}
                   </td>
                   {measurement.values.map((value, valueIdx) => (

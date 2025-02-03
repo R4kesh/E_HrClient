@@ -13,7 +13,7 @@ const Schedule = () => {
               name="viewOption"
               className="form-radio text-blue-600"
             />
-            <span className="text-gray-700">View Schedule</span>
+            <span className="text-[#1c4b85]">View Schedule</span>
           </label>
           <label className="flex items-center space-x-2">
             <input
@@ -21,7 +21,7 @@ const Schedule = () => {
               name="viewOption"
               className="form-radio text-blue-600"
             />
-            <span className="text-gray-700">View Patient History List</span>
+            <span className="text-[#1c4b85]">View Patient History List</span>
           </label>
         </div>
         <button className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition">

@@ -4,7 +4,7 @@ import Document from './Document';
 
 const DocumnetMainPage = () => {
  
-    const [activeTab, setActiveTab] = useState("Information");
+    const [activeTab, setActiveTab] = useState("Document");
 
   const renderTabContent = () => {
     switch (activeTab) {

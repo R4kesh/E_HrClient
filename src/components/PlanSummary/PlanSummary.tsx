@@ -79,12 +79,12 @@ const PlanSummaryPage = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-lg font-semibold mb-4">Visits & Evaluations</h2>
+          <h2 className="text-lg font-semibold text-[#1c4b85] mb-4">Visits & Evaluations</h2>
           <div className="space-y-4">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`p-4 border rounded-lg cursor-pointer flex items-center space-x-2 ${selectedPlan === plan ? 'bg-blue-50 border-blue-600' : 'hover:bg-gray-50'}`}
+                className={`p-4 text-base font-semibold text-[#1c4b85] border rounded-lg cursor-pointer flex items-center space-x-2 ${selectedPlan === plan ? 'bg-blue-50 border-blue-600' : 'hover:bg-gray-50'}`}
                 onClick={() => {
                   setSelectedPlan(plan);
                   setShowSummary(false);
@@ -92,7 +92,7 @@ const PlanSummaryPage = () => {
               >
                 <FaInfoCircle className="text-blue-600" />
                 <div>
-                  <div className="font-medium">{plan.name}</div>
+                  <div className="text-sm font-semibold text-[#1c4b85]">{plan.name}</div>
                   <div className="text-sm text-gray-600">Date: {plan.date}</div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const PlanSummaryPage = () => {
           {selectedPlan ? (
             !showSummary ? (
               <>
-                <h2 className="text-lg font-semibold mb-4">{selectedPlan.name}</h2>
+                <h2 className="text-base font-semibold text-[#1c4b85] mb-4">{selectedPlan.name}</h2>
                 <div className="text-sm text-gray-600 mb-2">Date: {selectedPlan.date}</div>
                 <p className="text-gray-800 mb-4">{selectedPlan.details}</p>
                 <h3 className="font-semibold text-gray-700 mb-2">History:</h3>
@@ -131,7 +131,7 @@ const PlanSummaryPage = () => {
               </>
             ) : (
               <>
-                <h2 className="text-lg font-semibold mb-4">Summary of {selectedPlan.name}</h2>
+                <h2 className="text-lg font-semibold text-[#1c4b85] mb-4">Summary of {selectedPlan.name}</h2>
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="font-semibold text-gray-700">History:</h3>
                   <div className="flex items-center space-x-2">

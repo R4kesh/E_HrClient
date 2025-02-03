@@ -34,18 +34,18 @@ const Immunization = () => {
           <div className="grid grid-cols-2 gap-4 mb-4">
             {/* Immunization Name */}
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-1">Immunization Name</label>
+              <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Immunization Name</label>
               <input
                 type="text"
                 placeholder="Enter name"
-                className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full placeholder-[#6786b4] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
             </div>
     
             {/* Group Name */}
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-1">Group Name</label>
-              <select className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+              <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Group Name</label>
+              <select className="w-full border text-[#3972c7] rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                 <option value="">Select Group Name</option>
                 <option value="group1">Group 1</option>
                 <option value="group2">Group 2</option>
@@ -72,31 +72,31 @@ const Immunization = () => {
                   </label>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Date/Time Given</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Date/Time Given</label>
                   <input
                     type="datetime-local"
-                    className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full border text-[#3972c7] rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Facility/Location</label>
-                  <select className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Facility/Location</label>
+                  <select className="w-full text-[#3972c7] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="">Select Facility/Location</option>
                     <option value="facility1">Facility 1</option>
                     <option value="facility2">Facility 2</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Administering Clinician</label>
-                  <select className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Administering Clinician</label>
+                  <select className="w-full text-[#3972c7] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="">Select Clinician</option>
                     <option value="clinician1">Clinician 1</option>
                     <option value="clinician2">Clinician 2</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Ordering Provider</label>
-                  <select className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Ordering Provider</label>
+                  <select className="w-full text-[#3972c7] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                     <option value="">Select Provider</option>
                     <option value="provider1">Provider 1</option>
                     <option value="provider2">Provider 2</option>
@@ -112,11 +112,11 @@ const Immunization = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {/* Dosage */}
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Dosage</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Dosage</label>
                   <input
                     type="text"
                     placeholder="Enter dosage"
-                    className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full placeholder-[#6786b4] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
                 <div className="col-span-2 flex items-center">
@@ -135,20 +135,20 @@ const Immunization = () => {
               <h2 className="text-lg text-[#002D62] font-bold mb-3">Vaccine Information</h2>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">
                     Use Custom Information Sheet
                   </label>
                   <input
                     type="date"
-                    className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full text-[#3972c7] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1">Reaction/Adverse Event</label>
+                  <label className="block text-sm font-semibold text-[#1c4b85] mb-1">Reaction/Adverse Event</label>
                   <input
                     type="text"
                     placeholder="Enter reaction details"
-                    className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full placeholder-[#6786b4] border rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
                   />
                 </div>
               </div>

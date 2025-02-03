@@ -40,7 +40,7 @@ const PhysicalTherapty = () => {
       <div className="space-y-6">
         {/* Wound Care Initial/Follow-up Subnotes */}
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             AMDS_Physical Therapy Progress
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -61,7 +61,7 @@ const PhysicalTherapty = () => {
 
         {/* From Wounds 1-3 Initial/Follow up Notes */}
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             Fields from Range Of Motion Subnote
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -82,7 +82,7 @@ const PhysicalTherapty = () => {
 
         {/* Details for Wound 1 */}
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             Active Range of Motion(AROM)_Passive Range of Motion (PROM)_Right Side Measured (degress)
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -103,7 +103,7 @@ const PhysicalTherapty = () => {
 
         {/* Details for Wound 2 */}
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             Left Side Measured (degrees)
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -124,7 +124,7 @@ const PhysicalTherapty = () => {
 
         {/* Details for Wound 3 */}
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             Fields from Gait Test Subnote
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -144,7 +144,7 @@ const PhysicalTherapty = () => {
         </div>
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             Field from Walking Endure Test
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -164,7 +164,7 @@ const PhysicalTherapty = () => {
         </div>
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
             Field from physical Therapy Evaluation_Right Upper Extremity Details
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -184,7 +184,7 @@ const PhysicalTherapty = () => {
         </div>
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
            Left Upper Extremity Details
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -204,7 +204,7 @@ const PhysicalTherapty = () => {
         </div>
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
            Right Lower Extremity Details
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -225,7 +225,7 @@ const PhysicalTherapty = () => {
 
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
            Left Lower Extremity Details
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -246,7 +246,7 @@ const PhysicalTherapty = () => {
 
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
            Spine,Ribs,Pelvis Details
           </div>
           <div className="grid grid-cols-6 gap-2">
@@ -266,7 +266,7 @@ const PhysicalTherapty = () => {
         </div>
 
         <div className="border rounded-lg p-4">
-          <div className="text-sm font-medium text-gray-700 mb-2">
+          <div className="text-sm font-semibold text-[#3972c7] mb-2">
           Head and Neck Details
           </div>
           <div className="grid grid-cols-6 gap-2">
