@@ -8,8 +8,13 @@ import {
   FaCommentDots,
 } from "react-icons/fa";
 
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
+
 export default function Notes() {
   const [data, setData] = useState(null);
+  const { id } = useParams();
+  const { addTab } = useTabs();
 
   useEffect(() => {
     axios
@@ -21,6 +26,12 @@ export default function Notes() {
         console.error("Error fetching notes data:", error);
       });
   }, []);
+
+  useEffect(() => {
+
+    addTab({ id:"/notes", name:"Notes", path:`/notes/${id}` });
+  
+}, [ id]);
 
   if (!data) {
     return <div>Loading...</div>;

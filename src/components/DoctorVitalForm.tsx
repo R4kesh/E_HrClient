@@ -303,6 +303,7 @@ function DoctorVitalsForm() {
           </div>
           <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-4">
             <h3 className="text-2xl font-bold text-[#002D62] text-center mb-4">Vital Information</h3>
+            {formState.vitalCards.length > 0 ? (
             <div className="space-y-4">
   {formState.vitalCards.map((card, index) => (
     <motion.div
@@ -351,6 +352,17 @@ function DoctorVitalsForm() {
     </motion.div>
   ))}
 </div>
+
+) : (
+  <div className="flex flex-col items-center justify-center py-8 bg-white shadow-md rounded-lg">
+    <p className="text-gray-600 text-lg font-medium">No vitals recorded</p>
+    <p className="text-sm text-gray-500">You haven't added any vital information yet.</p>
+  </div>
+)}
+
+
+
+
           </div>
         </div>
       </main>

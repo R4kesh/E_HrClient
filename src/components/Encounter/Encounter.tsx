@@ -3,8 +3,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Calendar, User, FileText, ChevronRight, PlusCircle } from "lucide-react";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 function Encounter() {
+  const { id } = useParams();
+  const { addTab } = useTabs();
   const [encounters, setEncounters] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -21,6 +25,12 @@ function Encounter() {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+
+    addTab({ id:"/encounter", name:"Encounter", path:`/encounter/${id}` });
+  
+}, [ id]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br  p-6">

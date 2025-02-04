@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendarAlt, FaInfoCircle, FaFilter, FaArrowLeft, FaCheckCircle } from 'react-icons/fa';
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const PlanSummaryPage = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [showSummary, setShowSummary] = useState(false);
   const [filter, setFilter] = useState({ year: '', month: '', day: '' });
+  
+
+  useEffect(() => {
+
+    addTab({ id:"/planSummary", name:"Plan Summary", path:`/planSummary/${id}` });
+  
+}, [ id]);
 
   const plans = [
     {

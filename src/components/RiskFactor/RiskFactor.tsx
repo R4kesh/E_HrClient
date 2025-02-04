@@ -1,9 +1,13 @@
 
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { AlertTriangle, Plus, History, CheckCircle, RefreshCw, Calendar } from 'lucide-react';
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const RiskFactor = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
   const [riskFactors, setRiskFactors] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const [comments, setComments] = useState('');
@@ -48,6 +52,12 @@ const RiskFactor = () => {
       factor.id === id ? {...factor, reviewed: !factor.reviewed} : factor
     ));
   };
+
+  useEffect(() => {
+
+    addTab({ id:"/riskfactor", name:"Riskfactor", path:`/riskfactor/${id}` });
+  
+}, [ id]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50 p-6">

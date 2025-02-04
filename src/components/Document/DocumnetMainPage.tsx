@@ -1,10 +1,20 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Information from './Information';
 import Document from './Document';
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const DocumnetMainPage = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
  
     const [activeTab, setActiveTab] = useState("Document");
+
+    useEffect(() => {
+
+      addTab({ id:"/document", name:"Document", path:`/document/${id}` });
+    
+  }, [ id]);
 
   const renderTabContent = () => {
     switch (activeTab) {

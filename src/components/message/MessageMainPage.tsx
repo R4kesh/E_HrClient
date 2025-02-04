@@ -1,10 +1,22 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import NewMessage from "./NewMessage";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
+
 import MessageToPortal from "./MessageToPortal";
 
 const MessageMainPage = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
 
     const [activeTab, setActiveTab] = useState("New Message");
+
+  useEffect(() => {
+
+    addTab({ id: "/message", name: "Message", path:`/message/${id}` });
+  
+}, [ id]);
+
 
   const renderTabContent = () => {
     switch (activeTab) {

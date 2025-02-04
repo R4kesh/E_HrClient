@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Schedule from "./Schedule";
 import Immunization from "./Immunization";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const ImmunizationMain = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
   const [activeTab, setActiveTab] = useState("schedule");
 
   const renderTabContent = () => {
@@ -15,6 +19,12 @@ const ImmunizationMain = () => {
         return null;
     }
   };
+
+  useEffect(() => {
+
+    addTab({ id:"/immunizations", name:"Immunizations", path:`/immunizations/${id}` });
+  
+}, [ id]);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center ">

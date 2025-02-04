@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Save, Printer, File, Link2, Trash2, Eye, AlertCircle, Clock, Calendar, UserCircle, Building, FileText, Bell } from 'lucide-react';
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 
 const Result = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
   const [testRows, setTestRows] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -30,6 +34,12 @@ const Result = () => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 1000);
   };
+
+  useEffect(() => {
+
+    addTab({ id:"/result", name:"Result", path:`/result/${id}` });
+  
+}, [ id]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-teal-50 p-6 animate-fadeIn">

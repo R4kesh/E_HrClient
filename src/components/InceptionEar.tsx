@@ -1,37 +1,3 @@
-// import React, { useState } from 'react';
-
-// const EarSection = () => {
-//   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-
-//   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     const option = event.target.value;
-//     setSelectedOptions((prev) =>
-//       event.target.checked
-//         ? [...prev, option]
-//         : prev.filter((item) => item !== option)
-//     );
-//   };
-
-//   return (
-//     <div className="space-y-6">
-//       {['Ear Infection', 'Hearing Loss', 'Tinnitus', 'Earwax Blockage', 'Itching', 'Ear Pain'].map((option) => (
-//         <div key={option} className="flex items-center space-x-3">
-//           <input
-//             type="checkbox"
-//             id={option}
-//             value={option}
-//             onChange={handleChange}
-//             className="w-5 h-5 text-teal-500 border-gray-300 rounded-md focus:ring-teal-500 focus:ring-2 transition duration-200"
-//           />
-//           <label htmlFor={option} className="text-lg text-gray-700 cursor-pointer">{option}</label>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default EarSection;
-
 
 import React, { useEffect, useState } from 'react';
 
