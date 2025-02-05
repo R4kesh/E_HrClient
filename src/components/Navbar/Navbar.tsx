@@ -228,6 +228,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaMoon, FaSun, FaChevronRight, FaUserCircle } from "react-icons/fa";
+import { MoonStar, Sun } from "lucide-react";
+import Switch from "./Switch";
 
 const NavMenu = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -436,14 +438,19 @@ const Navbar = () => {
       <div className="max-w-full mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a
-              href="#"
-              className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600"
-            >
-              Electronic Health Record
-            </a>
-          </div>
+          <div className="flex items-center justify-between h-16">
+  {/* Logo */}
+  <div className="flex-shrink-0 flex items-center">
+    <img src="https://img.freepik.com/premium-vector/stethoscope-logo-healthcare-medical-design-vector-illustration_690981-860.jpg" alt="EHR Logo" className="h-10 w-10 mr-2" />
+    <a
+      href="#"
+      className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600"
+    >
+      Electronic Health Record
+    </a>
+  </div>
+</div>
+
 
           {/* Navigation Menu */}
           <div className=" md:flex md:items-center ">
@@ -466,7 +473,7 @@ const Navbar = () => {
     <p className="text-lg font-semibold text-gray-700 dark:text-white">Rakesh</p>
     <p className="text-sm text-gray-500 dark:text-gray-400">(Staff)</p>
   </div>
-            <button
+            {/* <button
               onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
             >
@@ -475,7 +482,13 @@ const Navbar = () => {
               ) : (
                 <FaSun className="text-yellow-500" />
               )}
-            </button>
+            </button> */}
+<button
+  onClick={toggleDarkMode}
+  className=" rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
+>
+ <Switch   />
+</button>
 
             <Link to="/login">
               <button className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg font-bold shadow-lg transition duration-300 ease-in-out">
