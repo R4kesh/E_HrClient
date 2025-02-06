@@ -402,7 +402,7 @@ const Sidebar = () => {
  <div className="p-3 border-b">
   <div className="flex items-center justify-between">
     {/* Date and Time */}
-    <div className="relative">
+    {/* <div className="relative">
       <select
         className="block appearance-none bg-blue-700 text-white font-bold px-3 py-1   rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         value={currentTimezone}
@@ -413,12 +413,12 @@ const Sidebar = () => {
         <option value="America/Denver">MST</option>
         <option value="America/Los_Angeles">PST</option>
       </select>
-    </div>
+    </div> */}
     <div className="ml-5">
       <h1 className="text-xs font-bold text-blue-700 animate-pulse">
         {currentDate}
       </h1>
-      <h2 className="text-xs font-bold text-green-700">{currentTime}</h2>
+      <h2 className="text-xs font-bold text-green-700">{currentTime} : EST</h2>
     </div>
 
     {/* Timezone Dropdown */}
@@ -455,7 +455,7 @@ const Sidebar = () => {
               {isAppointmentsOpen && (
                 <div className="bg-gray-50 rounded-md shadow-inner transition-all duration-300">
                   <div className="p-4 border-b">
-                    <h3 className="text-sm font-bold text-gray-600">Appointments</h3>
+                    {/* <h3 className="text-sm font-bold text-gray-600">Appointments</h3> */}
                     <p className="text-xs text-gray-500">{currentDate}</p>
                   </div>
                   {currentAppointments.map((appointment, index) => (

@@ -432,8 +432,10 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useParams } from "react-router-dom";
+import { useTabs } from "../../Context/TabProvider";
 import {
   Menu,
   X,
@@ -473,6 +475,16 @@ const CardContent = ({ children }) => {
 };
 
 const Dashboard = () => {
+  const { id } = useParams();
+  const { addTab } = useTabs();
+ 
+    const [activeTab, setActiveTab] = useState("Document");
+
+    useEffect(() => {
+
+      addTab({ id:"/dashboard", name:"Home", path:`/dashboard/${id}` });
+    
+  }, [ id]);
   const [cards, setCards] = useState([
     {
       id: "health",
@@ -839,7 +851,7 @@ const Dashboard = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto pt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto pt-  ">
         <AnimatePresence>
           {cards.map(
             (card, index) =>
