@@ -325,7 +325,7 @@ const PatientSearch = () => {
 
       {/* Search Inputs */}
       {isSearchActive && (
-        <div className="space-y-4">
+        <div className="space-y-2">
           <div className="flex space-x-4">
             {/* Patient Search Input */}
             <div className="flex-1">
@@ -334,7 +334,7 @@ const PatientSearch = () => {
                 value={searchQuery}
                 onChange={handlePatientSearch}
                 placeholder="Search patients..."
-                className="w-full px-4 py-3 text-sm text-gray-800 bg-white rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="w-full px-2 py-1 text-sm mt-1  text-gray-800 bg-white rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
 
@@ -345,12 +345,12 @@ const PatientSearch = () => {
                 value={doctorSearchQuery}
                 onChange={handleDoctorSearch}
                 placeholder="Search doctors..."
-                className="w-full px-4 py-3 text-sm text-gray-800 bg-white rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className="w-full px-2 py-1 text-sm mt-1 text-gray-800 bg-white rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
             </div>
           <button
             onClick={toggleSearch}
-            className="px-4 py-2 text-gray-500 hover:text-blue-500 transition duration-300"
+            className="px-4 py-1 text-gray-500 hover:text-blue-500 transition duration-300"
           >
             Cancel
           </button>
@@ -392,7 +392,7 @@ const PatientSearch = () => {
     <h3 className="p-4 font-bold text-gray-700">Patients</h3>
     {loading ? (
       <div className="p-4 text-sm text-gray-500">Loading...</div>
-    ) : (
+    ) : ( 
       patientSuggestions.map((patient) => (
         <Link
           key={patient.id}

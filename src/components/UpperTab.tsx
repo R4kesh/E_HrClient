@@ -15,9 +15,9 @@ const UpperTab = () => {
       window.location.reload(); // This will reload the entire window
     };
   return (
-    <div className="bg-blue-800 text-white flex items-center justify-between px-4 py-3 shadow-md">
+    <div className="bg-blue-800 text-white flex items-center justify-between px-3 py-2 shadow-md">
       {/* Left Side: Tabs */}
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-4">
         {/* Patient Search */}
         <PatientSearch />
         
