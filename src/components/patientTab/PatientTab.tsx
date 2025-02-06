@@ -57,7 +57,7 @@ const PatientTabs = () => {
           >
             <div
               className={`
-                flex items-center space-x-2 pl-2  pr-6 py-1.5 rounded-md 
+                flex items-center space-x-2 pl-2  pr-6  rounded-md 
                 transition-all duration-300 ease-in-out cursor-pointer
                 ${activeTab === tab.id 
                   ? "bg-white text-blue-800 shadow-md" 

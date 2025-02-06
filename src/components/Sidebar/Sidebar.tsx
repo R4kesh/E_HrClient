@@ -823,7 +823,7 @@ export function Sidebar() {
     <div className="text-center text-gray-500">Loading...</div>
   ) : patient ? (
     <>
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-2">
         {/* Patient Image */}
         <div
           className="w-24 h-24 bg-gray-300 rounded-full overflow-hidden border-2 border-blue-500 cursor-pointer"
@@ -852,7 +852,7 @@ export function Sidebar() {
           }
         >
           <div className="text-lg font-semibold text-[#002D62]">{patient.firstName} {patient.lastName}</div>
-          <div className="text-sm text-gray-500">DOB: {patient.dateOfBirth}</div>
+          <div className="text-sm text-[#002D62]">DOB: {patient.dateOfBirth}</div>
         </div>
       </div>
 
@@ -866,13 +866,13 @@ export function Sidebar() {
 
        
         <div className="bg-blue-gray-50 space-y-2 text-center">
-        <div className="text-sm text-gray-600">Phone: {patient.phoneNumber}</div>
-        <div className="text-sm text-gray-600">Insurance: {patient.insuranceCarrier}</div>
-        <div className=" text-sm text-gray-600">Plan: {patient.insurancePlanName}</div>
+        <div className="text-sm text-[#002D62]">Phone: {patient.phoneNumber}</div>
+        <div className="text-sm text-[#002D62]">Insurance: {patient.insuranceCarrier}</div>
+        <div className=" text-sm text-[#002D62]">Plan: {patient.insurancePlanName}</div>
         <div>
           <button className="text-blue-600 hover:text-blue-800 text-xs">Pharmacy Details</button>
         </div>
-        <div className="text-sm text-gray-600">Last Visit: {patient.lastVisit}</div>
+        <div className="text-sm text-[#002D62]">Last Visit: {patient.lastVisit}</div>
         </div>
       </div>
     </>
@@ -881,7 +881,7 @@ export function Sidebar() {
   )}
 </div>
         <div className="p-2">
-          <div className="relative mb-4">
+          <div className="relative -mt-5">
             <input
               type="text"
               placeholder="Search..."
@@ -891,10 +891,10 @@ export function Sidebar() {
             />
             <FaSearch className="absolute left-3 top-3 text-gray-500" size={18} />
           </div>
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             {filteredItems.map((item, index) => (
               <Link key={index} to={item.path}>
-                <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-3 p-3 rounded-lg font-medium shadow-sm hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
+                <li className="bg-[#EEF7FF] text-[#002D62] flex items-center gap-2 p-2 rounded-lg font-medium shadow-sm hover:shadow-lg hover:bg-blue-100 transition border-l-4 duration-100 transform hover:-translate-y-1">
                   {item.icon} {item.label}
                 </li>
               </Link>

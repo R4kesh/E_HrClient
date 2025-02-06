@@ -415,10 +415,10 @@ const Sidebar = () => {
       </select>
     </div> */}
     <div className="ml-5">
-      <h1 className="text-xs font-bold text-blue-700 animate-pulse">
+      <h1 className="text-sm font-bold text-blue-700 animate-pulse">
         {currentDate}
       </h1>
-      <h2 className="text-xs font-bold text-green-700">{currentTime} : EST</h2>
+      <h2 className="text-sm font-bold text-green-700">{currentTime} : EST</h2>
     </div>
 
     {/* Timezone Dropdown */}
@@ -456,7 +456,7 @@ const Sidebar = () => {
                 <div className="bg-gray-50 rounded-md shadow-inner transition-all duration-300">
                   <div className="p-4 border-b">
                     {/* <h3 className="text-sm font-bold text-gray-600">Appointments</h3> */}
-                    <p className="text-xs text-gray-500">{currentDate}</p>
+                    {/* <p className="text-sm font-semibold text-gray-500">{currentDate}</p> */}
                   </div>
                   {currentAppointments.map((appointment, index) => (
                     <div
