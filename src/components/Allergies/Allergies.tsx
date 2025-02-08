@@ -377,12 +377,13 @@ const Allergies = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="min-h-screen" style={{ backgroundColor: '#F5F5F5' }}>
+
       <div className="max-w-7xl mx-auto p-6">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-2">
           <div>
-            <h1 className="text-2xl font-bold mb-2 text-[#002D62]">Allergy Management</h1>
-            <p className="text-gray-600">Track and manage patient allergies</p>
+            <h1 className="text-2xl font-bold mb-2 text-formHeading_1">Allergy Management</h1>
+            {/* <p className="text-gray-600">Track and manage patient allergies</p> */}
           </div>
           <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-lg">
             <AlertCircle className="text-blue-600 w-5 h-5" />
@@ -427,7 +428,7 @@ const Allergies = () => {
                     </label>
                     <input
                       type="date"
-                      className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full rounded-lg text-[#3972c7] border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                     />
@@ -440,7 +441,7 @@ const Allergies = () => {
                     <div className="relative">
                       <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
                       <select
-                        className="w-full pl-10 py-2 text-[#3972c7] rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                        className="w-full pl-10 py-2 text-[#3972c7] rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                         value={formData.allergy}
                         onChange={(e) => setFormData({ ...formData, allergy: e.target.value })}
                       >
@@ -457,7 +458,7 @@ const Allergies = () => {
                       {dropdownData.fields.severity}
                     </label>
                     <select
-                      className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full rounded-lg text-[#3972c7] border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       value={formData.severity}
                       onChange={(e) => setFormData({ ...formData, severity: e.target.value })}
                     >
@@ -473,7 +474,7 @@ const Allergies = () => {
                       {dropdownData.fields.status}
                     </label>
                     <select
-                      className="w-full rounded-lg text-[#3972c7] border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
+                      className="w-full rounded-lg text-[#3972c7] border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors"
                       value={formData.status}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
                     >

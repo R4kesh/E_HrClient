@@ -5,7 +5,7 @@ import { Sidebar } from '../components/Sidebar/Sidebar'
 import Dashboard from '../components/Dashboard/Dashboard';
 const DashboardPage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white">
     {/* Wrapper for Sidebar and Main Content */}
     <div className="flex flex-grow">
       {/* Sidebar */}

@@ -350,12 +350,12 @@ const LabOrderMain = () => {
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-1xl mx-auto p-4">
         {/* Tab Section */}
-        <div className="h-10 flex justify-center border-b border-gray-300 gap-2">
+        <div className="h-10 flex justify-start ml-2 border-b border-gray-300 gap-2">
           <button
             className={`px-1 py-2 rounded-t-lg w-36 focus:outline-none transition duration-300 transform ${
               activeTab === 'orders'
                 ? 'bg-blue-600 text-white border-blue-600 scale-110 shadow-lg'
-                : 'text-blue-800 hover:bg-blue-300 border-transparent bg-blue-200'
+                : 'text-blue-800 hover:bg-blue-300 border-transparent border border-blue-600'
             }`}
             onClick={() => handleTabChange('orders')}
           >
@@ -366,7 +366,7 @@ const LabOrderMain = () => {
             className={`px-6 py-2 w-36 rounded-t-lg focus:outline-none transition duration-300 transform ${
               activeTab === 'test'
                     ? 'bg-blue-600 text-white border-blue-600 scale-110 shadow-lg'
-                : 'text-blue-800 hover:bg-blue-300 border-transparent bg-blue-200'
+                : 'text-blue-800 hover:bg-blue-300 border-transparent '
             }`}
             onClick={() => handleTabChange('test')}
           >
@@ -377,10 +377,10 @@ const LabOrderMain = () => {
         {/* Tab Content */}
         <div className="transition-all duration-500">
           {activeTab === 'orders' && (
-            <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
+            <div className="bg-white p-2 rounded-lg shadow-lg border border-gray-300">
               
-              <div className="min-h-screen bg-gray-50 p-6">
-      <Card className="max-w-5xl mx-auto">
+              <div className="min-h-screen bg-gray-50 ">
+      <Card className=" mx-auto">
         <CardHeader className="bg-blue-600">
           <CardTitle className="text-white flex items-center gap-2">
             <FileText className="h-6 w-6" />

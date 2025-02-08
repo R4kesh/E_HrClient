@@ -248,7 +248,7 @@ const NavMenu = ({ title, items }) => {
     >
       <button
         onClick={toggleMenu}
-        className="px-4 py-2 text-[#002D62]  dark:text-white hover:text-blue-500 dark:hover:text-blue-400  hover:bg-[#CCE5FF] hover:shadow-xl transition duration-200 font-semibold inline-flex items-center"
+        className="px-4 py-2 text-nav-menu-color  dark:text-white hover:text-blue-500 dark:hover:text-blue-400  hover:bg-[#CCE5FF] hover:shadow-xl transition duration-200 font-semibold inline-flex items-center"
       >
         {title}
         <svg
@@ -468,26 +468,17 @@ const Navbar = () => {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-          <FaUserCircle className="text-2xl text-gray-700 dark:text-gray-300" />
-          <div className="flex flex-col ">
+          <FaUserCircle className="text-2xl  text-gray-700 dark:text-gray-300" />
+          <div className="flex items-center ">
     <p className="text-lg font-semibold text-gray-700 dark:text-white">Rakesh</p>
     <p className="text-sm text-gray-500 dark:text-gray-400">(Staff)</p>
   </div>
-            {/* <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
-            >
-              {darkMode ? (
-                <FaMoon className="text-yellow-400" />
-              ) : (
-                <FaSun className="text-yellow-500" />
-              )}
-            </button> */}
+            
 <button
   onClick={toggleDarkMode}
   className=" rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
 >
- <Switch   />
+ {/* <Switch   /> */}
 </button>
 
             <Link to="/login">

@@ -15,7 +15,7 @@ const UpperTab = () => {
       window.location.reload(); // This will reload the entire window
     };
   return (
-    <div className="bg-blue-800 text-white flex items-center justify-between px-3 py-2 shadow-md">
+    <div className="bg-upperTabBackground text-white flex items-center justify-between px-3 py-2 shadow-md">
       {/* Left Side: Tabs */}
       <div className="flex items-center space-x-4">
         {/* Patient Search */}
@@ -46,7 +46,7 @@ const UpperTab = () => {
         <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300"
          onClick={handleRefresh}>
           <FiRefreshCw size={20} />
-          <span className="text-sm font-medium">Refresh</span>
+          {/* <span className="text-sm font-medium">Refresh</span> */}
         </div>
 
         
@@ -57,7 +57,7 @@ const UpperTab = () => {
         {/* Settings Button */}
         <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300">
           <FiSettings size={20} />
-          <span className="text-sm font-medium">Settings</span>
+          {/* <span className="text-sm font-medium">Settings</span> */}
         </div>
       </div>
     </div>

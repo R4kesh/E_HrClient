@@ -138,10 +138,10 @@ const ROSSection = () => {
   return (
     <div className="p-6">
       <div className="mb-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-[#002D62]">Review of Systems</h1>
+        <h1 className="text-2xl font-bold text-formHeading_1">Review of Systems</h1>
         <button
           onClick={() => setIsFormVisible(!isFormVisible)}
-          className="flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md  transition-colors"
         >
           {isFormVisible ? (
             <>
@@ -176,7 +176,7 @@ const ROSSection = () => {
             <select
                 value={selectedAnswers[category.question]?.[category.symptom] || ''}
                 onChange={(e) => handleAnswerChange(category.question, e.target.value)}
-                className="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-teal-500"
+                className="w-full text-[#3972c7] px-3 py-2 border rounded-md focus:ring-2 focus:ring-teal-500"
               >
                 <option value="">Select an option</option>
                 {category.options.map(option => (
@@ -184,16 +184,7 @@ const ROSSection = () => {
                 ))}
               </select>
 
-              {/* <select
-  value={selectedAnswers[category.question]?.[category.symptom] || ''}
-  onChange={(e) => handleAnswerChange(category.question, category.symptom, e.target.value)}
-  className="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-teal-500"
->
-  <option value="">Select an option</option>
-  {category.options.map(option => (
-    <option key={option} value={option}>{option}</option>
-  ))}
-</select> */}
+              
 
           </div>
         ))}
@@ -201,7 +192,7 @@ const ROSSection = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md "
           >
             Save Entry
           </button>
