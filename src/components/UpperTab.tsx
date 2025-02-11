@@ -21,15 +21,7 @@ const UpperTab = () => {
         {/* Patient Search */}
         <PatientSearch />
         
-        {/* <PatientSearch /> */}
-
-
-
-        {/* Dashboard Tab */}
-        {/* <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300">
-          <AiOutlineDashboard size={20} />
-         <Link to={"/"}> <span className="text-sm font-medium">Dashboard</span></Link>
-        </div> */}
+      
 
         {/* Appointments Tab */}
         <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-300 transition duration-300">
