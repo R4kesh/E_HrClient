@@ -28,97 +28,10 @@ import LabOrderForm from "./LabOrderForm";
 import ImplantableDeviceForm from "./ImplementableDeviceForm";
 import FamilyConnectionForm from "./FamilyConnectionForm";
 import ReferralForm from "./ReferralForm";
+import axios from "axios";
+import VitalForm from "./VitalForm";
 
-const Button = ({ children, onClick, variant, size, className }) => {
-  const baseStyles = "px-4 py-2 rounded-lg focus:outline-none";
-  const variantStyles = {
-    ghost: "bg-transparent hover:bg-gray-200",
-    primary: "bg-blue-500 text-white hover:bg-blue-600",
-  };
-  const sizeStyles = {
-    sm: "text-sm",
-    md: "text-base",
-  };
 
-  return (
-    <button
-      onClick={onClick}
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-    >
-      {children}
-    </button>
-  );
-};
-
-const VitalsForm = ({ onSubmit }) => {
-  const [formData, setFormData] = useState({
-    weight: '',
-    previousWeight: '',
-    weightChange: '',
-    height: '',
-    bmi: '',
-    pulse: '',
-    temperature: '',
-    respirationRate: '',
-    oxygenSaturation: '',
-    oxygenSupplement: '',
-    systolicBP: '',
-    diastolicBP: '',
-    bpLocation: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4">
-      <div className="grid grid-cols-3 gap-4">
-        {[
-          { label: 'Weight (kg)', name: 'weight' },
-          { label: 'Previous Weight (kg)', name: 'previousWeight' },
-          { label: 'Weight Change (kg)', name: 'weightChange' },
-          { label: 'Height (cm)', name: 'height' },
-          { label: 'BMI', name: 'bmi' },
-          { label: 'Pulse (bpm)', name: 'pulse' },
-          { label: 'Temperature (°C)', name: 'temperature' },
-          { label: 'Respiration Rate (breaths/min)', name: 'respirationRate' },
-          { label: 'Oxygen Saturation (%)', name: 'oxygenSaturation' },
-          { label: 'Oxygen Supplement', name: 'oxygenSupplement' },
-          { label: 'Systolic BP (mmHg)', name: 'systolicBP' },
-          { label: 'Diastolic BP (mmHg)', name: 'diastolicBP' },
-          { label: 'BP Measurement Location', name: 'bpLocation' }
-        ].map(field => (
-          <div key={field.name} className="flex flex-col">
-            <label className="text-sm text-gray-600 mb-1">{field.label}</label>
-            <input
-              type="text"
-              name={field.name}
-              value={formData[field.name]}
-              onChange={handleChange}
-              className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-        ))}
-      </div>
-      <button
-        type="submit"
-        className="w-40 align-middle bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition-colors"
-      >
-        Submit Vitals
-      </button>
-    </form>
-  );
-};
 
 const Dashboard = () => {
   const { id } = useParams();
@@ -131,182 +44,21 @@ const Dashboard = () => {
   const [draggedCard, setDraggedCard] = useState(null);
   const [collapsedContent, setCollapsedContent] = useState({});
   const [activeCardIndex, setActiveCardIndex] = useState(null);
-   
-
-  
   const [collapsedCards, setCollapsedCards] = useState({});
-  const [cards, setCards] = useState([
-    {
-      id: "health",
-      title: "Health Composition",
-      icon: "🫀",
-      content: {
-        Glucose: { value: "7.9 mmol/L", status: "green" },
-        Cholesterol: { value: "195 mg/dL", status: "red" },
-      },
-    },   {
-      id: "immunizations",
-      title: "Immunizations",
-      icon: "💉",
-      content: {
-        "Flu Vaccine": { value: "Completed", status: "green" },
-      },
-    },
-    {
-      id: "immunotherapy",
-      title: "Immunotherapy",
-      icon: "💉",
-      content: {
-        "Immunotherapy Plan": { value: "Ongoing", status: "green" },
-      },
-    },
-    
-    {
-      id: "vitals",
-      title: "Vital Signs",
-      icon: "📊",
-      content: {
-        BP: { value: "120/80", status: "green" },
-        HR: { value: "72 bpm", status: "green" },
-      },
-    },
-    {
-      id: "notes",
-      title: "Notes",
-      icon: "📝",
-      content: {
-        note1: { value: "Patient is stable", status: "green" },
-      },
-    },
-    
-    {
-      id: "allergies",
-      title: "Allergies",
-      icon: "⚠️",
-      content: {
-        Penicillin: { value: "Severe", status: "red" },
-        Codeine: { value: "Moderate", status: "orange" },
-      },
-    },
+  const [cards, setCards] = useState([])
 
-
-    {
-      id: "problems",
-      title: "Problems",
-      icon: "⚠️",
-      content: {
-        "Chronic Pain": { value: "Ongoing", status: "orange" },
-      },
-    },
-    {
-      id: "medications",
-      title: "Medications",
-      icon: "💊",
-      content: {
-        Albuterol: { value: "2 puffs/6h", status: "blue" },
-        "Vitamin D": { value: "1000 IU daily", status: "green" },
-      },
-    },
-    {
-      id: "plan-summary",
-      title: "Plan Summary",
-      icon: "📋",
-      content: {
-        "Treatment Plan": { value: "To be reviewed", status: "blue" },
-      },
-    },
-    {
-      id: "documents",
-      title: "Documents",
-      icon: "📑",
-      content: {
-        "Medical Records": { value: "Available", status: "green" },
-      },
-    },
-    {
-      id: "lab-orders",
-      title: "Lab Orders",
-      icon: "🔬",
-      content: {
-        "Blood Test": { value: "Ordered", status: "blue" },
-      },
-    },
-    {
-      id: "lab-results",
-      title: "Lab Results",
-      icon: "🧪",
-      content: {
-        "Blood Test": { value: "Pending", status: "yellow" },
-      },
-    },
-    {
-      id: "messages",
-      title: "Messages",
-      icon: "📩",
-      content: {
-        "Doctor's Message": { value: "Follow-up required", status: "orange" },
-      },
-    },
-    {
-      id: "quick-memos",
-      title: "Quick Memos",
-      icon: "🗒️",
-      content: {
-        "Reminder": { value: "Check medications", status: "green" },
-      },
-    },
-    {
-      id: "risk-factors",
-      title: "Risk Factors",
-      icon: "⚠️",
-      content: {
-        "High Cholesterol": { value: "Yes", status: "red" },
-      },
-    },
-    {
-      id: "health-watcher",
-      title: "Health Watcher",
-      icon: "👁️",
-      content: {
-        "Monitor": { value: "Stable", status: "green" },
-      },
-    },
- 
-    {
-      id: "implantable-devices",
-      title: "Implantable Devices",
-      icon: "💎",
-      content: {
-        "Pacemaker": { value: "Active", status: "green" },
-      },
-    },
-    {
-      id: "encounters",
-      title: "Encounters",
-      icon: "📅",
-      content: {
-        "Last Visit": { value: "Jan 2025", status: "green" },
-      },
-    },
-    {
-      id: "family-connections",
-      title: "Family Connections",
-      icon: "👨‍👩‍👧",
-      content: {
-        "Spouse": { value: "John Doe", status: "green" },
-      },
-    },
-    {
-      id: "referrals",
-      title: "Referrals",
-      icon: "🔗",
-      content: {
-        "Cardiologist": { value: "Referred", status: "green" },
-      },
-    },
-  ]);
 
   useEffect(() => {
+    axios.get(`${import.meta.env.VITE_BASE_URL}/assets/json/Dashboard/dashboard.json`)  // Replace with your actual file path
+    .then(response => {
+      setCards(response.data);  // Set the response data to state
+      
+    })
+    .catch(err => {
+      console.error('Error fetching dropdown data:', err);
+     
+    });
+
     addTab({ id: "/dashboard", name: "Home", path: `/dashboard/${id}` });
   }, [id]);
 
@@ -361,209 +113,30 @@ const Dashboard = () => {
   };
 
   const handleVitalsSubmit = (vitalsData) => {
-    setCards(prevCards => prevCards.map(card => {
-      if (card.id === 'vitals') {
-        return {
-          ...card,
-          content: {
-            Weight: { value: `${vitalsData.weight} kg`, status: 'green' },
-            'Previous Weight': { value: `${vitalsData.previousWeight} kg`, status: 'green' },
-            'Weight Change': { value: `${vitalsData.weightChange} kg`, status: 'green' },
-            Height: { value: `${vitalsData.height} cm`, status: 'green' },
-            BMI: { value: vitalsData.bmi, status: 'green' },
-            Pulse: { value: `${vitalsData.pulse} bpm`, status: 'green' },
-            Temperature: { value: `${vitalsData.temperature} °C`, status: 'green' },
-            'Respiration Rate': { value: `${vitalsData.respirationRate} breaths/min`, status: 'green' },
-            'O2 Saturation': { value: `${vitalsData.oxygenSaturation}%`, status: 'green' },
-            'O2 Supplement': { value: vitalsData.oxygenSupplement, status: 'green' },
-            BP: { value: `${vitalsData.systolicBP}/${vitalsData.diastolicBP}`, status: 'green' },
-            'BP Location': { value: vitalsData.bpLocation, status: 'green' }
-          }
-        };
-      }
-      return card;
-    }));
+
   };
 
+
   const renderCardContent = (card) => {
-    if (card.id === 'vitals') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <VitalsForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    } else if(card.id === 'notes') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <NotesForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }else if(card.id === 'problems') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <ProblemForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }else if(card.id === 'quick-memos') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <QuickMemoForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'medications') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <MedicationForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }else if(card.id === 'health-watcher') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <HealthWatcher onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'allergies') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <AllergiesForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'risk-factors') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <RiskFactor onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'encounters') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <EncounterList onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'documents') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <DocumentsForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }else if(card.id === 'lab-orders') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <LabOrderForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }else if(card.id === 'implantable-devices') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <ImplantableDeviceForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'family-connections') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <FamilyConnectionForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-    else if(card.id === 'referrals') {
-      return (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="overflow-hidden bg-white"
-        >
-          <ReferralForm onSubmit={handleVitalsSubmit} />
-        </motion.div>
-      );
-    }
-
-
+    const formComponents = {
+      vitals: VitalForm,
+      notes: NotesForm,
+      problems: ProblemForm,
+      "quick-memos": QuickMemoForm,
+      medications: MedicationForm,
+      "health-watcher": HealthWatcher,
+      allergies: AllergiesForm,
+      "risk-factors": RiskFactor,
+      encounters: EncounterList,
+      documents: DocumentsForm,
+      "lab-orders": LabOrderForm,
+      "implantable-devices": ImplantableDeviceForm,
+      "family-connections": FamilyConnectionForm,
+      referrals: ReferralForm,
+    };
+  
+    const FormComponent = formComponents[card.id];
+  
     return (
       <motion.div
         initial={{ opacity: 0, height: 0 }}
@@ -572,25 +145,35 @@ const Dashboard = () => {
         transition={{ duration: 0.3 }}
         className="overflow-hidden bg-white"
       >
-        <div className="p-2 space-y-1">
-          {Object.entries(card.content).map(([key, data]) => (
-            <div key={key} className="flex justify-around items-center py-2 px-1 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-              <span className="text-gray-600 font-medium">{key}</span>
-              <span className={`px-3 py-1 rounded-full text-sm font-medium shadow-sm ${
-                data.status === 'green' ? 'text-green-700 bg-green-100 ring-1 ring-green-200' :
-                data.status === 'red' ? 'text-red-700 bg-red-100 ring-1 ring-red-200' :
-                data.status === 'orange' ? 'text-orange-700 bg-orange-100 ring-1 ring-orange-200' :
-                'text-blue-700 bg-blue-100 ring-1 ring-blue-200'
-              }`}>
-                {data.value}
-              </span>
-            </div>
-          ))}
-        </div>
+        {FormComponent ? <FormComponent onSubmit={handleVitalsSubmit} /> : (
+          <div className="p-2 space-y-1">
+            {Object.entries(card.content).map(([key, data]) => (
+              <div
+                key={key}
+                className="flex justify-around items-center py-2 px-1 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+              >
+                <span className="text-gray-600 font-medium">{key}</span>
+                <span
+                  className={`px-3 py-1 rounded-full text-sm font-medium shadow-sm ${
+                    data.status === "green"
+                      ? "text-green-700 bg-green-100 ring-1 ring-green-200"
+                      : data.status === "red"
+                      ? "text-red-700 bg-red-100 ring-1 ring-red-200"
+                      : data.status === "orange"
+                      ? "text-orange-700 bg-orange-100 ring-1 ring-orange-200"
+                      : "text-blue-700 bg-blue-100 ring-1 ring-blue-200"
+                  }`}
+                >
+                  {data.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
       </motion.div>
     );
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-50 p-1">
       <motion.button
@@ -781,9 +364,9 @@ const Dashboard = () => {
   );
 };
 
-
-
 export default Dashboard;
+
+
 
 //////////////////////////////////////////
 
