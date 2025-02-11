@@ -2035,6 +2035,16 @@ import {
 import NotesForm from "./NotesForm";
 import ProblemForm from "./ProblemForm";
 import QuickMemoForm from "./QuickMemoForm";
+import MedicationForm from "./MedicationForm";
+import HealthWatcher from "./HealthWatcher";
+import AllergiesForm from "./AllergiesForm";
+import RiskFactor from "./RiskFactor";
+import EncounterList from "./Encounterlist";
+import DocumentsForm from "./Documentsform";
+import LabOrderForm from "./LabOrderForm";
+import ImplantableDeviceForm from "./ImplementableDeviceForm";
+import FamilyConnectionForm from "./FamilyConnectionForm";
+import ReferralForm from "./ReferralForm";
 
 const Button = ({ children, onClick, variant, size, className }) => {
   const baseStyles = "px-4 py-2 rounded-lg focus:outline-none";
@@ -2139,6 +2149,9 @@ const Dashboard = () => {
   const [collapsedContent, setCollapsedContent] = useState({});
   const [activeCardIndex, setActiveCardIndex] = useState(null);
    
+
+  
+  const [collapsedCards, setCollapsedCards] = useState({});
   const [cards, setCards] = useState([
     {
       id: "health",
@@ -2148,25 +2161,23 @@ const Dashboard = () => {
         Glucose: { value: "7.9 mmol/L", status: "green" },
         Cholesterol: { value: "195 mg/dL", status: "red" },
       },
-    },
-    {
-      id: "medications",
-      title: "Medications",
-      icon: "💊",
+    },   {
+      id: "immunizations",
+      title: "Immunizations",
+      icon: "💉",
       content: {
-        Albuterol: { value: "2 puffs/6h", status: "blue" },
-        "Vitamin D": { value: "1000 IU daily", status: "green" },
+        "Flu Vaccine": { value: "Completed", status: "green" },
       },
     },
     {
-      id: "allergies",
-      title: "Allergies",
-      icon: "⚠️",
+      id: "immunotherapy",
+      title: "Immunotherapy",
+      icon: "💉",
       content: {
-        Penicillin: { value: "Severe", status: "red" },
-        Codeine: { value: "Moderate", status: "orange" },
+        "Immunotherapy Plan": { value: "Ongoing", status: "green" },
       },
     },
+    
     {
       id: "vitals",
       title: "Vital Signs",
@@ -2184,20 +2195,33 @@ const Dashboard = () => {
         note1: { value: "Patient is stable", status: "green" },
       },
     },
+    
     {
-      id: "immunotherapy",
-      title: "Immunotherapy",
-      icon: "💉",
+      id: "allergies",
+      title: "Allergies",
+      icon: "⚠️",
       content: {
-        "Immunotherapy Plan": { value: "Ongoing", status: "green" },
+        Penicillin: { value: "Severe", status: "red" },
+        Codeine: { value: "Moderate", status: "orange" },
       },
     },
+
+
     {
       id: "problems",
       title: "Problems",
       icon: "⚠️",
       content: {
         "Chronic Pain": { value: "Ongoing", status: "orange" },
+      },
+    },
+    {
+      id: "medications",
+      title: "Medications",
+      icon: "💊",
+      content: {
+        Albuterol: { value: "2 puffs/6h", status: "blue" },
+        "Vitamin D": { value: "1000 IU daily", status: "green" },
       },
     },
     {
@@ -2264,14 +2288,7 @@ const Dashboard = () => {
         "Monitor": { value: "Stable", status: "green" },
       },
     },
-    {
-      id: "immunizations",
-      title: "Immunizations",
-      icon: "💉",
-      content: {
-        "Flu Vaccine": { value: "Completed", status: "green" },
-      },
-    },
+ 
     {
       id: "implantable-devices",
       title: "Implantable Devices",
@@ -2352,6 +2369,13 @@ const Dashboard = () => {
       }
     }
   };
+  const toggleCollapse = (cardId, e) => {
+    e.stopPropagation();
+    setCollapsedCards(prev => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }));
+  };
 
   const handleVitalsSubmit = (vitalsData) => {
     setCards(prevCards => prevCards.map(card => {
@@ -2428,8 +2452,135 @@ const Dashboard = () => {
         </motion.div>
       );
     }
+    else if(card.id === 'medications') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <MedicationForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }else if(card.id === 'health-watcher') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <HealthWatcher onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
+    else if(card.id === 'allergies') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <AllergiesForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
+    else if(card.id === 'risk-factors') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <RiskFactor onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
+    else if(card.id === 'encounters') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <EncounterList onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
+    else if(card.id === 'documents') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <DocumentsForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }else if(card.id === 'lab-orders') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <LabOrderForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }else if(card.id === 'implantable-devices') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <ImplantableDeviceForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
+    else if(card.id === 'family-connections') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <FamilyConnectionForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
+    else if(card.id === 'referrals') {
+      return (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden bg-white"
+        >
+          <ReferralForm onSubmit={handleVitalsSubmit} />
+        </motion.div>
+      );
+    }
 
-    
+
     return (
       <motion.div
         initial={{ opacity: 0, height: 0 }}
@@ -2458,7 +2609,6 @@ const Dashboard = () => {
   };
 
   return (
-
     <div className="min-h-screen bg-gray-50 p-1">
       <motion.button
         whileHover={{ scale: 1.05 }}
@@ -2500,8 +2650,7 @@ const Dashboard = () => {
                 <div
                   className={`p-3 flex items-center justify-between border-b border-gray-100 
                     bg-blue-50 
-                    rounded-t-lg cursor-pointer`}
-                  onClick={() => setExpandedId(expandedId === card.id ? null : card.id)}
+                    rounded-t-lg`}
                 >
                   <div className="flex items-center space-x-3">
                     <div className="p-1.5 hover:bg-gray-100 rounded cursor-grab active:cursor-grabbing">
@@ -2516,34 +2665,30 @@ const Dashboard = () => {
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={(e) => toggleCollapse(card.id, e)}
+                      className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
+                    >
+                      {collapsedCards[card.id] ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={(e) => closeCard(card.id, e)}
                       className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
                     >
                       <X size={14} />
                     </motion.button>
-                    {expandedId === card.id && (
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedId(null);
-                        }}
-                        className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
-                      >
-                        <Minimize2 size={14} />
-                      </motion.button>
-                    )}
                   </div>
                 </div>
                 <AnimatePresence>
-                  {renderCardContent(card)}
+                  {!collapsedCards[card.id] && renderCardContent(card)}
                 </AnimatePresence>
               </motion.div>
             </motion.div>
           ))}
         </div>
 
+      
         {/* Bottom grid with masonry-like layout */}
         <div className="grid grid-cols-4 auto-rows-min gap-4 mt-4">
           {cards.slice(3).map((card, index) => !closedCards[card.id] && (
@@ -2653,4 +2798,246 @@ const Dashboard = () => {
   );
 };
 
+//       </div>
+//     </div>
+//   );
+// };
+
 export default Dashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+   
+//     return (
+//       <motion.div
+//         initial={{ opacity: 0, height: 0 }}
+//         animate={{ opacity: 1, height: "auto" }}
+//         exit={{ opacity: 0, height: 0 }}
+//         transition={{ duration: 0.3 }}
+//         className="overflow-hidden bg-white"
+//       >
+//         <div className="p-2 space-y-1">
+//           {Object.entries(card.content).map(([key, data]) => (
+//             <div key={key} className="flex justify-around items-center py-2 px-1 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
+//               <span className="text-gray-600 font-medium">{key}</span>
+//               <span className={`px-3 py-1 rounded-full text-sm font-medium shadow-sm ${
+//                 data.status === 'green' ? 'text-green-700 bg-green-100 ring-1 ring-green-200' :
+//                 data.status === 'red' ? 'text-red-700 bg-red-100 ring-1 ring-red-200' :
+//                 data.status === 'orange' ? 'text-orange-700 bg-orange-100 ring-1 ring-orange-200' :
+//                 'text-blue-700 bg-blue-100 ring-1 ring-blue-200'
+//               }`}>
+//                 {data.value}
+//               </span>
+//             </div>
+//           ))}
+//         </div>
+//       </motion.div>
+//     );
+//   };
+
+//   return (
+
+//     <div className="min-h-screen bg-gray-50 p-1">
+//       <motion.button
+//         whileHover={{ scale: 1.05 }}
+//         whileTap={{ scale: 0.95 }}
+//         onClick={() => setShowNav(!showNav)}
+//         className="fixed top-26 right-4 p-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all z-50"
+//       >
+//         <Menu size={24} />
+//       </motion.button>
+
+//       <div className="relative mx-auto pt-4">
+//         {/* Top row grid */}
+//         <div className="grid grid-cols-3 gap-4">
+//           {cards.slice(0, 3).map((card, index) => !closedCards[card.id] && (
+//             <motion.div
+//               key={card.id}
+//               className="relative"
+//               style={{
+//                 gridColumn: "span 1",
+//                 zIndex: cards.length + 1,
+//               }}
+//               layout
+//             >
+//               <motion.div
+//                 className={`bg-white rounded-lg shadow-md border border-gray-100 transition-all duration-200`}
+//                 animate={{
+//                   scale: 1,
+//                 }}
+//                 whileHover={{
+//                   scale: 1.02,
+//                   zIndex: cards.length + 2,
+//                 }}
+//                 draggable
+//                 onDragStart={(e) => handleDragStart(e, card, index)}
+//                 onDragEnd={handleDragEnd}
+//                 onDragOver={handleDragOver}
+//                 onDrop={(e) => handleDrop(e, index)}
+//               >
+//                 <div
+//                   className={`p-3 flex items-center justify-between border-b border-gray-100 
+//                     bg-blue-50 
+//                     rounded-t-lg cursor-pointer`}
+//                   onClick={() => setExpandedId(expandedId === card.id ? null : card.id)}
+//                 >
+//                   <div className="flex items-center space-x-3">
+//                     <div className="p-1.5 hover:bg-gray-100 rounded cursor-grab active:cursor-grabbing">
+//                       <GripHorizontal size={16} className="text-gray-400" />
+//                     </div>
+//                     <h3 className="font-semibold text-gray-700 text-sm flex items-center">
+//                       <span className="text-base mr-2">{card.icon}</span>
+//                       {card.title}
+//                     </h3>
+//                   </div>
+//                   <div className="flex space-x-1">
+//                     <motion.button
+//                       whileHover={{ scale: 1.1 }}
+//                       whileTap={{ scale: 0.95 }}
+//                       onClick={(e) => closeCard(card.id, e)}
+//                       className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
+//                     >
+//                       <X size={14} />
+//                     </motion.button>
+//                     {expandedId === card.id && (
+//                       <motion.button
+//                         whileHover={{ scale: 1.1 }}
+//                         whileTap={{ scale: 0.95 }}
+//                         onClick={(e) => {
+//                           e.stopPropagation();
+//                           setExpandedId(null);
+//                         }}
+//                         className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
+//                       >
+//                         <Minimize2 size={14} />
+//                       </motion.button>
+//                     )}
+//                   </div>
+//                 </div>
+//                 <AnimatePresence>
+//                   {renderCardContent(card)}
+//                 </AnimatePresence>
+//               </motion.div>
+//             </motion.div>
+//           ))}
+//         </div>
+
+//         {/* Bottom grid with masonry-like layout */}
+//         <div className="grid grid-cols-4 auto-rows-min gap-4 mt-4">
+//           {cards.slice(3).map((card, index) => !closedCards[card.id] && (
+//             <motion.div
+//               key={card.id}
+//               className="relative"
+//               style={{
+//                 gridColumn: expandedId === card.id ? "span 2" : "span 1",
+//                 gridRow: expandedId === card.id ? "span 6" : "auto",
+//                 zIndex: expandedId === card.id ? cards.length + 1 : cards.length,
+//               }}
+//               layout
+//             >
+//               <motion.div
+//                 className={`bg-white rounded-lg shadow-md border border-gray-100 transition-all duration-200
+//                   ${expandedId === card.id ? "transform-none w-auto" : "hover:-translate-y-1"}`}
+//                 animate={{
+//                   scale: expandedId === card.id ? 1 : 0.98,
+//                 }}
+//                 whileHover={{
+//                   scale: expandedId === card.id ? 1 : 1.02,
+//                   zIndex: cards.length + 2,
+//                 }}
+//                 draggable
+//                 onDragStart={(e) => handleDragStart(e, card, index + 3)}
+//                 onDragEnd={handleDragEnd}
+//                 onDragOver={handleDragOver}
+//                 onDrop={(e) => handleDrop(e, index + 3)}
+//               >
+//                 <div
+//                   className={`p-3 flex items-center justify-between border-b border-gray-100 
+//                     ${expandedId === card.id ? 'bg-blue-50' : 'bg-white'} 
+//                     rounded-t-lg cursor-pointer`}
+//                   onClick={() => setExpandedId(expandedId === card.id ? null : card.id)}
+//                 >
+//                   <div className="flex items-center space-x-3">
+//                     <div className="p-1.5 hover:bg-gray-100 rounded cursor-grab active:cursor-grabbing">
+//                       <GripHorizontal size={16} className="text-gray-400" />
+//                     </div>
+//                     <h3 className="font-semibold text-gray-700 text-sm flex items-center">
+//                       <span className="text-base mr-2">{card.icon}</span>
+//                       {card.title}
+//                     </h3>
+//                   </div>
+//                   <div className="flex space-x-1">
+//                     <motion.button
+//                       whileHover={{ scale: 1.1 }}
+//                       whileTap={{ scale: 0.95 }}
+//                       onClick={(e) => closeCard(card.id, e)}
+//                       className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
+//                     >
+//                       <X size={14} />
+//                     </motion.button>
+//                     {expandedId === card.id && (
+//                       <motion.button
+//                         whileHover={{ scale: 1.1 }}
+//                         whileTap={{ scale: 0.95 }}
+//                         onClick={(e) => {
+//                           e.stopPropagation();
+//                           setExpandedId(null);
+//                         }}
+//                         className="p-1.5 hover:bg-gray-100 rounded-full transition-colors"
+//                       >
+//                         <Minimize2 size={14} />
+//                       </motion.button>
+//                     )}
+//                   </div>
+//                 </div>
+//                 <AnimatePresence>
+//                   {expandedId === card.id && renderCardContent(card)}
+//                 </AnimatePresence>
+//               </motion.div>
+//             </motion.div>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Side Navigation for Closed Cards */}
+//       <AnimatePresence>
+//         {showNav && (
+//           <motion.div
+//             initial={{ x: "100%" }}
+//             animate={{ x: 0 }}
+//             exit={{ x: "100%" }}
+//             transition={{ type: "spring", damping: 20 }}
+//             className="fixed right-0 top-0 h-full w-64 bg-white shadow-xl z-40 p-4"
+//           >
+//             <h2 className="text-lg font-semibold mb-4">Closed Cards</h2>
+//             <div className="space-y-2">
+//               {cards.map((card) => 
+//                 closedCards[card.id] && (
+//                   <motion.button
+//                     key={card.id}
+//                     onClick={() => openCard(card.id)}
+//                     className="w-full flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg"
+//                   >
+//                     <span>{card.icon}</span>
+//                     <span>{card.title}</span>
+//                   </motion.button>
+//                 )
+//               )}
+//             </div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </div>
+//   );
+// };
+
+// export default Dashboard;
