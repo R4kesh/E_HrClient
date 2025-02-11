@@ -171,6 +171,7 @@ import LabOrderContent from './components/LabOrders/LabOrderContent';
 import DocumentPage from './pages/DocumentPage';
 import PlanSummaryPage from './pages/PlanSummaryPage';
 import Main from './components/Messages/Main';
+import Home_SchedularDoctorWise from './components/Home_Schedular/Home_SchedularDoctorWise';
 
 function App() {
   return (
@@ -190,7 +191,7 @@ function AppLayout() {
   return (
     <>
       <Navbar />
-      {location.pathname !== "/messages" && <UpperTab />} {/* Hide UpperTab on /messages */}
+      {!["/messages", "/doctorsappoinments"].includes(location.pathname) && <UpperTab />}
 
       <Routes>
         <Route path="/" element={<LandingDashboard />} />
@@ -223,6 +224,8 @@ function AppLayout() {
         
         {/* Route that hides UpperTab */}
         <Route path="/messages" element={<Main />} />
+        <Route path="/doctorsappoinments" element={<Home_SchedularDoctorWise />} />
+
       </Routes>
     </>
   );

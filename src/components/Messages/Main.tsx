@@ -155,6 +155,7 @@
 
 import React, { useState } from 'react';
 import { Calendar, Clock, Home, Users, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Main = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -195,10 +196,10 @@ const Main = () => {
               className="px-4 py-2 rounded bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button className="p-2 hover:bg-blue-700 rounded">
-              <Home className="w-5 h-5" />
+              <Link to="/messages"><Home className="w-5 h-5" /></Link>
             </button>
             <button className="p-2 hover:bg-blue-700 rounded">
-              <Users className="w-5 h-5" />
+              <Link to='/doctorsappoinments'><Users className="w-5 h-5" /></Link>
             </button>
           </div>
           <div className="flex items-center space-x-4">
