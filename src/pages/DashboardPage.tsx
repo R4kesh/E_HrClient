@@ -42,7 +42,7 @@ const DashboardPage = () => {
       {/* Main Content */}
       <div className="flex flex-col flex-grow bg-white">
         {/* Tab */}
-        <div className="sticky top-0 left-0 w-full z-10">
+        <div className=" top-0 left-0 w-full z-10">
           <Tab />
         </div>
 

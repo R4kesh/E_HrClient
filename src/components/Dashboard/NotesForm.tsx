@@ -81,7 +81,7 @@ const NotesForm = ({ onSubmit }) => {
     </div>
     <button
       type="submit"
-      className="w-40 align-middle bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition-colors"
+      className="w-40  bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition-colors"
     >
       Submit Note
     </button>

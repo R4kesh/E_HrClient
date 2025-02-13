@@ -63,7 +63,10 @@ const ProfessionalTabs = () => {
   };
 
   return (
-    <div className="bg-white border-b border-gray-400 shadow-sm">
+    <div className="bg-white border-b max-w-5xl "  style={{
+      scrollbarWidth: "thin", // For Firefox
+      scrollbarColor: "#e2e3e1 #f3f4f6", // Thumb and track colors for Firefox
+    }}>
       <div className="flex overflow-x-auto px-1 py-2 space-x-2 ">
         {tabs.map((tab) => (
           <div 
@@ -75,7 +78,7 @@ const ProfessionalTabs = () => {
               relative group
               ${location.pathname === tab.path 
                 ? 'bg-blue-100 text-blue-800 shadow-md' 
-                : 'hover:bg-gray-100 text-gray-600 text-gray-500 hover:text-gray-800'}
+                : 'hover:bg-gray-100  text-gray-500 hover:text-gray-800'}
             `}
             onClick={() => handleTabClick(tab.path)}
           >

@@ -180,7 +180,7 @@ const Dashboard = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setShowNav(!showNav)}
-        className="fixed top-26 right-4 p-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all z-50"
+        className="fixed top-24 right-2 p-1 mt-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all z-50"
       >
         <Menu size={24} />
       </motion.button>
@@ -339,8 +339,8 @@ const Dashboard = () => {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 20 }}
-            className="fixed right-0 top-0 h-full w-64 bg-white shadow-xl z-40 p-4"
+            transition={{ type: "spring", damping: 20 }} 
+            className="fixed right-0 top-0 h-full w-64 bg-[#EEF7FF] border-l-4 rounded-xl  border-t-cyan-300  border-l-cyan-300 shadow-xl z-40 p-4"
           >
             <h2 className="text-lg font-semibold mb-4">Closed Cards</h2>
             <div className="space-y-2">
@@ -349,7 +349,7 @@ const Dashboard = () => {
                   <motion.button
                     key={card.id}
                     onClick={() => openCard(card.id)}
-                    className="w-full flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg"
+                    className="w-full flex items-center bg-light-blue-100 space-x-2 p-2 hover:bg-light-blue-200 rounded-lg"
                   >
                     <span>{card.icon}</span>
                     <span>{card.title}</span>
